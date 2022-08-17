@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { image } from '../../../Function';
 import './ImageSlide.scss';
 
@@ -13,6 +13,13 @@ const ImageSlide = () => {
   const showprevImage = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent(current === length - 1 ? 0 : current + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <div className="ImageSlide">
