@@ -1,0 +1,36 @@
+.ImageSlide {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+
+  .btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -4rem;
+    width: 4rem;
+    height: 8rem;
+    z-index: 10;
+    opacity: 0.5;
+    cursor: pointer;
+
+    @at-root .left {
+      left: 10rem;
+    }
+
+    @at-root .right {
+      right: 10rem;
+    }
+  }
+
+  .slide_active {
+    transition-duration: 2s;
+    transform: scale(1.01);
+    width: 100%;
+    height: 100%;
+  }
+
+  .imgBox {
+    width: 100%;
+    height: 100%;
+  }
+}
