@@ -22,6 +22,12 @@ const ImageSlide = () => {
         alt="leftArrrow"
         onClick={showprevImage}
       />
+      <img
+        className="btn right"
+        src={image('right-arrow')}
+        alt="rightArrrow"
+        onClick={showNextImage}
+      />
       {IMG_BOX.map((picture, index) => {
         return (
           <div
@@ -34,12 +40,10 @@ const ImageSlide = () => {
           </div>
         );
       })}
-      <img
-        className="btn right"
-        src={image('right-arrow')}
-        alt="rightArrrow"
-        onClick={showNextImage}
-      />
+      <div className="mouseDown">
+        <img src={image('mouseDown')} alt="mouseDown" />
+        <p>SCROLL DOWN</p>
+      </div>
     </div>
   );
 };
