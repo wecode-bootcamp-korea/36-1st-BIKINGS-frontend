@@ -5,10 +5,6 @@ import './BycleInfo.scss';
 const BycleInfo = () => {
   return (
     <div className="bycleInfo">
-      <div className="bycleLogo">
-        <p>Logo</p>
-        <p>시리즈</p>
-      </div>
       <img className="bycleImg" src={image('testImg')} alt="bycleImg" />
       <div className="bycleContent">
         <div className="bycleName">name</div>

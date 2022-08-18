@@ -10,22 +10,10 @@
   &:hover {
     box-shadow: 5px 5px 5px 5px gray;
     transition-duration: 0.8s;
-    .bycleLogo {
-      opacity: 1;
-      transition-duration: 0.8s;
-    }
     .bycleName {
       color: red;
       transition-duration: 0.8s;
     }
-  }
-  .bycleLogo {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    font-size: 2rem;
-    opacity: 0.3;
-    cursor: pointer;
   }
   .bycleContent {
     display: flex;
