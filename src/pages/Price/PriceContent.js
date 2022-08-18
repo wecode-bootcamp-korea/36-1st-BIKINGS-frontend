@@ -1,11 +1,11 @@
 import React from 'react';
-import './BasketContent.scss';
+import './PriceContent.scss';
 
-const BasketContent = ({ name, src, price }) => {
+const priceContent = ({ name, src, price }) => {
   return (
-    <div className="BasketContent">
+    <div className="priceContent">
       <input type="checkbox" />
-      <img src={src} alt="basketContent" />
+      <img src={src} alt="priceContent" />
       <div className="contentInfo">
         <div className="contentName">{name}</div>
         <div className="contentPrice">{price}원</div>
@@ -15,4 +15,4 @@ const BasketContent = ({ name, src, price }) => {
   );
 };
 
-export default BasketContent;
+export default priceContent;

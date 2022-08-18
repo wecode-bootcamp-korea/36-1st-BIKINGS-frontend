@@ -1,5 +1,5 @@
-.Basket {
-  .basketPrice {
+.price {
+  .priceBox {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@
       margin: 0 0.5rem;
       font-size: 1rem;
     }
-    .basketSelect {
+    .priceOptionSelect {
       display: flex;
       align-items: center;
     }
@@ -20,12 +20,18 @@
       border: 0.1rem solid gray;
       margin: 1rem 0;
     }
+    .priceList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .priceInfo {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-left: 15rem;
     .totalBox {
       display: flex;
       justify-content: space-between;

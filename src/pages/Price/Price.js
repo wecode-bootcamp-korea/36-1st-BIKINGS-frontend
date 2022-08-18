@@ -1,29 +1,31 @@
 import React from 'react';
 import { image } from '../../Function';
-import './Basket.scss';
-import BasketContent from './BasketContent';
+import './Price.scss';
+import PriceContent from './PriceContent';
 
-const Basket = () => {
+const price = () => {
   return (
-    <div className="Basket">
-      <div className="basketPrice">
+    <div className="price">
+      <div className="priceBox">
         <h3>장바구니</h3>
-        <div className="basketList">
-          <div className="basketSelect">
-            <input type="checkbox" />
-            <span> 전체선택 </span>
-            <span> l </span>
-            <span> 선택삭제 </span>
+        <div className="priceList">
+          <div className="priceSelectBox">
+            <div className="priceOptionSelect">
+              <input type="checkbox" />
+              <span> 전체선택 </span>
+              <span> l </span>
+              <span> 선택삭제 </span>
+            </div>
+            <div className="line" />
+            {price_Data.map(prices => (
+              <PriceContent
+                key={prices.id}
+                name={prices.name}
+                price={prices.price}
+                src={prices.src}
+              />
+            ))}
           </div>
-          <div className="line" />
-          {Basket_Data.map(baskets => (
-            <BasketContent
-              key={baskets.id}
-              name={baskets.name}
-              price={baskets.price}
-              src={baskets.src}
-            />
-          ))}
           <div className="priceInfo">
             <div className="totalBox">
               <div className="priceTotal"> 2222원 </div>
@@ -40,9 +42,9 @@ const Basket = () => {
   );
 };
 
-export default Basket;
+export default price;
 
-const Basket_Data = [
+const price_Data = [
   {
     id: 1,
     name: '자전거',
