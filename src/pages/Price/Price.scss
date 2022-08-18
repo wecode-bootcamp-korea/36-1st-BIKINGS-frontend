@@ -4,22 +4,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     h3 {
       padding: 10rem;
       font-size: 3rem;
     }
+
     span {
       margin: 0 0.5rem;
       font-size: 1rem;
     }
+
     .priceOptionSelect {
       display: flex;
       align-items: center;
     }
-    .line {
-      border: 0.1rem solid gray;
-      margin: 1rem 0;
-    }
+
     .priceList {
       display: flex;
       justify-content: center;
@@ -27,15 +27,34 @@
     }
   }
 
-  .priceInfo {
+  .priceFinalCheck {
     display: flex;
-    align-items: center;
     flex-direction: column;
     margin-left: 15rem;
-    .totalBox {
+    padding: 1rem;
+    width: 25rem;
+
+    .priceInfo {
       display: flex;
-      justify-content: space-between;
-      padding: 0 1rem;
+      align-items: center;
+      flex-direction: column;
+      border: 0.2rem solid black;
+
+      .totalBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+      }
+
+      .footer {
+        font-size: 1rem;
+        color: gray;
+      }
+    }
+    .priceBtn {
+      margin: 2rem 0;
     }
   }
 }

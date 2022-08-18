@@ -25,12 +25,28 @@ const price = () => {
                 src={prices.src}
               />
             ))}
+            <div className="line" />
           </div>
-          <div className="priceInfo">
-            <div className="totalBox">
-              <div className="priceTotal"> 2222원 </div>
-              <button className="priceBtn"> 주문하기 </button>
+          <div className="priceFinalCheck">
+            <div className="priceInfo">
+              <div className="totalBox">
+                <p>상품금액</p>
+                <p>2원</p>
+              </div>
+              <div className="totalBox">
+                <p>상품할인금액</p>
+                <p>2원</p>
+              </div>
+              <div className="totalBox">
+                <p>배송비</p>
+                <p>2원</p>
+              </div>
+              <div className="totalBox">
+                <p>결제예정금액</p>
+                <p>2원</p>
+              </div>
             </div>
+            <button className="priceBtn"> 주문하기 </button>
             <div className="Footer">
               <p>[주문완료] 상태일경우에만 주문취소 할수있습니다.</p>
               <p>[배송중] 상태일 경우에는 곤란.</p>
