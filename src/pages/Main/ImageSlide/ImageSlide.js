@@ -30,7 +30,7 @@ const ImageSlide = () => {
       />
       <img
         className="btn right"
-        src={image('right-arrow')}
+        src={image('right-arro')}
         alt="rightArrrow"
         onClick={showNextImage}
       />
