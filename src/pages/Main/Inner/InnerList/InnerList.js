@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './InnerList.scss';
 
 const InnerList = ({ list }) => {
-  const { id, name, src, icon, description } = list;
+  const { name, src, icon, description } = list;
 
   return (
     <li className="listCategory">
