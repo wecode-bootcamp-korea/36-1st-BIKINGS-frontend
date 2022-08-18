@@ -2,19 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './InnerList.scss';
 
-const InnerList = ({ src, name, description, icon }) => {
+const InnerList = ({ list }) => {
+  const { id, name, src, icon, description } = list;
+
   return (
     <li className="listCategory">
       <img className="listImage" src={src} alt="list" />
       <div className="bgBox">{name}</div>
-      <div class="darkness">
-        <div class="hoverDetail">
+      <div className="darkness">
+        <div className="hoverDetail">
           <img className="hoverImg" src={icon} alt="mainImage" />
-          <h3 className="hoverName">{name}</h3>
-          <h4 className="hoverDes">{description}</h4>
+          <p className="hoverName">{name}</p>
+          <p className="hoverDes">{description}</p>
           <button className="hoverBtn" type="submit">
             <Link to="/product">
-              <h4 className="hoverBtnText">VIEW MORE</h4>
+              <p className="hoverBtnText">VIEW MORE</p>
             </Link>
           </button>
         </div>

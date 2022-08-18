@@ -12,26 +12,20 @@ const Inner = () => {
   }, []);
 
   return (
-    <div className="Inner">
+    <div className="inner">
       <div className="container">
         <div className="headContainer">
-          <div className="line-container">
+          <div className="lineContainer">
             <div className="line" />
           </div>
           <h3 className="headText">FIND YOUR STYLE</h3>
-          <div className="line-container">
+          <div className="lineContainer">
             <div className="line" />
           </div>
         </div>
         <ul className="listBicycle">
           {lists.map(list => (
-            <InnerList
-              key={list.id}
-              src={list.src}
-              name={list.name}
-              description={list.description}
-              icon={list.icon}
-            />
+            <InnerList key={list.id} list={list} />
           ))}
         </ul>
       </div>
