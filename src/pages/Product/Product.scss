@@ -1,0 +1,60 @@
+.Product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .productImgBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .productImg {
+      width: 100%;
+      height: 30rem;
+    }
+    .productText {
+      position: absolute;
+      margin-top: 10rem;
+      color: white;
+      text-align: center;
+      h3 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+      }
+      button {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    width: 100rem;
+    height: 30rem;
+    background-color: whitesmoke;
+  }
+
+  .bycleList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .bycleTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-size: 10rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .line {
+      border: 0.1rem solid gray;
+    }
+  }
+  .line {
+    border: 0.1rem solid gray;
+  }
+}
