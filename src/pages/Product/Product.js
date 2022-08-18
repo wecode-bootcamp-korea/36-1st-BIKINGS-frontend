@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
+import BycleInfo from './BycleInfo/BycleInfo';
+import ProductCheackList from './ProductCheckList/ProductCheackList';
 import { image } from '../../Function';
-import BycleInfo from './BycleInfo';
 import './Product.scss';
-import ProductCheackList from './ProductCheackList';
 
 const Product = () => {
-  const [showImage, setShowImage] = useState(false);
+  const [isShowImage, setIsShowImage] = useState(false);
   const [name, setName] = useState('closeProductImg');
   const [seeMore, setSeeMore] = useState('더보기');
-  const imageChange = () => {
-    setShowImage(!showImage);
+
+  const changeImage = () => {
+    setIsShowImage(!isShowImage);
     setName(name === 'closeProductImg' ? 'showProductImg' : 'closeProductImg');
     setSeeMore(seeMore === '더보기' ? '접기 ' : '더보기');
   };
 
   return (
-    <div className="Product">
+    <div className="product">
       <div className="productImgBox">
         <img className={name} src={image('testImg')} alt="productImg" />
-        {showImage && (
+        {isShowImage && (
           <div className="productText">
             <h3>전기자전거</h3>
             <p>
@@ -29,7 +30,7 @@ const Product = () => {
         )}
       </div>
       <div className="productBody">
-        <div className="imageSeemore" onClick={imageChange}>
+        <div className="imageSeemore" onClick={changeImage}>
           {seeMore}
         </div>
         <ProductCheackList />

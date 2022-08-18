@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
 
-$headFont: ('Inspiration', cursive );
+$headFont: ('Inspiration', cursive);
 
+@mixin flex-sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,9 +1,8 @@
-.Product {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@import '../../styles/variable.scss';
+
+.product {
+  @include flex-sort;
   flex-direction: column;
-  // background-color: antiquewhite;
   .productImgBox {
     display: flex;
     align-items: center;
@@ -34,9 +33,7 @@
     }
   }
   .productBody {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-sort;
     flex-direction: column;
 
     .imageSeemore {
@@ -50,30 +47,25 @@
     }
 
     .bycleContainer {
-      display: flex;
+      @include flex-sort;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       width: 100%;
       .bycleTitle {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-sort;
         flex-direction: column;
         h2 {
           font-size: 10rem;
           text-align: center;
           margin: 3rem 0;
         }
-        @at-root .line {
+        .line {
           border: 0.1rem solid gray;
           width: 100%;
         }
-        @at-root .bycleList {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap-reverse;
-        }
+      }
+      .bycleList {
+        @include flex-sort;
+        flex-wrap: wrap-reverse;
       }
     }
   }
