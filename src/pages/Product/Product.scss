@@ -26,35 +26,45 @@
       }
     }
   }
-
-  .detail {
+  .productBody {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
-    width: 100rem;
-    height: 30rem;
-    background-color: whitesmoke;
-  }
+    flex-direction: column;
 
-  .bycleList {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .bycleTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    h2 {
-      font-size: 10rem;
+    .imageSeemore {
+      background-color: aqua;
+      padding: 1.5rem;
+      width: 10rem;
       text-align: center;
-      margin: 3rem 0;
     }
-    .line {
-      border: 0.1rem solid gray;
+
+    .bycleContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      .bycleTitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h2 {
+          font-size: 10rem;
+          text-align: center;
+          margin: 3rem 0;
+        }
+        .line {
+          border: 0.1rem solid gray;
+          width: 650%;
+        }
+        @at-root .bycleList {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap-reverse;
+        }
+      }
     }
-  }
-  .line {
-    border: 0.1rem solid gray;
   }
 }

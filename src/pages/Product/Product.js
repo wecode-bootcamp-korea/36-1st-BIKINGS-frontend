@@ -2,6 +2,7 @@ import React from 'react';
 import { image } from '../../Function';
 import BycleInfo from './BycleInfo';
 import './Product.scss';
+import ProductCheackList from './ProductCheackList';
 
 const Product = () => {
   return (
@@ -16,23 +17,22 @@ const Product = () => {
           <button> 제품 더보기 </button>
         </div>
       </div>
-      <div className="selectOption">
-        <div className="detail">
-          <li>
-            <ol />
-          </li>
+      <div className="productBody">
+        <div className="imageSeemore">더보기</div>
+        <ProductCheackList />
+        <div className="bycleContainer">
+          <div className="bycleTitle">
+            <h2> Title </h2>
+            <div className="line" />
+          </div>
+          <div className="bycleList">
+            <BycleInfo />
+            <BycleInfo />
+            <BycleInfo />
+            <BycleInfo />
+            <BycleInfo />
+          </div>
         </div>
-      </div>
-      <div className="bycleTitle">
-        <h2> Title </h2>
-      </div>
-      <line className="line" />
-      <div className="bycleList">
-        <BycleInfo />
-        <BycleInfo />
-        <BycleInfo />
-        <BycleInfo />
-        <BycleInfo />
       </div>
     </div>
   );
