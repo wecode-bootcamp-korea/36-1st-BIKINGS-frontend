@@ -1,28 +1,28 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { image } from '../../../Function';
 import './ImageSlide.scss';
 
 const ImageSlide = () => {
-  const [current, setCurrent] = useState(0);
-  const length = IMG_BOX.length;
+  const [imgNum, setImgNum] = useState(0);
 
   const showNextImage = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+    setImgNum(imgNum => (imgNum === IMG_BOX.length - 1 ? 0 : imgNum + 1));
   };
 
   const showprevImage = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
+    setImgNum(imgNum => (imgNum === 0 ? IMG_BOX.length - 1 : imgNum - 1));
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent(current === length - 1 ? 0 : current + 1);
+      setImgNum(imgNum => (imgNum === IMG_BOX.length - 1 ? 0 : imgNum + 1));
     }, 5000);
     return () => clearInterval(interval);
-  });
+  }, []);
 
   return (
-    <div className="ImageSlide">
+    <div className="imageSlide">
       <img
         className="btn left"
         src={image('left-arrow')}
@@ -38,10 +38,10 @@ const ImageSlide = () => {
       {IMG_BOX.map((picture, index) => {
         return (
           <div
-            className={index === current ? 'slide_active' : 'slide'}
+            className={index === imgNum ? 'slide_active' : 'slide'}
             key={picture.id}
           >
-            {index === current && (
+            {index === imgNum && (
               <img className="imgBox" src={picture.src} alt="slideImage" />
             )}
           </div>
