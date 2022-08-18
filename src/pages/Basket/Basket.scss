@@ -1,0 +1,35 @@
+.Basket {
+  .basketPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h3 {
+      padding: 10rem;
+      font-size: 3rem;
+    }
+    span {
+      margin: 0 0.5rem;
+      font-size: 1rem;
+    }
+    .basketSelect {
+      display: flex;
+      align-items: center;
+    }
+    .line {
+      border: 0.1rem solid gray;
+      margin: 1rem 0;
+    }
+  }
+
+  .priceInfo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .totalBox {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+  }
+}
