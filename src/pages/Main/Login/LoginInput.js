@@ -8,7 +8,7 @@ const LoginInput = ({ replace, buttonChange }) => {
   const [inputValues, setInputValues] = useState({
     id: '',
     password: '',
-    phone: '',
+    contact: '',
     birth: '',
     name: '',
   });
@@ -34,19 +34,19 @@ const LoginInput = ({ replace, buttonChange }) => {
         navigate('/main-bosung');
       });
   };
-  const signUp = e => {
-    e.preventDefault();
-    fetch('', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        id: inputValues.id,
-        password: inputValues.password,
-      }),
-    })
-      .then(response => response.json())
-      .then(data => {});
-  };
+  // const signUp = e => {
+  //   e.preventDefault();
+  //   fetch('', {
+  //     method: 'post',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify({
+  //       id: inputValues.id,
+  //       password: inputValues.password,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {});
+  // };
 
   const InputValueLoginSignup =
     inputValues.id.includes('@') &&
@@ -87,7 +87,7 @@ const LoginInput = ({ replace, buttonChange }) => {
             placeholder="생년월일"
           />
           <input
-            name="phone"
+            name="contact"
             onChange={handleInput}
             type="text"
             placeholder="전화번호"

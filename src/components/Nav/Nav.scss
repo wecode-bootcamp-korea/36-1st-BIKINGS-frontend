@@ -1,0 +1,51 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  border-bottom: 0.1rem solid black;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background-color: lightblue;
+
+  .topFontRight {
+    font-size: 2rem;
+  }
+  .topFontLeft {
+    font-size: 2rem;
+    margin-left: 7rem;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+  }
+
+  .mainTitle {
+    color: red;
+    font-size: 5rem;
+    font-family: 'Inspiration', cursive;
+    font-weight: bold;
+  }
+  .images {
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+
+    .topImage {
+      margin-left: 2rem;
+    }
+  }
+  .searchBarInput {
+    display: flex;
+    padding: 1rem;
+    margin-left: 6rem;
+    border-radius: 3rem;
+    border: none;
+    width: 35rem;
+  }
+  .searchBar {
+    display: flex;
+  }
+}
