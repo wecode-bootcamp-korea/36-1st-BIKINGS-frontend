@@ -1,0 +1,19 @@
+.productDetail {
+  position: relative;
+
+  .basketBtn {
+    width: 6.7rem;
+    height: 6.7rem;
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    background-color: #d82728;
+    border-radius: 50%;
+    cursor: pointer;
+    .basketImg {
+      position: absolute;
+      color: white;
+      left: 0.2rem;
+    }
+  }
+}

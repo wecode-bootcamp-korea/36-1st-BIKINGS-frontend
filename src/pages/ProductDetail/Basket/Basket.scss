@@ -1,0 +1,98 @@
+.basket {
+  height: auto;
+  width: 440px;
+  overflow-x: hidden;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: none;
+  background-color: antiquewhite;
+  position: absolute;
+  left: 35%;
+  top: 20rem;
+
+  .basketContainer {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100% - 64px);
+    max-width: 600px;
+
+    .firstBasket {
+      margin: 2px 0px 4px;
+      padding: 12px 0px;
+      font-size: 1.5rem;
+      width: 38rem;
+
+      .subDes {
+        margin-bottom: 20px;
+      }
+
+      .price {
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+      .subPrice {
+        padding-left: 0.5rem;
+        color: grey;
+        text-decoration: line-through;
+      }
+    }
+
+    .secondBasket {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: inherit;
+      height: 2.4rem;
+      font-size: 1.9rem;
+      margin: 1.5rem 0;
+      font-weight: 600;
+
+      .bigPrice {
+        font-size: 2.3rem;
+      }
+    }
+
+    .secondHalfBasket {
+      text-align: right;
+      font-size: 1.5rem;
+      padding-bottom: 1.5rem;
+      color: grey;
+
+      .secondBtn {
+        background-color: #ffc000;
+        color: #ffffff;
+        font-size: 1.2rem;
+        margin: 0 1rem;
+        padding: 1px 5px;
+        border-radius: 5px;
+      }
+    }
+    .thirdBasket {
+      display: flex;
+      gap: 1rem;
+      .btnOne {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        height: 52px;
+        background-color: #ffffff;
+        border-radius: 6px;
+        border: 0px none;
+        width: 50%;
+        font-size: 1.7rem;
+      }
+      .btnTwo {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        width: 50%;
+        height: 52px;
+        border-radius: 6px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(95, 0, 128);
+        border: 0px none;
+        font-size: 1.7rem;
+      }
+    }
+  }
+}
