@@ -12,14 +12,14 @@
     z-index: 10;
     opacity: 0.5;
     cursor: pointer;
+  }
 
-    @at-root .left {
-      left: 10rem;
-    }
+  .left {
+    left: 10rem;
+  }
 
-    @at-root .right {
-      right: 10rem;
-    }
+  .right {
+    right: 10rem;
   }
 
   .slide_active {
