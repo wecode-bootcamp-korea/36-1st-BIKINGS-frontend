@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DropDown from './DropDown';
 import './Nav.scss';
 
 const Nav = () => {
+  const [navRender, setNavRender] = useState(false);
+  const popNavBar = () => {
+    setNavRender(!navRender);
+  };
+
   return (
     <div>
       <div className="top">
         <div className="navLeft">
           <div className="mainTitle">300</div>
-          <li className="topFontLeft">자전거</li>
+          <li className="topFontLeft" onClick={popNavBar}>
+            자전거
+          </li>
         </div>
 
         <div className="searchBar">
@@ -28,22 +35,22 @@ const Nav = () => {
 
         <div className="navRight">
           <div className="images">
-            <img className="topImage" alt="blog" src="images/blog.png" />
-            <img className="topImage" alt="blog" src="images/instagram.png" />
-            <img className="topImage" alt="blog" src="images/facebook.png" />
-            <img className="topImage" alt="blog" src="images/youtube.png" />
+            <img className="topImage" alt="blog" src="images/blog2.png" />
+            <img className="topImage" alt="blog" src="images/instagram2.png" />
+            <img className="topImage" alt="blog" src="images/facebook2.png" />
+            <img className="topImage" alt="blog" src="images/youtube2.png" />
           </div>
           <div className="topRight">
             <li className="topFontRight">Login</li>
             <img
               className="shoppingCart"
               alt="shoppingCart"
-              src="images/shopping-cart.png"
+              src="images/shopping-cart2.png"
             />
           </div>
         </div>
       </div>
-      <DropDown />
+      <DropDown navRender={navRender} />
     </div>
   );
 };

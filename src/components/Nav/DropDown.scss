@@ -1,4 +1,67 @@
 .DropDown {
-  background-color: yellow;
-  height: 50%;
+  display: flex;
+  background-color: white;
+  height: 25rem;
+  border-bottom: 0.1rem solid lightgray;
+}
+li {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+.dropDownLeft {
+  display: flex;
+  flex: 1.7;
+  padding-left: 15rem;
+}
+.styleList {
+  font-size: 1.7rem;
+  height: 3rem;
+  border-right: 0.1rem solid rgb(228, 224, 224);
+  padding-right: 2rem;
+}
+.menuTop {
+  color: red;
+  font-size: 2rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3rem;
+}
+.styleList2 {
+  font-size: 1.5rem;
+  height: 3rem;
+  color: gray;
+  padding-left: 1rem;
+}
+
+.styleList3 {
+  font-size: 1.7rem;
+  height: 3rem;
+}
+
+.brand {
+  flex: 0.7;
+}
+
+.menuDetail {
+  padding-top: 8.5rem;
+  cursor: pointer;
+}
+
+.hashTagStyle {
+  font-size: 1.7rem;
+  height: 3rem;
+  background-color: white;
+  border: 0.1rem solid lightgray;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.hashTagList {
+  background-color: rgb(245, 242, 242);
+  width: 50rem;
+  flex: 1;
+  padding-left: 3rem;
 }
