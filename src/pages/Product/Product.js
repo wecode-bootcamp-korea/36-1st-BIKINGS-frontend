@@ -6,19 +6,19 @@ import './Product.scss';
 
 const Product = () => {
   const [isShowImage, setIsShowImage] = useState(false);
-  const [name, setName] = useState('closeProductImg');
-  const [seeMore, setSeeMore] = useState('더보기');
 
   const changeImage = () => {
     setIsShowImage(!isShowImage);
-    setName(name === 'closeProductImg' ? 'showProductImg' : 'closeProductImg');
-    setSeeMore(seeMore === '더보기' ? '접기 ' : '더보기');
   };
 
   return (
     <div className="product">
       <div className="productImgBox">
-        <img className={name} src={image('testImg')} alt="productImg" />
+        <img
+          className={isShowImage ? 'showProductImg' : 'closeProductImg'}
+          src={image('testImg')}
+          alt="productImg"
+        />
         {isShowImage && (
           <div className="productText">
             <h3>전기자전거</h3>
@@ -31,7 +31,7 @@ const Product = () => {
       </div>
       <div className="productBody">
         <div className="imageSeemore" onClick={changeImage}>
-          {seeMore}
+          {isShowImage ? '접기 ' : '더보기'}
         </div>
         <ProductCheackList />
         <div className="bycleContainer">
