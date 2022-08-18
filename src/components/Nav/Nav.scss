@@ -1,0 +1,81 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  background-color: lightblue;
+
+  .topFontRight {
+    font-size: 2rem;
+  }
+  .topFontLeft {
+    font-size: 2rem;
+    margin-left: 7rem;
+    margin-right: 17rem;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+  }
+
+  .mainTitle {
+    color: red;
+    font-size: 5rem;
+    font-family: 'Inspiration', cursive;
+    font-weight: bold;
+    margin-left: 3rem;
+  }
+
+  .navRight {
+    display: flex;
+    justify-content: space-between;
+    .images {
+      display: flex;
+      height: 3rem;
+      margin-right: 3rem;
+      cursor: pointer;
+      .topImage {
+        margin-right: 3rem;
+      }
+    }
+    .topRight {
+      display: flex;
+      margin-right: 3rem;
+
+      .shoppingCart {
+        height: 3rem;
+        cursor: pointer;
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  .searchBar {
+    display: flex;
+    position: relative;
+
+    .searchBarInput {
+      padding: 1rem;
+      border-radius: 3rem;
+      border: none;
+      width: 35rem;
+      padding: auto;
+    }
+
+    .button {
+      border: none;
+      background-color: white;
+      position: absolute;
+      right: 1.5rem;
+      margin-top: 0.4rem;
+      cursor: pointer;
+
+      .buttonImage {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+}
