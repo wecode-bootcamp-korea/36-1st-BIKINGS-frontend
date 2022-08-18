@@ -7,9 +7,11 @@ import ProductCheackList from './ProductCheackList';
 const Product = () => {
   const [showImage, setShowImage] = useState(false);
   const [name, setName] = useState('closeProductImg');
+  const [seeMore, setSeeMore] = useState('더보기');
   const imageChange = () => {
     setShowImage(!showImage);
     setName(name === 'closeProductImg' ? 'showProductImg' : 'closeProductImg');
+    setSeeMore(seeMore === '더보기' ? '접기 ' : '더보기');
   };
 
   return (
@@ -22,13 +24,13 @@ const Product = () => {
             <p>
               전기모터의 힘을 더하여, 적은 힘으로도 편하게 주행할 수 있는 자전거
             </p>
-            <button> 제품 더보기 </button>
+            <button> 제품 자세히 </button>
           </div>
         )}
       </div>
       <div className="productBody">
         <div className="imageSeemore" onClick={imageChange}>
-          더보기
+          {seeMore}
         </div>
         <ProductCheackList />
         <div className="bycleContainer">
