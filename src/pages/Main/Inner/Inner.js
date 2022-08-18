@@ -25,7 +25,13 @@ const Inner = () => {
         </div>
         <ul className="listBicycle">
           {lists.map(list => (
-            <InnerList key={list.id} src={list.src} name={list.name} />
+            <InnerList
+              key={list.id}
+              src={list.src}
+              name={list.name}
+              description={list.description}
+              icon={list.icon}
+            />
           ))}
         </ul>
       </div>

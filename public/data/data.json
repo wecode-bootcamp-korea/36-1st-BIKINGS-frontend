@@ -4,62 +4,62 @@
     "src": "images/Main 이미지.png",
     "name": "전기자전거",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "https://cdn-icons.flaticon.com/png/512/2168/premium/2168310.png?token=exp=1660741256~hmac=d80b5aacc10b5ead3943c49fc2ded35a"
+    "icon": "images/전기.png"
   },
   {
     "id": 2,
     "src": "images/Main 이미지.png",
     "name": "산악",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "https://cdn-icons.flaticon.com/png/512/2168/premium/2168310.png?token=exp=1660741256~hmac=d80b5aacc10b5ead3943c49fc2ded35a"
+    "icon": "images/전기.png"
   },
   {
     "id": 3,
     "src": "images/Main 이미지.png",
     "name": "로드",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "https://cdn-icons.flaticon.com/png/512/2168/premium/2168310.png?token=exp=1660741256~hmac=d80b5aacc10b5ead3943c49fc2ded35a"
+    "icon": "images/전기.png"
   },
   {
     "id": 4,
     "src": "images/Main 이미지.png",
     "name": "하이브리드",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "https://cdn-icons.flaticon.com/png/512/2168/premium/2168310.png?token=exp=1660741256~hmac=d80b5aacc10b5ead3943c49fc2ded35a"
+    "icon": "images/전기.png"
   },
   {
     "id": 5,
     "src": "images/Main 이미지.png",
     "name": "산악형",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "https://cdn-icons.flaticon.com/png/512/2168/premium/2168310.png?token=exp=1660741256~hmac=d80b5aacc10b5ead3943c49fc2ded35a"
+    "icon": "images/전기.png"
   },
   {
     "id": 6,
     "src": "images/Main 이미지.png",
     "name": "시티",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "https://cdn-icons.flaticon.com/png/512/2168/premium/2168310.png?token=exp=1660741256~hmac=d80b5aacc10b5ead3943c49fc2ded35a"
+    "icon": "images/전기.png"
   },
   {
     "id": 7,
     "src": "images/Main 이미지.png",
     "name": "폴딩",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "https://cdn-icons.flaticon.com/png/512/2168/premium/2168310.png?token=exp=1660741256~hmac=d80b5aacc10b5ead3943c49fc2ded35a"
+    "icon": "images/전기.png"
   },
   {
     "id": 8,
     "src": "images/Main 이미지.png",
     "name": "주니어",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "https://cdn-icons.flaticon.com/png/512/2168/premium/2168310.png?token=exp=1660741256~hmac=d80b5aacc10b5ead3943c49fc2ded35a"
+    "icon": "images/전기.png"
   },
   {
     "id": 9,
     "src": "images/Main 이미지.png",
     "name": "키즈",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "https://cdn-icons.flaticon.com/png/512/2168/premium/2168310.png?token=exp=1660741256~hmac=d80b5aacc10b5ead3943c49fc2ded35a"
+    "icon": "images/전기.png"
   }
 ]
