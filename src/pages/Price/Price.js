@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { image } from '../../Function';
-import './Price.scss';
 import PriceContent from './PriceContent';
+import './Price.scss';
 
-const price = () => {
-  const addPrice = price_Data.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.price;
+const Price = () => {
+  const [isChecked, setIsChecked] = useState(true);
+
+  const checkBoxEvent = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const getFields = (input, field) => {
+    let barsketPrices = [];
+    for (let i = 0; i < input.length; ++i) barsketPrices.push(input[i][field]);
+    return barsketPrices;
+  };
+
+  const addPrice = getFields(price_Data, 'price').reduce((acc, cur) => {
+    return (acc += cur);
   }, 0);
 
   const sale = addPrice / 10;
@@ -19,10 +31,16 @@ const price = () => {
         <div className="priceList">
           <div className="priceSelectBox">
             <div className="priceOptionSelect">
-              <input type="checkbox" />
-              <span> 전체선택 </span>
+              <input
+                type="checkbox"
+                defaultChecked={isChecked}
+                onClick={checkBoxEvent}
+              />
+              <span className="setCheckBox" onClick={checkBoxEvent}>
+                전체선택
+              </span>
               <span> l </span>
-              <span> 선택삭제 </span>
+              <span className="setCheckBox"> 선택삭제 </span>
             </div>
             <div className="line" />
             {price_Data.map(prices => (
@@ -66,7 +84,7 @@ const price = () => {
   );
 };
 
-export default price;
+export default Price;
 
 const price_Data = [
   {
