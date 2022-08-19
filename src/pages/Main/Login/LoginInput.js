@@ -60,13 +60,15 @@ const LoginInput = ({ isLoginMode }) => {
   //     });
   // };
 
-  const InputValueLoginSignup =
-    inputValues.username.includes('@') ||
-    inputValues.password.length >= 5 ||
-    inputValues.name.length > 2 ||
-    inputValues.birth.length >= 8 || //유효성 검사 포멧 지정
-    inputValues.contact.length >= 10; // 유효성 검사 미정
-  //if 문 활용하여 alert 아이디 입력 하세요, 비밀번호 입력하세요... 등 구현
+  const InputValueSignup =
+    inputValues.username.includes('@') &&
+    inputValues.password.length >= 5 &&
+    inputValues.name.length > 2 &&
+    inputValues.birth.length >= 8 &&
+    inputValues.contact.length >= 10;
+
+  const InputValueLogin =
+    inputValues.username.includes('@') && inputValues.password.length >= 5;
 
   return (
     <form className="inputAndButton">
@@ -109,10 +111,10 @@ const LoginInput = ({ isLoginMode }) => {
 
       <button
         className="loginSignupButton"
-        disabled={!InputValueLoginSignup}
+        disabled={isLoginMode ? !InputValueSignup : !InputValueLogin}
         // onClick={login || signUp}
       >
-        {isLoginMode ? <strong>회원가입</strong> : <strong>로그인</strong>}
+        <strong>{isLoginMode ? '회원가입' : '로그인'}</strong>
       </button>
     </form>
   );
