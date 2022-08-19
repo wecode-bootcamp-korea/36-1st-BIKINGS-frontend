@@ -4,6 +4,7 @@ import './PriceContent.scss';
 const PriceContent = ({
   prices: { name, src, price, id },
   onCheckedElement,
+  checked,
 }) => {
   return (
     <div className="priceContent">
@@ -11,8 +12,9 @@ const PriceContent = ({
         type="checkbox"
         onClick={onCheckedElement}
         value={price}
+        checked={checked}
         onChange={e => {
-          onCheckedElement(e.target.checked, e.target.value);
+          onCheckedElement(e);
         }}
       />
       <img src={src} alt="priceContent" />

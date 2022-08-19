@@ -4,28 +4,35 @@ import PriceContent from './PriceContent';
 import './Price.scss';
 
 const Price = () => {
-  const [isChecked, setIsChecked] = useState(true);
-
   const [checkedList, setCheckedList] = useState([]);
-  const setPricetoNumber = checkedList.map(a => Number(a));
 
-  const checkBoxEvent = () => {
-    setIsChecked(!isChecked);
+  const handleAllCheck = e => {
+    if (e.target.checked) {
+      const idArray = [];
+      price_Data.forEach(el => idArray.push(el.price));
+      setCheckedList(idArray);
+    } else {
+      setCheckedList([]);
+    }
   };
+
+  const onCheckedElement = e => {
+    if (e.target.checked) {
+      setCheckedList([...checkedList, e.target.value]);
+    } else if (!e.target.checked) {
+      setCheckedList(checkedList.filter(el => el !== e.target.value));
+    }
+  };
+
+  const setPricetoNumber = checkedList.map(checkedListToNumber =>
+    Number(checkedListToNumber)
+  );
 
   const addPrice = setPricetoNumber.reduce((a, b) => a + b, 0);
 
   const sale = addPrice / 10;
 
-  const result = addPrice - sale + 5000;
-
-  const onCheckedElement = (checked, item) => {
-    if (checked) {
-      setCheckedList([...checkedList, item]);
-    } else if (!checked) {
-      setCheckedList(checkedList.filter(element => element !== item));
-    }
-  };
+  const totalPrice = addPrice === 0 ? 0 : addPrice - sale + 5000;
 
   return (
     <div className="price">
@@ -36,13 +43,15 @@ const Price = () => {
             <div className="priceOptionSelect">
               <input
                 type="checkbox"
-                checked={isChecked}
-                onChange={checkBoxEvent}
+                onChange={e => handleAllCheck(e)}
+                checked={
+                  checkedList.length === price_Data.length ? true : false
+                }
               />
-              <span className="setCheckBox" onClick={checkBoxEvent}>
+              <span className="setCheckBox" onClick={e => handleAllCheck(e)}>
                 전체선택
               </span>
-              <span> l </span>
+              <span> ㅣ </span>
               <span className="setCheckBox"> 선택삭제 </span>
             </div>
             <div className="line" />
@@ -50,9 +59,9 @@ const Price = () => {
               <PriceContent
                 key={prices.id}
                 prices={prices}
-                isChecked={isChecked}
                 onCheckedElement={onCheckedElement}
                 checkedList={checkedList}
+                checked={checkedList.includes(prices.price) ? true : false}
               />
             ))}
             <div className="line" />
@@ -73,7 +82,7 @@ const Price = () => {
               </div>
               <div className="totalBox">
                 <p>결제예정금액</p>
-                <p>{result} 원</p>
+                <p>{totalPrice} 원</p>
               </div>
             </div>
             <button className="priceBtn"> 주문하기 </button>
