@@ -6,7 +6,7 @@ const Nav = () => {
   const [navRender, setNavRender] = useState(false);
 
   const popNavBar = () => {
-    setNavRender(!navRender);
+    setNavRender(true);
   };
 
   return (
