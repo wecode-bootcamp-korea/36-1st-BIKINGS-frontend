@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './LoginInput.scss';
 
 const LoginInput = ({ isLoginMode }) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [inputValues, setInputValues] = useState({
     username: '',
@@ -18,47 +18,47 @@ const LoginInput = ({ isLoginMode }) => {
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  // const login = e => {
-  //   e.preventDefault();
-  //   fetch('http://10.58.0.71:3000/users/username', {
-  //     method: 'delete',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       authorization: localStorage.getItem('Token'),
-  //     },
-  //     body: JSON.stringify({
-  //       username: inputValues.username,
-  //       password: inputValues.password,
-  //       name: inputValues.name,
-  //       birth: Number(inputValues.birth),
-  //       contact: inputValues.contact,
-  //     }),
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       localStorage.setItem('Token', String(data.TOKEN));
-  //       navigate('/main-bosung');
-  //     });
-  // };
-  // const signUp = e => {
-  //   e.preventDefault();
-  //   fetch('http://10.58.0.71:3000/users/signup', {
-  //     method: 'post',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify({
-  //       username: inputValues.username,
-  //       password: inputValues.password,
-  //       name: inputValues.name,
-  //       birth: Number(inputValues.birth),
-  //       contact: inputValues.contact,
-  //     }),
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       localStorage.setItem('Token', data.authorization);
-  //       navigate('/');
-  //     });
-  // };
+  const login = e => {
+    e.preventDefault();
+    fetch('http://10.58.0.71:3000/users/withrowal', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: localStorage.getItem('Token'),
+      },
+      body: JSON.stringify({
+        username: inputValues.username,
+        password: inputValues.password,
+        name: inputValues.name,
+        birth: Number(inputValues.birth),
+        contact: inputValues.contact,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        localStorage.setItem('Token', String(data.TOKEN));
+        navigate('/main-bosung');
+      });
+  };
+  const signUp = e => {
+    e.preventDefault();
+    fetch('http://10.58.0.71:3000/users/signup', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: inputValues.username,
+        password: inputValues.password,
+        name: inputValues.name,
+        birth: Number(inputValues.birth),
+        contact: inputValues.contact,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        localStorage.setItem('Token', data.authorization);
+        navigate('/');
+      });
+  };
 
   const InputValueSignup =
     inputValues.username.includes('@') &&
@@ -112,7 +112,7 @@ const LoginInput = ({ isLoginMode }) => {
       <button
         className="loginSignupButton"
         disabled={isLoginMode ? !InputValueSignup : !InputValueLogin}
-        // onClick={login || signUp}
+        onClick={isLoginMode ? signUp : login}
       >
         <strong>{isLoginMode ? '회원가입' : '로그인'}</strong>
       </button>
