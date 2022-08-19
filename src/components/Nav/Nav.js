@@ -4,6 +4,7 @@ import './Nav.scss';
 
 const Nav = () => {
   const [navRender, setNavRender] = useState(false);
+
   const popNavBar = () => {
     setNavRender(!navRender);
   };
@@ -13,7 +14,7 @@ const Nav = () => {
       <div className="top">
         <div className="navLeft">
           <div className="mainTitle">300</div>
-          <li className="topFontLeft" onClick={popNavBar}>
+          <li className="topFontLeft" onMouseOver={popNavBar}>
             자전거
           </li>
         </div>
@@ -50,7 +51,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <DropDown navRender={navRender} />
+      {navRender && <DropDown navRender={setNavRender} />}
     </div>
   );
 };
