@@ -5,14 +5,13 @@ import './ProductDetail.scss';
 const ProductDetail = () => {
   const [showModal, setShowModal] = useState(false);
 
+  const closeModal = () => {
+    setShowModal(true);
+  };
   return (
     <div className="productDetail">
-      {showModal ? <Carts setShowModal={setShowModal} /> : null}
-      <button
-        onClick={() => setShowModal(true)}
-        className="cartsBtn"
-        type="button"
-      >
+      {showModal && <Carts setShowModal={setShowModal} />}
+      <button onClick={closeModal} className="cartsBtn" type="button">
         <img className="cartsImg" src="/images/카트.png" alt="cart" />
       </button>
     </div>

@@ -1,97 +1,107 @@
 .carts {
-  height: auto;
-  width: 440px;
-  overflow-x: hidden;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: none;
-  background-color: antiquewhite;
-  position: absolute;
-  left: 35%;
-  top: 20rem;
+  backdrop-filter: blur();
 
-  .cartsContainer {
-    display: flex;
-    flex-direction: column;
-    max-height: calc(100% - 64px);
-    max-width: 600px;
+  .carsContainer {
+    width: 100vw;
+    height: 100vh;
 
-    .firstBasket {
-      margin: 2px 0px 4px;
-      padding: 12px 0px;
-      font-size: 1.5rem;
-      width: 38rem;
+    .cartsSubContainer {
+      height: auto;
+      width: 440px;
+      overflow-x: hidden;
+      padding: 30px;
+      border-radius: 12px;
+      border: 0.2px solid rgb(234, 228, 228);
+      box-shadow: none;
+      background-color: white;
+      position: absolute;
+      left: 35%;
+      top: 20rem;
 
-      .subDes {
-        margin-bottom: 20px;
-      }
+      .cartsInnerContainer {
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100% - 64px);
+        max-width: 600px;
 
-      .price {
-        font-size: 1.8rem;
-        font-weight: 600;
-      }
-      .subPrice {
-        padding-left: 0.5rem;
-        color: grey;
-        text-decoration: line-through;
-      }
-    }
+        .firstBasket {
+          margin: 2px 0px 4px;
+          padding: 12px 0px;
+          font-size: 1.5rem;
+          width: 38rem;
 
-    .secondBasket {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: inherit;
-      height: 2.4rem;
-      font-size: 1.9rem;
-      margin: 1.5rem 0;
-      font-weight: 600;
+          .subDes {
+            margin-bottom: 20px;
+          }
 
-      .bigPrice {
-        font-size: 2.3rem;
-      }
-    }
+          .price {
+            font-size: 1.8rem;
+            font-weight: 600;
+          }
+          .subPrice {
+            padding-left: 0.5rem;
+            color: grey;
+            text-decoration: line-through;
+          }
+        }
 
-    .secondAndHalfBasket {
-      text-align: right;
-      font-size: 1.5rem;
-      padding-bottom: 1.5rem;
-      color: grey;
+        .secondBasket {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: inherit;
+          height: 2.4rem;
+          font-size: 1.9rem;
+          margin: 1.5rem 0;
+          font-weight: 600;
 
-      .secondBtn {
-        background-color: #ffc000;
-        color: #ffffff;
-        font-size: 1.2rem;
-        margin: 0 1rem;
-        padding: 1px 5px;
-        border-radius: 5px;
-      }
-    }
-    .thirdBasket {
-      display: flex;
-      gap: 1rem;
-      .cancelBtn {
-        display: block;
-        text-align: center;
-        overflow: hidden;
-        height: 52px;
-        background-color: #ffffff;
-        border-radius: 6px;
-        border: 0px none;
-        width: 50%;
-        font-size: 1.7rem;
-      }
-      .selectBtn {
-        display: block;
-        text-align: center;
-        overflow: hidden;
-        width: 50%;
-        height: 52px;
-        border-radius: 6px;
-        color: rgb(255, 255, 255);
-        background-color: rgb(95, 0, 128);
-        border: 0px none;
-        font-size: 1.7rem;
+          .bigPrice {
+            font-size: 2.3rem;
+          }
+        }
+
+        .secondAndHalfBasket {
+          text-align: right;
+          font-size: 1.5rem;
+          padding-bottom: 1.5rem;
+          color: grey;
+
+          .secondBtn {
+            background-color: #ffc000;
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin: 0 1rem;
+            padding: 1px 5px;
+            border-radius: 5px;
+          }
+        }
+        .thirdBasket {
+          display: flex;
+          gap: 1rem;
+          .cancelBtn {
+            display: block;
+            text-align: center;
+            overflow: hidden;
+            height: 52px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            border: 0px none;
+            width: 50%;
+            font-size: 1.7rem;
+          }
+          .selectBtn {
+            display: block;
+            text-align: center;
+            overflow: hidden;
+            width: 50%;
+            height: 52px;
+            border-radius: 6px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(95, 0, 128);
+            border: 0px none;
+            font-size: 1.7rem;
+          }
+        }
       }
     }
   }
