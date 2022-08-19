@@ -4,8 +4,8 @@ import './Price.scss';
 import PriceContent from './PriceContent';
 
 const price = () => {
-  const addPrice = price_Data.reduce((accumulator, currentObject) => {
-    return accumulator + currentObject.price;
+  const addPrice = price_Data.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.price;
   }, 0);
 
   const sale = addPrice / 10;
