@@ -1,35 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import BycleInfo from './BycleInfo/BycleInfo';
 import ProductCheackList from './ProductCheckList/ProductCheackList';
-import { useSearchParams } from 'react-router-dom';
 import { image } from '../../Function';
 import './Product.scss';
 
 const Product = () => {
   const [isShowImage, setIsShowImage] = useState(false);
+  const [bycles, setbycles] = useState([]);
+  const [page, setPage] = useState(1);
 
   const changeImage = () => {
-    setIsShowImage(!isShowImage);
+    setIsShowImage(isShowImage => !isShowImage);
   };
-
-  const [searchParams, setSearchParams] = useSearchParams();
-  const offset = searchParams.get('offset');
-  const limit = searchParams.get('limit');
-
-  const movePage = pageNumber => {
-    searchParams.set('offset', (pageNumber - 1) * 6);
-    setSearchParams(searchParams);
-  };
-
-  const [bycle, setbycle] = useState([]);
 
   useEffect(() => {
-    fetch(`/data/data.json?limit=${limit}&start=${offset}`, {
+    fetch(`http://10.58.0.127:3000/products/covers/${page}`, {
       method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
       .then(res => res.json())
-      .then(data => setbycle(data));
-  }, [offset, limit]);
+      .then(res => setbycles(res))
+      .catch(rej => alert(rej));
+  }, [page]);
+
+  const movePage = pageNum => {
+    setPage(pageNum);
+  };
 
   return (
     <div className="product">
@@ -60,14 +58,13 @@ const Product = () => {
             <div className="line" />
           </div>
           <div className="bycleList">
-            {bycle.map(bycle => (
+            {bycles.map(bycle => (
               <BycleInfo key={bycle.id} bycle={bycle} />
             ))}
           </div>
           <div>
             <button onClick={() => movePage(1)}>1</button>
             <button onClick={() => movePage(2)}>2</button>
-            <button onClick={() => movePage(3)}>3</button>
           </div>
         </div>
       </div>

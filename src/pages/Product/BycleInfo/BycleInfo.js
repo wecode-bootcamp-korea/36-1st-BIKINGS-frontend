@@ -1,17 +1,17 @@
 import React from 'react';
 import './BycleInfo.scss';
 
-const BycleInfo = ({ bycle: { name, price, picture, hashtag } }) => {
+const BycleInfo = ({ bycle: { name, price, cover_image_url, tags } }) => {
   return (
     <div className="bycleInfo">
-      <img className="bycleImg" src={picture} alt="bycleImg" />
+      <img className="bycleImg" src={cover_image_url} alt="bycleImg" />
       <div className="bycleContent">
         <div className="bycleName">{name}</div>
         <div className="byclePrice">{price}</div>
         <div className="bycleHashtag">
-          {hashtag.map(aa => (
-            <button className="hashTag" key={aa.id}>
-              {aa.name}
+          {tags.map((tag, i) => (
+            <button className="hashTag" key={i}>
+              {tag}
             </button>
           ))}
         </div>

@@ -15,14 +15,13 @@ const CATEGORY_LIST = [
 
 function ProductCheackList() {
   const [checkedList, setCheckedList] = useState([]);
-  const onCheckedElement = (checked, item) => {
-    if (checked) {
-      setCheckedList([...checkedList, item]);
-    } else if (!checked) {
-      setCheckedList(checkedList.filter(element => element !== item));
+  const onCheckedElement = e => {
+    if (e.target.checked) {
+      setCheckedList([...checkedList, e.target.value]);
+    } else if (!e.target.checked) {
+      setCheckedList(checkedList.filter(element => element !== e.target.value));
     }
   };
-
   return (
     <div className="ProductCheackList">
       <h3>카테고리</h3>
@@ -35,7 +34,7 @@ function ProductCheackList() {
                   type="checkbox"
                   value={item.data}
                   onChange={e => {
-                    onCheckedElement(e.target.checked, e.target.value);
+                    onCheckedElement(e);
                   }}
                   checked={checkedList.includes(item.data) ? true : false}
                 />
