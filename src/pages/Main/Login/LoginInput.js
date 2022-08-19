@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import './LoginInput.scss';
 
-const LoginInput = ({ replace, buttonChange }) => {
-  const navigate = useNavigate();
+const LoginInput = ({ isLoginMode }) => {
+  // const navigate = useNavigate();
 
   const [inputValues, setInputValues] = useState({
-    id: '',
+    username: '',
     password: '',
     contact: '',
     birth: '',
@@ -18,49 +18,61 @@ const LoginInput = ({ replace, buttonChange }) => {
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  const login = e => {
-    e.preventDefault();
-    fetch('', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        id: inputValues.id,
-        password: inputValues.password,
-      }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        localStorage.setItem('Token', data.accessToken);
-        navigate('/main-bosung');
-      });
-  };
-  // const signUp = e => {
+  // const login = e => {
   //   e.preventDefault();
-  //   fetch('', {
-  //     method: 'post',
-  //     headers: { 'Content-Type': 'application/json' },
+  //   fetch('http://10.58.0.71:3000/users/username', {
+  //     method: 'delete',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       authorization: localStorage.getItem('Token'),
+  //     },
   //     body: JSON.stringify({
-  //       id: inputValues.id,
+  //       username: inputValues.username,
   //       password: inputValues.password,
+  //       name: inputValues.name,
+  //       birth: Number(inputValues.birth),
+  //       contact: inputValues.contact,
   //     }),
   //   })
   //     .then(response => response.json())
-  //     .then(data => {});
+  //     .then(data => {
+  //       localStorage.setItem('Token', String(data.TOKEN));
+  //       navigate('/main-bosung');
+  //     });
+  // };
+  // const signUp = e => {
+  //   e.preventDefault();
+  //   fetch('http://10.58.0.71:3000/users/signup', {
+  //     method: 'post',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify({
+  //       username: inputValues.username,
+  //       password: inputValues.password,
+  //       name: inputValues.name,
+  //       birth: Number(inputValues.birth),
+  //       contact: inputValues.contact,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       localStorage.setItem('Token', data.authorization);
+  //       navigate('/');
+  //     });
   // };
 
   const InputValueLoginSignup =
-    inputValues.id.includes('@') &&
-    inputValues.password.length >= 5 &&
-    inputValues.name.length >= 2 &&
-    inputValues.birth.length >= 8 &&
-    inputValues.phone.length >= 10; // 유효성 검사 미정
+    inputValues.username.includes('@') ||
+    inputValues.password.length >= 5 ||
+    inputValues.name.length > 2 ||
+    inputValues.birth.length >= 8 || //유효성 검사 포멧 지정
+    inputValues.contact.length >= 10; // 유효성 검사 미정
   //if 문 활용하여 alert 아이디 입력 하세요, 비밀번호 입력하세요... 등 구현
 
   return (
     <form className="inputAndButton">
       <input
         className="inputIdPw"
-        name="id"
+        name="username"
         onChange={handleInput}
         type="text"
         placeholder="전화번호,사용자 이름 또는 이메일"
@@ -72,7 +84,7 @@ const LoginInput = ({ replace, buttonChange }) => {
         type="password"
         placeholder="비밀번호"
       />
-      {replace && (
+      {isLoginMode && (
         <>
           <input
             name="name"
@@ -98,9 +110,9 @@ const LoginInput = ({ replace, buttonChange }) => {
       <button
         className="loginSignupButton"
         disabled={!InputValueLoginSignup}
-        onClick={login}
+        // onClick={login || signUp}
       >
-        {buttonChange ? <strong>회원가입</strong> : <strong>로그인</strong>}
+        {isLoginMode ? <strong>회원가입</strong> : <strong>로그인</strong>}
       </button>
     </form>
   );

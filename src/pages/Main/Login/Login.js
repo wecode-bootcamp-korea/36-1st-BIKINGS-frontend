@@ -3,24 +3,20 @@ import './Login.scss';
 import LoginInput from './LoginInput';
 
 const Login = () => {
-  const [replace, setreplace] = useState(false);
-  const [alreadyHaveId, setalreadyHaveId] = useState(false);
-  const [buttonChange, setbuttonChange] = useState(false);
+  const [isLoginMode, setreplace] = useState(false);
 
   const popSignup = () => {
-    setreplace(!replace);
-    setalreadyHaveId(!alreadyHaveId);
-    setbuttonChange(!buttonChange);
+    setreplace(!isLoginMode);
   };
 
   return (
     <div className="loginBackground">
       <div className="logIn">
         <div className="mainTitle">300</div>
-        <LoginInput replace={replace} buttonChange={buttonChange} />
+        <LoginInput isLoginMode={isLoginMode} />
 
         <p className="cursor" onClick={popSignup}>
-          {alreadyHaveId
+          {isLoginMode
             ? '이미 가입하셨나요? 로그인'
             : '계정이 없으신가요? 회원가입'}
         </p>
