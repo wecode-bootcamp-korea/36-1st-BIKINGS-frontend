@@ -1,9 +1,4 @@
 .footer {
-  width: 100vw;
-  min-width: 1280px;
-  height: auto;
-  display: block;
-
   .customContainer {
     display: flex;
     justify-content: space-around;
@@ -50,16 +45,17 @@
   }
 
   .footerContainer {
-    width: 90%;
-    margin: 0 auto;
+    background-color: #fbfbfb;
 
     .linkArea {
       font-size: 1.4rem;
       display: flex;
       justify-content: space-between;
+      width: 90%;
+      margin: 0 auto;
+      position: relative;
 
       .linkUl {
-        position: relative;
         display: flex;
         padding: 19px 0;
 
@@ -67,7 +63,6 @@
           &::after {
             content: '/';
             padding: 0 10px 0 15px;
-            vertical-align: top;
             font-weight: 100;
             color: #d4d4d4;
           }
@@ -76,12 +71,27 @@
 
       .linkSelect {
         position: absolute;
-        right: 15rem;
+        right: 10rem;
+        width: 170px;
+        padding: 7px 5px;
+        margin-top: 10px;
+        color: #898989;
       }
     }
 
-    .footerArea {
-      background-color: lightcyan;
+    .footerAreas {
+      background-color: #b7b7b7;
+      color: white;
+      margin: 0 auto;
+      padding: 30px 0 30px;
+      font-weight: 200;
+      font-size: 1.4rem;
+      appearance: none;
+
+      .footerArea {
+        width: 90%;
+        margin: 0 auto;
+      }
     }
   }
 }
