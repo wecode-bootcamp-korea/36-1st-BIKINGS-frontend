@@ -3,8 +3,6 @@ import './DropDown.scss';
 import { DropDownData, DropDownData2, Brand, hashTag } from './DropDownData';
 
 const DropDown = ({ navRender }) => {
-  // const [onMouseLeave, setonMouseLeave] = useState(false);
-
   const dropLeave = () => {
     navRender(false);
   };
