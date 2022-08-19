@@ -1,4 +1,4 @@
-.basket {
+.carts {
   height: auto;
   width: 440px;
   overflow-x: hidden;
@@ -10,7 +10,7 @@
   left: 35%;
   top: 20rem;
 
-  .basketContainer {
+  .cartsContainer {
     display: flex;
     flex-direction: column;
     max-height: calc(100% - 64px);
@@ -52,7 +52,7 @@
       }
     }
 
-    .secondHalfBasket {
+    .secondAndHalfBasket {
       text-align: right;
       font-size: 1.5rem;
       padding-bottom: 1.5rem;
@@ -70,7 +70,7 @@
     .thirdBasket {
       display: flex;
       gap: 1rem;
-      .btnOne {
+      .cancelBtn {
         display: block;
         text-align: center;
         overflow: hidden;
@@ -81,7 +81,7 @@
         width: 50%;
         font-size: 1.7rem;
       }
-      .btnTwo {
+      .selectBtn {
         display: block;
         text-align: center;
         overflow: hidden;

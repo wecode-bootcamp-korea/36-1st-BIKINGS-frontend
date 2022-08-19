@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Basket from './Basket/Basket';
+import Carts from './Carts/Carts';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
@@ -7,13 +7,13 @@ const ProductDetail = () => {
 
   return (
     <div className="productDetail">
-      {showModal ? <Basket setShowModal={setShowModal} /> : null}
+      {showModal ? <Carts setShowModal={setShowModal} /> : null}
       <button
         onClick={() => setShowModal(true)}
-        className="basketBtn"
+        className="cartsBtn"
         type="button"
       >
-        <img className="basketImg" src="/images/카트.png" alt="cart" />
+        <img className="cartsImg" src="/images/카트.png" alt="cart" />
       </button>
     </div>
   );
