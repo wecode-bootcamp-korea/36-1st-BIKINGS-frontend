@@ -1,0 +1,87 @@
+.footer {
+  width: 100vw;
+  min-width: 1280px;
+  height: auto;
+  display: block;
+
+  .customContainer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 5rem 12rem;
+    border-top: 2px solid #e7e7e7;
+    border-bottom: 2px solid #e7e7e7;
+
+    .list {
+      width: 19rem;
+      height: auto;
+      font-size: 1.2rem;
+      text-align: left;
+
+      .listCategory {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #666;
+        padding-bottom: 2rem;
+
+        &::after {
+          content: '';
+          width: 100%;
+          height: 1px;
+          display: block;
+          margin-top: 10px;
+          background: #adadad;
+        }
+      }
+
+      .listGrey {
+        font-size: 1.4rem;
+        color: #898989;
+        padding-bottom: 1rem;
+      }
+
+      .listNum {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #666666;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  .footerContainer {
+    width: 90%;
+    margin: 0 auto;
+
+    .linkArea {
+      font-size: 1.4rem;
+      display: flex;
+      justify-content: space-between;
+
+      .linkUl {
+        position: relative;
+        display: flex;
+        padding: 19px 0;
+
+        .linkAfter {
+          &::after {
+            content: '/';
+            padding: 0 10px 0 15px;
+            vertical-align: top;
+            font-weight: 100;
+            color: #d4d4d4;
+          }
+        }
+      }
+
+      .linkSelect {
+        position: absolute;
+        right: 15rem;
+      }
+    }
+
+    .footerArea {
+      background-color: lightcyan;
+    }
+  }
+}
