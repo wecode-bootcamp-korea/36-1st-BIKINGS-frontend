@@ -1,10 +1,20 @@
 import React from 'react';
 import './PriceContent.scss';
 
-const priceContent = ({ name, src, price }) => {
+const PriceContent = ({
+  prices: { name, src, price, id },
+  onCheckedElement,
+}) => {
   return (
     <div className="priceContent">
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        onClick={onCheckedElement}
+        value={price}
+        onChange={e => {
+          onCheckedElement(e.target.checked, e.target.value);
+        }}
+      />
       <img src={src} alt="priceContent" />
       <div className="contentInfo">
         <div className="contentName">{name}</div>
@@ -15,4 +25,4 @@ const priceContent = ({ name, src, price }) => {
   );
 };
 
-export default priceContent;
+export default PriceContent;

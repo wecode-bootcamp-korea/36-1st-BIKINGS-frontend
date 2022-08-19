@@ -6,23 +6,26 @@ import './Price.scss';
 const Price = () => {
   const [isChecked, setIsChecked] = useState(true);
 
+  const [checkedList, setCheckedList] = useState([]);
+  const setPricetoNumber = checkedList.map(a => Number(a));
+
   const checkBoxEvent = () => {
     setIsChecked(!isChecked);
   };
 
-  const getFields = (input, field) => {
-    let barsketPrices = [];
-    for (let i = 0; i < input.length; ++i) barsketPrices.push(input[i][field]);
-    return barsketPrices;
-  };
-
-  const addPrice = getFields(price_Data, 'price').reduce((acc, cur) => {
-    return (acc += cur);
-  }, 0);
+  const addPrice = setPricetoNumber.reduce((a, b) => a + b, 0);
 
   const sale = addPrice / 10;
 
   const result = addPrice - sale + 5000;
+
+  const onCheckedElement = (checked, item) => {
+    if (checked) {
+      setCheckedList([...checkedList, item]);
+    } else if (!checked) {
+      setCheckedList(checkedList.filter(element => element !== item));
+    }
+  };
 
   return (
     <div className="price">
@@ -33,8 +36,8 @@ const Price = () => {
             <div className="priceOptionSelect">
               <input
                 type="checkbox"
-                defaultChecked={isChecked}
-                onClick={checkBoxEvent}
+                checked={isChecked}
+                onChange={checkBoxEvent}
               />
               <span className="setCheckBox" onClick={checkBoxEvent}>
                 전체선택
@@ -46,9 +49,10 @@ const Price = () => {
             {price_Data.map(prices => (
               <PriceContent
                 key={prices.id}
-                name={prices.name}
-                price={prices.price}
-                src={prices.src}
+                prices={prices}
+                isChecked={isChecked}
+                onCheckedElement={onCheckedElement}
+                checkedList={checkedList}
               />
             ))}
             <div className="line" />
