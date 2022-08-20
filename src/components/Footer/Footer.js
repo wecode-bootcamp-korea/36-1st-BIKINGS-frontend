@@ -3,7 +3,7 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <ul className="customContainer">
         <li className="list">
           <p className="listCategory">CUSTOMER CENTER</p>
@@ -11,8 +11,8 @@ const Footer = () => {
             제품, 서비스, A/S에 대해 <br />
             궁금한 점이 있으시면 무엇이든 물어보세요.
           </p>
-          <p className="listNum">02-2671-3000</p>
-          <p>am 09:00 ~ pm 05:00</p>
+          <strong className="listNum">02-2671-3000</strong>
+          <strong>am 09:00 ~ pm 05:00</strong>
         </li>
         <li className="list">
           <p className="listCategory">대량구매</p>
@@ -42,8 +42,8 @@ const Footer = () => {
             <li>개인정보취급방침</li>
           </ul>
           <select className="linkSelect">
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
+            <option value="electric">electric</option>
+            <option value="bycle">bycle</option>
           </select>
         </div>
         <div className="footerAreas">
@@ -55,7 +55,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
