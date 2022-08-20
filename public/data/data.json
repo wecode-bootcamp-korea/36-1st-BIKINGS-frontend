@@ -3,120 +3,63 @@
     "id": 1,
     "name": "자전거1",
     "price": 2123123,
-    "picture": "images/testImg.png",
-    "hashtag": [
-      { "id": 1, "name": "#dasda" },
-      { "id": 2, "name": "#dasdddda" },
-      { "id": 3, "name": "#daaaasda" },
-      { "id": 4, "name": "#dassssda" },
-      { "id": 5, "name": "#kfkdkdk" },
-      { "id": 6, "name": "#dasda" },
-      { "id": 7, "name": "#dasdddda" },
-      { "id": 8, "name": "#daaaasda" },
-      { "id": 9, "name": "#dassssda" },
-      { "id": 10, "name": "#kfkdkdk" }
-    ]
+    "cover_image_url": "images/testImg.png",
+    "tag": ["#tag2", "#tag5", "#tag5", "#tag5", "#tag5"]
   },
   {
     "id": 2,
     "name": "자전거2",
     "price": 2123123,
-    "picture": "images/testImg.png",
-    "hashtag": [
-      { "id": 1, "name": "#dasda" },
-      { "id": 2, "name": "#dasdddda" },
-      { "id": 3, "name": "#daaaasda" },
-      { "id": 4, "name": "#dassssda" },
-      { "id": 5, "name": "#kfkdkdk" },
-      { "id": 6, "name": "#dasda" },
-      { "id": 7, "name": "#dasdddda" },
-      { "id": 8, "name": "#daaaasda" }
-    ]
+    "cover_image_url": "images/testImg.png",
+    "tag": ["#tag2", "#tag5", "#tag5", "#tag5"]
   },
   {
     "id": 3,
     "name": "자전거3",
     "price": 2123123,
-    "picture": "images/testImg.png",
-    "hashtag": [
-      { "id": 1, "name": "#dasda" },
-      { "id": 2, "name": "#dasdddda" },
-      { "id": 3, "name": "#daaaasda" },
-      { "id": 4, "name": "#dassssda" },
-      { "id": 5, "name": "#kfkdkdk" }
-    ]
+    "cover_image_url": "images/testImg.png",
+    "tag": ["#tag2", "#tag5", "#tag5", "#tag5"]
   },
   {
     "id": 4,
     "name": "자전거4",
     "price": 2123123,
-    "picture": "images/testImg.png",
-    "hashtag": [
-      { "id": 1, "name": "#dasda" },
-      { "id": 2, "name": "#dasdddda" },
-      { "id": 3, "name": "#daaaasda" },
-      { "id": 4, "name": "#dassssda" },
-      { "id": 5, "name": "#kfkdkdk" }
-    ]
+    "cover_image_url": "images/testImg.png",
+    "tag": ["#tag2", "#tag5", "#tag5", "#tag5"]
   },
   {
     "id": 5,
     "name": "자전거5",
     "price": 2123123,
-    "picture": "images/testImg.png",
-    "hashtag": [
-      { "id": 1, "name": "#dasda" },
-      { "id": 2, "name": "#dasdddda" },
-      { "id": 3, "name": "#daaaasda" },
-      { "id": 4, "name": "#dassssda" },
-      { "id": 5, "name": "#kfkdkdk" },
-      { "id": 6, "name": "#dasda" },
-      { "id": 7, "name": "#dasdddda" }
-    ]
+    "cover_image_url": "images/testImg.png",
+    "tag": ["#tag2", "#tag5", "#tag5"]
   },
   {
     "id": 6,
     "name": "자전거6",
     "price": 2123123,
-    "picture": "images/testImg.png",
-    "hashtag": [
-      { "id": 1, "name": "#dasda" },
-      { "id": 2, "name": "#dasdddda" },
-      { "id": 3, "name": "#daaaasda" }
-    ]
+    "cover_image_url": "images/testImg.png",
+    "tag": ["#tag2"]
   },
   {
     "id": 7,
     "name": "자전거7",
     "price": 2123123,
-    "picture": "images/testImg.png",
-    "hashtag": [{ "id": 1, "name": "#dasda" }]
+    "cover_image_url": "images/testImg.png",
+    "tag": ["#tag2", "#tag5", "#tag5", "#tag5", "#tag5", "#tag5"]
   },
   {
     "id": 8,
     "name": "자전거8",
     "price": 2123123,
-    "picture": "images/testImg.png",
-    "hashtag": [
-      { "id": 1, "name": "#dasda" },
-      { "id": 2, "name": "#dasdddda" },
-      { "id": 3, "name": "#daaaasda" },
-      { "id": 4, "name": "#dassssda" },
-      { "id": 5, "name": "#kfkdkdk" },
-      { "id": 6, "name": "#dasda" }
-    ]
+    "cover_image_url": "images/testImg.png",
+    "tag": ["#tag2", "#tag5", "#tag5", "#tag5", "#tag5"]
   },
   {
     "id": 9,
     "name": "자전거9",
     "price": 2123123,
-    "picture": "images/testImg.png",
-    "hashtag": [
-      { "id": 1, "name": "#dasda" },
-      { "id": 2, "name": "#dasdddda" },
-      { "id": 3, "name": "#daaaasda" },
-      { "id": 4, "name": "#dassssda" },
-      { "id": 5, "name": "#kfkdkdk" }
-    ]
+    "cover_image_url": "images/testImg.png",
+    "tag": ["#tag2", "#tag5", "#tag5", "#tag5"]
   }
 ]

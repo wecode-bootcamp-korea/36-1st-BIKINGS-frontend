@@ -13,17 +13,17 @@ const Product = () => {
     setIsShowImage(isShowImage => !isShowImage);
   };
 
-  // useEffect(() => {
-  //   fetch(`http://10.58.0.127:3000/products/covers/${page}`, {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   })
-  //     .then(res => res.json())
-  //     .then(res => setbycles(res))
-  //     .catch(rej => alert(rej));
-  // }, [page]);
+  useEffect(() => {
+    fetch(`http://10.58.0.127:3000/products/covers/${page}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(res => res.json())
+      .then(res => setbycles(res))
+      .catch(rej => alert(rej));
+  }, [page]);
 
   const movePage = pageNum => {
     setPage(pageNum);
