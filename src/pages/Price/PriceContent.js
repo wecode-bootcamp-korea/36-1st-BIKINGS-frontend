@@ -2,7 +2,7 @@ import React from 'react';
 import './PriceContent.scss';
 
 const PriceContent = ({
-  prices: { name, src, price, id },
+  prices: { name, src, price },
   onCheckedElement,
   checked,
 }) => {

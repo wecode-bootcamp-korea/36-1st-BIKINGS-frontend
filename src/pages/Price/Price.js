@@ -15,12 +15,13 @@ const Price = () => {
       setCheckedList([]);
     }
   };
+  console.log(checkedList);
 
   const onCheckedElement = e => {
     if (e.target.checked) {
-      setCheckedList([...checkedList, e.target.value]);
+      setCheckedList([...checkedList, Number(e.target.value)]);
     } else if (!e.target.checked) {
-      setCheckedList(checkedList.filter(el => el !== e.target.value));
+      setCheckedList(checkedList.filter(el => el !== Number(e.target.value)));
     }
   };
 
@@ -103,25 +104,25 @@ const price_Data = [
   {
     id: 1,
     name: '자전거',
-    price: 130000,
+    price: 1000,
     src: image('test'),
   },
   {
     id: 2,
     name: '자전거2',
-    price: 120000,
+    price: 1300,
     src: image('test'),
   },
   {
     id: 3,
     name: '자전거3',
-    price: 210000,
+    price: 130,
     src: image('test'),
   },
   {
     id: 4,
     name: '자전거4',
-    price: 312000,
+    price: 1320,
     src: image('test'),
   },
 ];
