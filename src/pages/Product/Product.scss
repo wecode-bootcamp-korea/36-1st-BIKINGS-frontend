@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     width: 100%;
     .showProductImg {
       width: 100%;
@@ -27,14 +28,15 @@
         font-size: 4rem;
         margin-bottom: 2rem;
       }
-      button {
-        margin-top: 2rem;
-      }
     }
   }
+
   .productBody {
     @include flex-sort;
     flex-direction: column;
+    position: relative;
+    background-color: white;
+    width: 100vw;
 
     .imageSeemore {
       background-color: gray;
@@ -68,5 +70,8 @@
         flex-wrap: wrap-reverse;
       }
     }
+  }
+  .active {
+    bottom: 20rem;
   }
 }

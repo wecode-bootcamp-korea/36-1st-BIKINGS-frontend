@@ -13,17 +13,17 @@ const Product = () => {
     setIsShowImage(isShowImage => !isShowImage);
   };
 
-  useEffect(() => {
-    fetch(`http://10.58.0.127:3000/products/covers/${page}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(res => res.json())
-      .then(res => setbycles(res))
-      .catch(rej => alert(rej));
-  }, [page]);
+  // useEffect(() => {
+  //   fetch(`http://10.58.0.127:3000/products/covers/${page}`, {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(res => setbycles(res))
+  //     .catch(rej => alert(rej));
+  // }, [page]);
 
   const movePage = pageNum => {
     setPage(pageNum);
@@ -33,8 +33,8 @@ const Product = () => {
     <div className="product">
       <div className="productImgBox">
         <img
-          className={isShowImage ? 'showProductImg' : 'closeProductImg'}
-          src={image('testImg')}
+          className="showProductImg"
+          src={image('ProductTopImg')}
           alt="productImg"
         />
         {isShowImage && (
@@ -43,11 +43,10 @@ const Product = () => {
             <p>
               전기모터의 힘을 더하여, 적은 힘으로도 편하게 주행할 수 있는 자전거
             </p>
-            <button> 제품 자세히 </button>
           </div>
         )}
       </div>
-      <div className="productBody">
+      <div className={isShowImage ? 'productBody' : 'productBody active'}>
         <div className="imageSeemore" onClick={changeImage}>
           {isShowImage ? '접기 ' : '더보기'}
         </div>
