@@ -1,0 +1,42 @@
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  padding-top: 5rem;
+  padding-right: 10rem;
+}
+
+.id {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.name {
+  margin-bottom: 3rem;
+}
+
+.contact {
+  margin-bottom: 3rem;
+}
+
+.birth {
+  margin-bottom: 3rem;
+}
+
+.bikeMyPage {
+  height: 38rem;
+  width: 35rem;
+  margin-top: 7rem;
+}
+
+.userOption {
+  font-size: 1.7rem;
+  padding-top: 43rem;
+  padding-right: 10rem;
+  color: rgb(69, 130, 205);
+
+  cursor: pointer;
+  .userInfoChange {
+    padding-bottom: 0.7rem;
+  }
+}
