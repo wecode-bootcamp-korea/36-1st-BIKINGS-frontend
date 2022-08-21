@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const [data, setData] = useState([]);
 
-  // const params = useParams();
-  // const userId = params.id;
+  console.log(data);
+  const params = useParams();
+  const userId = params.id;
+
   useEffect(() => {
     fetch('/data/data.json')
       .then(response => response.json())
       .then(result => setData(result));
-  }, []);
+  }, [userId]);
 
-  const [one] = data;
-  console.log(one);
-  console.log(one.id);
   // useEffect 쓴 이유 안썼을때 무한으로 받아져서
 
   //useParams를 쓰면 state를 못받아오는 현상
   return (
     <div className="productDetail">
       <div className="bigTitle">
-        <h1>팬텀 XC</h1>
+        <h1>{data.map(data => data.name)}</h1>
       </div>
       <div className="priceSection">
         <strong className="price">
