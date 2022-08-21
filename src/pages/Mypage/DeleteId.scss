@@ -2,13 +2,14 @@
   display: flex;
   align-items: center;
   position: absolute;
-  width: 40rem;
-  top: 40%;
+  width: 100%;
+  height: 100%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   flex-direction: column;
-  border: 0.1rem solid #e9e9e9;
-  background-color: white;
+  padding-top: 15rem;
+  backdrop-filter: blur(2rem);
 
   .inputAndButton {
     display: flex;
@@ -18,7 +19,7 @@
 
   .mainTitle {
     color: red;
-    margin-bottom: 7rem;
+    margin-bottom: 3.5rem;
     font-size: 2rem;
     font-family: 'Inspiration', cursive;
     letter-spacing: -0.1ch;
@@ -50,7 +51,7 @@
   }
   .backToMyPage {
     font-size: 1.3rem;
-    margin-top: 7rem;
+    margin-top: 5rem;
     margin-bottom: 3rem;
     cursor: pointer;
     color: #0095f6;

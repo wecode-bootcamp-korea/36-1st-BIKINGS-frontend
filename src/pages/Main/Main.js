@@ -1,11 +1,11 @@
 import React from 'react';
-import DeleteId from '../Mypage/DeleteId';
+import Mypage from '../Mypage/Mypage';
 
 const Main = () => {
   return (
     <>
       <div />
-      <DeleteId />
+      <Mypage />
     </>
   );
 };

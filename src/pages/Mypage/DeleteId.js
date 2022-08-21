@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DeleteId.scss';
 
-const DeleteId = () => {
+const DeleteId = ({ setShowModal }) => {
   const navigate = useNavigate();
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const [inputValues, setInputValues] = useState({
     username: '',
@@ -66,7 +70,9 @@ const DeleteId = () => {
           {/* 메인페이지로 이동 */}
         </button>
       </form>
-      <div className="backToMyPage">마이페이지로 돌아가기</div>
+      <div className="backToMyPage" onClick={closeModal}>
+        마이페이지로 돌아가기
+      </div>
       {/* 마이페이지로 이동 */}
     </div>
   );

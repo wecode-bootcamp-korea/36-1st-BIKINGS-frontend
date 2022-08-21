@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './UserInfo.scss';
+import DeleteId from './DeleteId';
 
 const UserInfo = ({ info }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
   return (
     <>
       <div className="userInfo">
@@ -12,13 +19,16 @@ const UserInfo = ({ info }) => {
       </div>
       <ol className="userOption">
         <li className="userInfoChange">회원정보 변경</li>
-        <li className="userInfoDelete">회원 탈퇴</li>
+        <li className="userInfoDelete" onClick={openModal}>
+          회원 탈퇴
+        </li>
       </ol>
       <img
         className="bikeMyPage"
         alt="bikeMyPage"
         src="images/paul-green-gOHfFgwyDNM-unsplash.jpg"
       />
+      {showModal && <DeleteId setShowModal={setShowModal} />}
     </>
   );
 };
