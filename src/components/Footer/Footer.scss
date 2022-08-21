@@ -1,7 +1,7 @@
 .footer {
   .customContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
     padding: 5rem 12rem;
     border-top: 2px solid #e7e7e7;
@@ -12,6 +12,7 @@
       height: auto;
       font-size: 1.2rem;
       text-align: left;
+      margin-right: 100px;
 
       .listCategory {
         font-size: 1.8rem;
@@ -21,7 +22,7 @@
 
         &::after {
           content: '';
-          width: 100%;
+          width: 90%;
           height: 1px;
           display: block;
           margin-top: 10px;
@@ -52,7 +53,7 @@
       font-size: 1.4rem;
       display: flex;
       justify-content: space-between;
-      width: 90%;
+      width: 80%;
       margin: 0 auto;
       position: relative;
 
@@ -90,7 +91,7 @@
       appearance: none;
 
       .footerArea {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
       }
     }
