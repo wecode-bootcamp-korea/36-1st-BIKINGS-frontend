@@ -48,6 +48,7 @@ function ProductCheackList() {
             );
           })}
         </div>
+        <button className="serchCategory">검색</button>
       </div>
     </div>
   );
