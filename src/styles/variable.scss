@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
 
 $headFont: ('Inspiration', cursive);
+$headColor: #d42939;
+$pageBackGroundColor: #f5f5f5;
+$fontColor: #a0a0a0;
 
-@mixin flex-sort {
+@mixin flex-sort($align: center, $justify: center) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: $align;
+  justify-content: $justify;
 }

@@ -1,0 +1,99 @@
+.footer {
+  .customContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 12rem;
+    border-top: 2px solid #e7e7e7;
+    border-bottom: 2px solid #e7e7e7;
+
+    .list {
+      width: 19rem;
+      height: auto;
+      font-size: 1.2rem;
+      text-align: left;
+      margin-right: 100px;
+
+      .listCategory {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #666;
+        padding-bottom: 2rem;
+
+        &::after {
+          content: '';
+          width: 90%;
+          height: 1px;
+          display: block;
+          margin-top: 10px;
+          background: #adadad;
+        }
+      }
+
+      .listGrey {
+        font-size: 1.4rem;
+        color: #898989;
+        padding-bottom: 1rem;
+      }
+
+      .listNum {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #666666;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  .footerContainer {
+    background-color: #fbfbfb;
+
+    .linkArea {
+      font-size: 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+
+      .linkUl {
+        display: flex;
+        padding: 19px 0;
+
+        .linkAfter {
+          &::after {
+            content: '/';
+            padding: 0 10px 0 15px;
+            font-weight: 100;
+            color: #d4d4d4;
+          }
+        }
+      }
+
+      .linkSelect {
+        position: absolute;
+        right: 10rem;
+        width: 170px;
+        padding: 7px 5px;
+        margin-top: 10px;
+        color: #898989;
+      }
+    }
+
+    .footerAreas {
+      background-color: #b7b7b7;
+      color: white;
+      margin: 0 auto;
+      padding: 30px 0 30px;
+      font-weight: 200;
+      font-size: 1.4rem;
+      appearance: none;
+
+      .footerArea {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
