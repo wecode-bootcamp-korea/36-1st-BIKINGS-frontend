@@ -6,7 +6,7 @@ const Login = () => {
   const [isLoginMode, setreplace] = useState(false);
 
   const popSignup = () => {
-    setreplace(!isLoginMode);
+    setreplace(isLoginMode => !isLoginMode);
   };
 
   return (

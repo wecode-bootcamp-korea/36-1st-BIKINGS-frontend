@@ -17,48 +17,86 @@ const LoginInput = ({ isLoginMode }) => {
     const { name, value } = event.target;
     setInputValues({ ...inputValues, [name]: value });
   };
+  // const loginSignUp = (url, method, headers, body, e) => {
+  //   e.preventDefault();
+  //   fetch(`http://10.58.0.71:3000/users/${url}`, {
+  //     method: method,
+  //     headers: headers,
+  //     body: body,
+  //   });
+  // };
 
-  const login = e => {
+  // const a = loginSignUp(
+  //   'login',
+  //   'post',
+  //   {
+  //     'Content-Type': 'application/json',
+  //     authorization: localStorage.getItem('Token'),
+  //   },
+  //   JSON.stringify({
+  //     username: inputValues.username,
+  //     password: inputValues.password,
+  //   })
+  // )
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     localStorage.setItem('Token', String(data.TOKEN));
+  //     navigate('/Main');
+  //   });
+
+  // const login = e => {
+  //   e.preventDefault();
+  //   fetch('http://10.58.1.132:8000/users/login', {
+  //     method: 'post',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       authorization: localStorage.getItem('Token'),
+  //     },
+  //     body: JSON.stringify({
+  //       username: inputValues.username,
+  //       password: inputValues.password,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       localStorage.setItem('Token', String(data.TOKEN));
+  //       navigate('/Main');
+  //     });
+  // };
+  const loginSignUp = e => {
     e.preventDefault();
-    fetch('http://10.58.0.71:3000/users/withrowal', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: localStorage.getItem('Token'),
-      },
-      body: JSON.stringify({
-        username: inputValues.username,
-        password: inputValues.password,
-        name: inputValues.name,
-        birth: Number(inputValues.birth),
-        contact: inputValues.contact,
-      }),
-    })
+    fetch(
+      `${
+        !isLoginMode
+          ? 'http://10.58.1.132:8000/users/login'
+          : 'http://10.58.1.132:8000/users/signup'
+      }`,
+      {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: `${
+          isLoginMode
+            ? JSON.stringify({
+                username: inputValues.username,
+                password: inputValues.password,
+              })
+            : JSON.stringify({
+                username: inputValues.username,
+                password: inputValues.password,
+                name: inputValues.name,
+                birth: Number(inputValues.birth),
+                contact: inputValues.contact,
+              })
+        }`,
+      }
+    )
       .then(response => response.json())
       .then(data => {
-        localStorage.setItem('Token', String(data.TOKEN));
-        navigate('/main-bosung');
+        if (isLoginMode) localStorage.setItem('Token', String(data.TOKEN));
+        navigate('/Main');
       });
   };
-  const signUp = e => {
-    e.preventDefault();
-    fetch('http://10.58.0.71:3000/users/signup', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        username: inputValues.username,
-        password: inputValues.password,
-        name: inputValues.name,
-        birth: Number(inputValues.birth),
-        contact: inputValues.contact,
-      }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        localStorage.setItem('Token', data.authorization);
-        navigate('/');
-      });
-  };
+  // localStorage.setItem('Token', data.authorization);
 
   const InputValueSignup =
     inputValues.username.includes('@') &&
@@ -112,12 +150,12 @@ const LoginInput = ({ isLoginMode }) => {
       <button
         className="loginSignupButton"
         disabled={isLoginMode ? !InputValueSignup : !InputValueLogin}
-        onClick={isLoginMode ? signUp : login}
+        onClick={loginSignUp}
       >
         <strong>{isLoginMode ? '회원가입' : '로그인'}</strong>
       </button>
     </form>
   );
 };
-
+// {isLoginMode ? '회원가입' : '로그인'}
 export default LoginInput;
