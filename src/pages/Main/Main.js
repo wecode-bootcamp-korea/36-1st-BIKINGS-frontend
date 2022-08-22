@@ -1,7 +1,8 @@
 import React from 'react';
+import ImageSlide from './ImageSlide/ImageSlide';
 
 const Main = () => {
-  return <div />;
+  return <ImageSlide />;
 };
 
 export default Main;
