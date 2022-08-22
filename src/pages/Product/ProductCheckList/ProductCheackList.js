@@ -8,12 +8,13 @@ function ProductCheackList() {
   const [categoty, setCategoty] = useState([]);
 
   const onCheckedElement = e => {
-    if (e.target.checked) {
-      setCheckedList([...checkedList, e.target.value]);
-    } else {
-      setCheckedList(checkedList.filter(element => element !== e.target.value));
-    }
+    e.target.checked
+      ? setCheckedList([...checkedList, e.target.value])
+      : setCheckedList(
+          checkedList.filter(element => element !== e.target.value)
+        );
   };
+  console.log(checkedList);
 
   useEffect(() => {
     fetch(`/data/CheckList.json`, {
