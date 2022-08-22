@@ -9,7 +9,7 @@ const Price = () => {
   const handleAllCheck = e => {
     if (e.target.checked) {
       const idArray = [];
-      price_Data.forEach(el => idArray.push(el.price));
+      PRICE_DATA.forEach(el => idArray.push(el.price));
       setCheckedList(idArray);
     } else {
       setCheckedList([]);
@@ -17,11 +17,11 @@ const Price = () => {
   };
 
   const onCheckedElement = e => {
-    if (e.target.checked) {
-      setCheckedList([...checkedList, Number(e.target.value)]);
-    } else if (!e.target.checked) {
-      setCheckedList(checkedList.filter(el => el !== Number(e.target.value)));
-    }
+    e.target.checked
+      ? setCheckedList([...checkedList, Number(e.target.value)])
+      : setCheckedList(
+          checkedList.filter(element => element !== Number(e.target.value))
+        );
   };
 
   const setPricetoNumber = checkedList.map(checkedListToNumber =>
@@ -45,7 +45,7 @@ const Price = () => {
                 type="checkbox"
                 onChange={e => handleAllCheck(e)}
                 checked={
-                  checkedList.length === price_Data.length ? true : false
+                  checkedList.length === PRICE_DATA.length ? true : false
                 }
               />
               <span className="setCheckBox" onClick={e => handleAllCheck(e)}>
@@ -55,7 +55,7 @@ const Price = () => {
               <span className="setCheckBox"> 선택삭제 </span>
             </div>
             <div className="line" />
-            {price_Data.map(prices => (
+            {PRICE_DATA.map(prices => (
               <PriceContent
                 key={prices.id}
                 prices={prices}
@@ -99,7 +99,7 @@ const Price = () => {
 
 export default Price;
 
-const price_Data = [
+const PRICE_DATA = [
   {
     id: 1,
     name: '자전거',

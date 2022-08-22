@@ -14,7 +14,7 @@ const PriceContent = ({
         value={price}
         checked={checked}
         onChange={e => {
-          onCheckedElement(e);
+          onCheckedElement();
         }}
       />
       <img src={src} alt="priceContent" />
