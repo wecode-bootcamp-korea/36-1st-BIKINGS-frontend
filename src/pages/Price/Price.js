@@ -18,25 +18,35 @@ const Price = () => {
 
   const onCheckedElement = e => {
     e.target.checked
-      ? setCheckedList([...checkedList, Number(e.target.value)])
+      ? setCheckedList([...checkedList, e.target.value])
       : setCheckedList(
-          checkedList.filter(element => element !== Number(e.target.value))
+          checkedList.filter(element => element !== e.target.value)
         );
   };
 
   useEffect(() => {
-    fetch(`/data/priceData.json`, {
+    fetch(`http://10.58.1.132:8000/carts/cart`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTEzMDIzNX0.1ZQ9uebdi1950j-dhZcG-3Tsf_9KTjWgFltGYQ7WOVk',
       },
     })
       .then(res => res.json())
-      .then(res => setPriceList(res));
+      .then(res => setPriceList(res.data));
   }, []);
 
   const deleteContent = id => {
-    setPriceList(priceList.filter(el => el.id !== id));
+    fetch(`http://10.58.1.132:8000/carts/withrawal/product`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTE3MTE1N30.6BorL6uEULIs3oYrhXpAetU72wFYDYaEEO_mw8uiHpw',
+      },
+      body: JSON.stringify({ productId: id }),
+    }).then(setPriceList(priceList.filter(el => el.id !== id)));
   };
 
   const setPricetoNumber = checkedList.map(checkedListToNumber =>
@@ -82,11 +92,11 @@ const Price = () => {
             <div className="priceInfo">
               <div className="totalBox">
                 <p>상품금액</p>
-                <p>{addPrice} 원</p>
+                <p>{addPrice.toLocaleString() + '원'}</p>
               </div>
               <div className="totalBox">
                 <p>상품할인금액</p>
-                <p>{sale} 원</p>
+                <p>{sale.toLocaleString() + '원'}</p>
               </div>
               <div className="totalBox">
                 <p>배송비</p>
@@ -94,7 +104,7 @@ const Price = () => {
               </div>
               <div className="totalBox">
                 <p>결제예정금액</p>
-                <p>{totalPrice} 원</p>
+                <p>{totalPrice.toLocaleString() + '원'}</p>
               </div>
             </div>
             <button className="priceBtn"> 주문하기 </button>

@@ -2,7 +2,7 @@ import React from 'react';
 import './PriceContent.scss';
 
 const PriceContent = ({
-  prices: { name, src, price, id },
+  prices: { name, cover_image_url, price },
   onCheckedElement,
   deleteContent,
   checked,
@@ -18,10 +18,12 @@ const PriceContent = ({
           onCheckedElement(e);
         }}
       />
-      <img src={src} alt="priceContent" />
+      <img src={cover_image_url} alt="priceContent" />
       <div className="contentInfo">
         <div className="contentName">{name}</div>
-        <div className="contentPrice">{price}원</div>
+        <div className="contentPrice">
+          {Number(price).toLocaleString() + '원'}
+        </div>
       </div>
       <div className="deleteContent" onClick={deleteContent}>
         x
