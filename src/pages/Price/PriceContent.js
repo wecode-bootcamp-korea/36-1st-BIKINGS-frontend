@@ -2,8 +2,9 @@ import React from 'react';
 import './PriceContent.scss';
 
 const PriceContent = ({
-  prices: { name, src, price },
+  prices: { name, src, price, id },
   onCheckedElement,
+  deleteContent,
   checked,
 }) => {
   return (
@@ -14,7 +15,7 @@ const PriceContent = ({
         value={price}
         checked={checked}
         onChange={e => {
-          onCheckedElement();
+          onCheckedElement(e);
         }}
       />
       <img src={src} alt="priceContent" />
@@ -22,7 +23,9 @@ const PriceContent = ({
         <div className="contentName">{name}</div>
         <div className="contentPrice">{price}원</div>
       </div>
-      <div className="deleteContent">x</div>
+      <div className="deleteContent" onClick={deleteContent}>
+        x
+      </div>
     </div>
   );
 };

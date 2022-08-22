@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { image } from '../../Function';
+import React, { useState, useEffect } from 'react';
 import PriceContent from './PriceContent';
 import './Price.scss';
 
 const Price = () => {
   const [checkedList, setCheckedList] = useState([]);
+  const [priceList, setPriceList] = useState([]);
 
   const handleAllCheck = e => {
     if (e.target.checked) {
       const idArray = [];
-      PRICE_DATA.forEach(el => idArray.push(el.price));
+      priceList.forEach(el => idArray.push(el.price));
       setCheckedList(idArray);
     } else {
       setCheckedList([]);
@@ -22,6 +22,21 @@ const Price = () => {
       : setCheckedList(
           checkedList.filter(element => element !== Number(e.target.value))
         );
+  };
+
+  useEffect(() => {
+    fetch(`/data/priceData.json`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(res => res.json())
+      .then(res => setPriceList(res));
+  }, []);
+
+  const deleteContent = id => {
+    setPriceList(priceList.filter(el => el.id !== id));
   };
 
   const setPricetoNumber = checkedList.map(checkedListToNumber =>
@@ -44,24 +59,21 @@ const Price = () => {
               <input
                 type="checkbox"
                 onChange={e => handleAllCheck(e)}
-                checked={
-                  checkedList.length === PRICE_DATA.length ? true : false
-                }
+                checked={checkedList.length === priceList.length ? true : false}
               />
-              <span className="setCheckBox" onClick={e => handleAllCheck(e)}>
-                전체선택
-              </span>
+              <span className="setCheckBox">전체선택</span>
               <span> ㅣ </span>
               <span className="setCheckBox"> 선택삭제 </span>
             </div>
             <div className="line" />
-            {PRICE_DATA.map(prices => (
+            {priceList.map(prices => (
               <PriceContent
                 key={prices.id}
                 prices={prices}
                 onCheckedElement={onCheckedElement}
                 checkedList={checkedList}
                 checked={checkedList.includes(prices.price) ? true : false}
+                deleteContent={() => deleteContent(prices.id)}
               />
             ))}
             <div className="line" />
@@ -98,30 +110,3 @@ const Price = () => {
 };
 
 export default Price;
-
-const PRICE_DATA = [
-  {
-    id: 1,
-    name: '자전거',
-    price: 1000,
-    src: image('test'),
-  },
-  {
-    id: 2,
-    name: '자전거2',
-    price: 1300,
-    src: image('test'),
-  },
-  {
-    id: 3,
-    name: '자전거3',
-    price: 130,
-    src: image('test'),
-  },
-  {
-    id: 4,
-    name: '자전거4',
-    price: 1320,
-    src: image('test'),
-  },
-];

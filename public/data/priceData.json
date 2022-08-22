@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "자전거",
+    "price": 1000,
+    "src": "../images/test.png"
+  },
+  {
+    "id": 2,
+    "name": "자전거2",
+    "price": 1300,
+    "src": "../images/test.png"
+  },
+  {
+    "id": 3,
+    "name": "자전거3",
+    "price": 130,
+    "src": "../images/test.png"
+  },
+  {
+    "id": 4,
+    "name": "자전거4",
+    "price": 1320,
+    "src": "../images/test.png"
+  }
+]
