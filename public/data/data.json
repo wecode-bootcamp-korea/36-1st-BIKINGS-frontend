@@ -1,65 +1,107 @@
 [
   {
     "id": 1,
-    "name": "자전거1",
-    "price": 2123123,
-    "cover_image_url": "images/testImg.png",
-    "tag": ["#tag2", "#tag5", "#tag5", "#tag5", "#tag5"]
+    "name": "판토마임 알파",
+    "cover_image_url": "https://drive.google.com/file/d/1Zu67ok9aS92Z78ZaLa76uf5jMrnsn3-i/view?usp=sharing",
+    "price": "1250000.00",
+    "tags": ["#전기", "#스틸", "#고가", "#트렌디", "#인기"]
   },
   {
     "id": 2,
-    "name": "자전거2",
-    "price": 2123123,
-    "cover_image_url": "images/testImg.png",
-    "tag": ["#tag2", "#tag5", "#tag5", "#tag5"]
+    "name": "판토마임 베타",
+    "cover_image_url": "https://drive.google.com/file/d/1mv19OXgNWqa6mW0vEVjacBQ5aXkAVqiT/view?usp=sharing",
+    "price": "1100000.00",
+    "tags": ["#전기", "#알루미늄", "#고가", "#트렌디"]
   },
   {
     "id": 3,
-    "name": "자전거3",
-    "price": 2123123,
-    "cover_image_url": "images/testImg.png",
-    "tag": ["#tag2", "#tag5", "#tag5", "#tag5"]
+    "name": "판토마임 XC",
+    "cover_image_url": "https://drive.google.com/file/d/1FPXNUCkpZG3NIjSBH4kkD_1XScPQ28Aw/view?usp=sharing",
+    "price": "1080000.00",
+    "tags": ["#전기", "#알루미늄", "#고가", "#트렌디"]
   },
   {
     "id": 4,
-    "name": "자전거4",
-    "price": 2123123,
-    "cover_image_url": "images/testImg.png",
-    "tag": ["#tag2", "#tag5", "#tag5", "#tag5"]
+    "name": "EV-마이크로 슈퍼스타",
+    "cover_image_url": "https://drive.google.com/file/d/1Waq6o5CqQKluabeWLSGuVlWF86zXE8NV/view?usp=sharing",
+    "price": "1000000.00",
+    "tags": ["#전기", "#알루미늄", "#고가", "#트렌디", "#인기"]
   },
   {
     "id": 5,
-    "name": "자전거5",
-    "price": 2123123,
-    "cover_image_url": "images/testImg.png",
-    "tag": ["#tag2", "#tag5", "#tag5"]
+    "name": "EV 슈퍼스타",
+    "cover_image_url": "https://drive.google.com/file/d/1xurlRLr2whr5y32hh594YShpswxBKKyK/view?usp=sharing",
+    "price": "950000.00",
+    "tags": ["#전기", "#스틸", "#가성비", "#트렌디"]
   },
   {
     "id": 6,
-    "name": "자전거6",
-    "price": 2123123,
-    "cover_image_url": "images/testImg.png",
-    "tag": ["#tag2"]
+    "name": "위버스 카본파이버",
+    "cover_image_url": "https://drive.google.com/file/d/140MZCdOBdKAoCC6VKJJZg1-ZMy2Pj1gg/view?usp=sharing",
+    "price": "1150000.00",
+    "tags": ["#산악", "#카본", "#고가", "#매니악"]
   },
   {
     "id": 7,
-    "name": "자전거7",
-    "price": 2123123,
-    "cover_image_url": "images/testImg.png",
-    "tag": ["#tag2", "#tag5", "#tag5", "#tag5", "#tag5", "#tag5"]
+    "name": "위버스 80",
+    "cover_image_url": "https://drive.google.com/file/d/1mFYETGJqOnkxhXWZgqL3PofualFCpdQc/view?usp=sharing",
+    "price": "1100000.00",
+    "tags": ["#산악", "#알루미늄", "#고가", "#매니악", "#인기"]
   },
   {
     "id": 8,
-    "name": "자전거8",
-    "price": 2123123,
-    "cover_image_url": "images/testImg.png",
-    "tag": ["#tag2", "#tag5", "#tag5", "#tag5", "#tag5"]
+    "name": "위버스 70",
+    "cover_image_url": "https://drive.google.com/file/d/17D3mOecGAFPQYzY4ZeiLEH20YRj2Fz77/view?usp=sharing",
+    "price": "1020000.00",
+    "tags": ["#산악", "#알루미늄", "#고가", "#매니악"]
   },
   {
     "id": 9,
-    "name": "자전거9",
-    "price": 2123123,
-    "cover_image_url": "images/testImg.png",
-    "tag": ["#tag2", "#tag5", "#tag5", "#tag5"]
+    "name": "위버스 60",
+    "cover_image_url": "https://drive.google.com/file/d/1X14Emuwi5bKBJw7x6Igua4uuP6eJmhR0/view?usp=sharing",
+    "price": "980000.00",
+    "tags": ["#산악", "#알루미늄", "#가성비", "#매니악"]
+  },
+  {
+    "id": 10,
+    "name": "위버스 40",
+    "cover_image_url": "https://drive.google.com/file/d/1_TImRoz1lpBYkuv1gu6JKL5lDbslpol5/view?usp=sharing",
+    "price": "850000.00",
+    "tags": ["#산악", "#알루미늄", "#가성비", "#매니악"]
+  },
+  {
+    "id": 11,
+    "name": "W3R 16",
+    "cover_image_url": "https://drive.google.com/file/d/1jyzrXHW4G0WbMOTUiLKkb9Lpz0WFOXfU/view?usp=sharing",
+    "price": "1030000.00",
+    "tags": ["#로드", "#스틸", "#고가", "#트렌디"]
+  },
+  {
+    "id": 12,
+    "name": "W3R 12",
+    "cover_image_url": "https://drive.google.com/file/d/1jyzrXHW4G0WbMOTUiLKkb9Lpz0WFOXfU/view?usp=sharing",
+    "price": "970000.00",
+    "tags": ["#로드", "#알루미늄", "#가성비", "#트렌디", "#인기"]
+  },
+  {
+    "id": 13,
+    "name": "W3R 8",
+    "cover_image_url": "https://drive.google.com/file/d/12JWyEmA7GfIjkXwQi0GMkczPc0hdFuL7/view?usp=sharing",
+    "price": "920000.00",
+    "tags": ["#로드", "#스틸", "#가성비", "#트렌디", "#인기"]
+  },
+  {
+    "id": 14,
+    "name": "위랠 300",
+    "cover_image_url": "https://drive.google.com/file/d/1uqLJEkxvJz-hWygDZogqD4-kdD9yq-SZ/view?usp=sharing",
+    "price": "850000.00",
+    "tags": ["#로드", "#알루미늄", "#가성비", "#트렌디", "#인기"]
+  },
+  {
+    "id": 15,
+    "name": "위랠 100",
+    "cover_image_url": "https://drive.google.com/file/d/16V-YnhXfirzlVzM4_QX3mmXQp0Zt0TS5/view?usp=sharing",
+    "price": "650000.00",
+    "tags": ["#로드", "#알루미늄", "#가성비", "#트렌디"]
   }
 ]

@@ -14,7 +14,7 @@ const Product = () => {
   };
 
   useEffect(() => {
-    fetch(`http://10.58.0.127:3000/products/covers/${page}`, {
+    fetch(`/data/data.json`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

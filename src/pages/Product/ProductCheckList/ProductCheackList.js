@@ -1,44 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductCheackList.scss';
 
 // 카테고리 목록
-const CATEGORY_LIST = [
-  { id: 0, data: '전기' },
-  { id: 1, data: '산악' },
-  { id: 2, data: '유아' },
-  { id: 3, data: '로드' },
-  { id: 4, data: '암튼' },
-  { id: 5, data: '머시기' },
-  { id: 6, data: '뭔가' },
-  { id: 7, data: '무언가' },
-];
 
 function ProductCheackList() {
   const [checkedList, setCheckedList] = useState([]);
+  const [categoty, setCategoty] = useState([]);
+
   const onCheckedElement = e => {
     if (e.target.checked) {
       setCheckedList([...checkedList, e.target.value]);
-    } else if (!e.target.checked) {
+    } else {
       setCheckedList(checkedList.filter(element => element !== e.target.value));
     }
   };
+
+  useEffect(() => {
+    fetch(`/data/CheckList.json`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(res => res.json())
+      .then(res => setCategoty(res))
+      .catch(rej => alert(rej));
+  }, []);
+
   return (
     <div className="ProductCheackList">
       <h3>카테고리</h3>
       <div className="checkList">
         <div className="checkBoxList">
-          {CATEGORY_LIST.map(item => {
+          {categoty.map(({ id, name }) => {
             return (
-              <div className="checkBox" key={item.id}>
+              <div className="checkBox" key={id}>
                 <input
                   type="checkbox"
-                  value={item.data}
+                  value={name}
                   onChange={e => {
                     onCheckedElement(e);
                   }}
-                  checked={checkedList.includes(item.data) ? true : false}
+                  checked={checkedList.includes(name) ? true : false}
                 />
-                <div>{item.data}</div>
+                <div>{name}</div>
               </div>
             );
           })}
