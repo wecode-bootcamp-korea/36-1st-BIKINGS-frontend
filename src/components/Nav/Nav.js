@@ -17,6 +17,8 @@ const Nav = () => {
           <li className="topFontLeft" onMouseOver={popNavBar}>
             자전거
           </li>
+          <li className="topFontLeft">용품</li>
+          <li className="topFontLeft">대리점</li>
         </div>
 
         <div className="searchBar">
