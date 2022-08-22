@@ -14,7 +14,6 @@ function ProductCheackList() {
           checkedList.filter(element => element !== e.target.value)
         );
   };
-  console.log(checkedList);
 
   useEffect(() => {
     fetch(`/data/CheckList.json`, {
