@@ -1,21 +1,9 @@
-.something {
+.common {
   display: flex;
   justify-content: space-between;
   padding-top: 2rem;
   padding-bottom: 3rem;
   align-items: center;
-  background-color: #d42939;
-  position: fixed;
-  width: 100%;
-}
-
-.top {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  align-items: center;
-  position: relative;
   width: 100%;
 
   .navLeft {
@@ -99,4 +87,13 @@
       }
     }
   }
+}
+
+.navigation {
+  position: fixed;
+  width: 100%;
+}
+
+.clicked {
+  background-color: #d42939;
 }

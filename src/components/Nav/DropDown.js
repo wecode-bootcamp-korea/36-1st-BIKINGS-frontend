@@ -8,8 +8,8 @@ const DropDown = ({ navRender }) => {
   };
 
   return (
-    <div className="dd" onMouseLeave={dropLeave}>
-      <div className="DropDown">
+    <div className="DropDownTop">
+      <div className="DropDown" onMouseLeave={dropLeave}>
         <div className="dropDownLeft">
           <ul className="style">
             <div className="menuTop">스타일</div>

@@ -7,7 +7,7 @@ const Nav = () => {
   const [scrollOption, setScrollOption] = useState(false);
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 500) {
       setScrollOption(true);
     } else setScrollOption(false);
   });
@@ -17,8 +17,8 @@ const Nav = () => {
   };
 
   return (
-    <div className="back">
-      <div className={scrollOption ? `top something` : 'top'}>
+    <div className={scrollOption ? 'navigation clicked' : 'navigation'}>
+      <div className="common">
         <div className="navLeft">
           <div className="mainTitle">300</div>
           <li className="topFontLeft" onMouseOver={popNavBar}>
