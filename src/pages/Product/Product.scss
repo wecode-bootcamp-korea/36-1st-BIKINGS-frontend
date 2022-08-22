@@ -47,13 +47,29 @@
     transition: transform 0.2s;
 
     .imageSeemore {
-      background-color: gray;
+      width: 11rem;
+      height: 3rem;
+      box-sizing: content-box;
+      padding-top: 1.5rem;
+      position: relative;
+      background: gray;
       color: white;
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      width: 10rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
       text-align: center;
+      text-transform: uppercase;
       cursor: pointer;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 1.3rem solid #eee;
+        border-left: 5.5rem solid transparent;
+        border-right: 5.5rem solid transparent;
+      }
     }
 
     .bycleContainer {
