@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './ProductDetail.scss';
+import Tags from './Tags/Tags';
 
 const ProductDetail = () => {
   const [data, setData] = useState([]);
-
-  console.log(data);
   const params = useParams();
   const userId = params.id;
 
@@ -14,8 +13,9 @@ const ProductDetail = () => {
       .then(response => response.json())
       .then(result => setData(result));
   }, [userId]);
-
   // useEffect 쓴 이유 안썼을때 무한으로 받아져서
+  // const tagData = data.map(data => data.tags);
+  // console.log(tagData);
 
   //useParams를 쓰면 state를 못받아오는 현상
   return (
@@ -26,18 +26,12 @@ const ProductDetail = () => {
       <div className="priceSection">
         <strong className="price">
           <span className="recommendPrice">권장소비자가격</span>
-          1,700,000원
+          {data.map(data => Number(data.price).toLocaleString()) + '원'}
         </strong>
         <ul className="hashTagContainer">
-          <li className="hashTag">#라이플스타일</li>
-          <li className="hashTag">#전기자전거</li>
-          <li className="hashTag">#팬텀</li>
-          <li className="hashTag">#라이플스타일</li>
-          <li className="hashTag">#사이드탈착형베터리</li>
-          <li className="hashTag">#이륜자전거</li>
-          <li className="hashTag">#스마트모빌리티</li>
-          <li className="hashTag">#이륜자전거</li>
-          <li className="hashTag">#이륜자전거</li>
+          {data.map((data, idx) => (
+            <Tags key={idx} data={data} />
+          ))}
         </ul>
         <div className="snsContainer">
           <a className="sns" href="https://www.instagram.com">
@@ -50,7 +44,7 @@ const ProductDetail = () => {
       </div>
 
       <div className="detailImgSection">
-        <img src="./images/마켓컬리.png" alt="images" />
+        <img src={data.map(data => data.detail_image_url)} alt="images" />
       </div>
     </div>
   );
