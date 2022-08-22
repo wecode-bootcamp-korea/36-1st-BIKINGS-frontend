@@ -4,14 +4,21 @@ import './Nav.scss';
 
 const Nav = () => {
   const [navRender, setNavRender] = useState(false);
+  const [scrollOption, setScrollOption] = useState(false);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      setScrollOption(true);
+    } else setScrollOption(false);
+  });
 
   const popNavBar = () => {
     setNavRender(true);
   };
 
   return (
-    <div>
-      <div className="top">
+    <div className="back">
+      <div className={scrollOption ? `top something` : 'top'}>
         <div className="navLeft">
           <div className="mainTitle">300</div>
           <li className="topFontLeft" onMouseOver={popNavBar}>

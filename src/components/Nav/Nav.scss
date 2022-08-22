@@ -1,10 +1,22 @@
-.top {
+.something {
   display: flex;
   justify-content: space-between;
   padding-top: 2rem;
   padding-bottom: 3rem;
   align-items: center;
   background-color: #d42939;
+  position: fixed;
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  align-items: center;
+  position: relative;
+  width: 100%;
 
   .navLeft {
     display: flex;
@@ -16,13 +28,7 @@
       font-weight: bold;
       margin-left: 3rem;
     }
-    .topFontLeft {
-      color: white;
-      font-size: 2rem;
-      margin-left: 5rem;
-      margin-right: 17rem;
-      cursor: pointer;
-    }
+
     .topFontLeft {
       color: white;
       font-size: 2rem;
