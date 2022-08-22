@@ -43,8 +43,8 @@
     background-color: white;
     width: 100vw;
 
-    transform: translate(0, 20rem);
-    transition: transform 1s;
+    transform: translate(0, 0);
+    transition: transform 0.5s;
 
     .imageSeemore {
       background-color: gray;
@@ -83,10 +83,8 @@
     }
   }
   .active {
-    // transition-property: bottom;
-    // transition-duration: 2s;
-    transform: translate(0, -20rem);
-    transition: transform 1s;
+    transform: translate(0, -40rem);
+    transition: transform 0.5s;
     top: 20rem;
   }
 }
