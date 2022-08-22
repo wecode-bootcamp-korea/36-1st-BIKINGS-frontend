@@ -15,7 +15,6 @@ const Price = () => {
       setCheckedList([]);
     }
   };
-  console.log(checkedList);
 
   const onCheckedElement = e => {
     if (e.target.checked) {
