@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import DropDown from './DropDown';
-import { image } from '../../Function';
 import './Nav.scss';
 
 const Nav = () => {
