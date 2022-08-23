@@ -9,11 +9,19 @@ const Nav = () => {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       setScrollOption(true);
-    } else setScrollOption(false);
+      document.getElementsByClassName('navigation')[0].style.backgroundColor =
+        '#d42939';
+    } else {
+      setScrollOption(false);
+      document.getElementsByClassName('navigation')[0].style.backgroundColor =
+        'unset';
+    }
   });
 
   const popNavBar = () => {
     setNavRender(true);
+    document.getElementsByClassName('navigation')[0].style.backgroundColor =
+      '#d42939';
   };
 
   return (

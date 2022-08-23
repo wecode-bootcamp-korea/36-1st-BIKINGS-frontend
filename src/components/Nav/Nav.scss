@@ -1,3 +1,12 @@
+.navigation {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  &.clicked {
+    background-color: #d42939;
+  }
+}
+
 .common {
   display: flex;
   justify-content: space-between;
@@ -23,9 +32,6 @@
       margin-left: 8rem;
       margin-right: 0rem;
       cursor: pointer;
-    }
-    .topFontLeft:hover {
-      color: black;
     }
   }
 
@@ -61,18 +67,4 @@
       }
     }
   }
-}
-
-.navigation {
-  position: fixed;
-  width: 100%;
-  z-index: 99;
-
-  &[onMouseOver] {
-    background-color: #d42939;
-  }
-}
-
-.clicked {
-  background-color: #d42939;
 }

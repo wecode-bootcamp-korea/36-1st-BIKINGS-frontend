@@ -5,6 +5,8 @@ import { DropDownData, DropDownData2, Brand, hashTag } from './DropDownData';
 const DropDown = ({ navRender }) => {
   const dropLeave = () => {
     navRender(false);
+    document.getElementsByClassName('navigation')[0].style.backgroundColor =
+      'unset';
   };
 
   return (
