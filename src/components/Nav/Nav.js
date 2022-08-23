@@ -3,6 +3,7 @@ import DropDown from './DropDown';
 import './Nav.scss';
 
 const Nav = () => {
+<<<<<<< HEAD
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
 
@@ -63,6 +64,9 @@ const Nav = () => {
       {navRender && <DropDown navRender={setNavRender} />}
     </div>
   );
+=======
+  return <div />;
+>>>>>>> d8c5182c15ec8cfd25c455d09108ecefa51df02c
 };
 
 export default Nav;
