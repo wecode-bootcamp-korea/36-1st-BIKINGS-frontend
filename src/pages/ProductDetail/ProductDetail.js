@@ -1,4 +1,3 @@
-import { isCompositeType } from 'graphql';
 import React, { useEffect, useState } from 'react';
 import Carts from './Carts/Carts';
 import './ProductDetail.scss';
@@ -6,7 +5,7 @@ import './ProductDetail.scss';
 const ProductDetail = () => {
   const [showModal, setShowModal] = useState(false);
   const [productData, setProductData] = useState([]);
-  const [data, setData] = useState([]);
+  const [getData, setGetData] = useState([]);
 
   const closeModal = () => {
     setShowModal(true);
@@ -22,7 +21,7 @@ const ProductDetail = () => {
       },
     })
       .then(response => response.json())
-      .then(result => setData(result));
+      .then(result => setGetData(result));
   }, []);
 
   return (
@@ -31,7 +30,8 @@ const ProductDetail = () => {
         <Carts
           setShowModal={setShowModal}
           setProductData={setProductData}
-          back={data}
+          getData={getData}
+          productData={productData}
           closeModal={closeModal}
         />
       )}

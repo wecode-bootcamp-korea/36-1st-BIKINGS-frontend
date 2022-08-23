@@ -1,8 +1,8 @@
 import React from 'react';
 import './Carts.scss';
 
-const Carts = ({ setShowModal, back, setProductData, closeModal }) => {
-  const { data } = back;
+const Carts = ({ setShowModal, getData, setProductData, closeModal }) => {
+  const { data } = getData;
   const [one] = data;
   const { name, price } = one;
 
