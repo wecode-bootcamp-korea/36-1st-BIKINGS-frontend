@@ -19,7 +19,7 @@ const Modal = ({ togleModal, content, propsFuntion }) => {
         <p className="content">{content}</p>
         <div className="modalBtn">
           <button className="btn close" onClick={togleModal}>
-            닫기
+            취소
           </button>
           <button
             className="confirm btn"
