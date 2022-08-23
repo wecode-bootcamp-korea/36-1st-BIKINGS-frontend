@@ -14,8 +14,6 @@ const Modal = ({ togleModal, content, propsFuntion }) => {
   }, []);
 
   return (
-    // <div>
-    //   {showModal && (
     <div className="modal" onClick={closeModal}>
       <div className="modalContainer">
         <p className="content">{content}</p>
@@ -35,8 +33,6 @@ const Modal = ({ togleModal, content, propsFuntion }) => {
         </div>
       </div>
     </div>
-    //   )}
-    // </div>
   );
 };
 
