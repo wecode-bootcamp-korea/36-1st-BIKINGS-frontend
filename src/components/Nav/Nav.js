@@ -1,31 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import DropDown from './DropDown';
 import './Nav.scss';
 
 const Nav = () => {
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
-
+  const navRef = useRef(null);
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       setScrollOption(true);
-      document.getElementsByClassName('navigation')[0].style.backgroundColor =
+      navRef.current.getElementsByClassName('common')[0].style.backgroundColor =
         '#d42939';
     } else {
       setScrollOption(false);
-      document.getElementsByClassName('navigation')[0].style.backgroundColor =
+      navRef.current.getElementsByClassName('common')[0].style.backgroundColor =
         'unset';
     }
   });
 
   const popNavBar = () => {
     setNavRender(true);
-    document.getElementsByClassName('navigation')[0].style.backgroundColor =
+    navRef.current.getElementsByClassName('common')[0].style.backgroundColor =
       '#d42939';
   };
 
   return (
-    <div className={scrollOption ? 'navigation clicked' : 'navigation'}>
+    <div
+      ref={navRef}
+      className={scrollOption ? 'navigation clicked' : 'navigation'}
+    >
       <div className="common">
         <div className="navLeft">
           <div className="mainTitle">300</div>
