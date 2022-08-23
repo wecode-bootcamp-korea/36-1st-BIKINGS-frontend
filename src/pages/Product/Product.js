@@ -3,21 +3,19 @@ import BycleInfo from './BycleInfo/BycleInfo';
 import ProductCheackList from './ProductCheckList/ProductCheackList';
 import { image } from '../../Function';
 import './Product.scss';
-import { useSearchParams } from 'react-router-dom';
 
 const Product = () => {
   const [isShowImage, setIsShowImage] = useState(false);
   const [bycles, setbycles] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const offset = searchParams.get('offset');
-  const limit = searchParams.get('limit');
+  const [tagId, setTagId] = useState(11);
+  const [offset, setOffset] = useState(0);
 
   const changeImage = () => {
     setIsShowImage(isShowImage => !isShowImage);
   };
 
   useEffect(() => {
-    fetch(`/data/data.json?:${limit}/&:${offset}`, {
+    fetch(`http://10.58.1.154:3000/products/?limit=${6}&offset=${offset}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -26,13 +24,23 @@ const Product = () => {
       .then(res => res.json())
       .then(res => setbycles(res))
       .catch(rej => alert(rej));
-  }, [offset, limit]);
-
-  // http://10.58.0.127:3000/products/:limit/:offset
+  }, [offset]);
 
   const movePage = pageNum => {
-    searchParams.set('offset', (pageNum - 1) * 6);
-    setSearchParams(searchParams);
+    setOffset((pageNum - 1) * 6);
+  };
+
+  const serach = id => {
+    setTagId(String(id));
+    fetch(`http://10.58.1.154:3000/tags/${tagId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(res => res.json())
+      .then(res => setbycles(res.getProductsByTags))
+      .catch(rej => alert(rej));
   };
 
   return (
@@ -56,7 +64,7 @@ const Product = () => {
         <div className="imageSeemore" onClick={changeImage}>
           {isShowImage ? '접기 ' : '더보기'}
         </div>
-        <ProductCheackList />
+        <ProductCheackList serach={serach} />
         <div className="bycleContainer">
           <div className="bycleTitle">
             <h2> Title </h2>

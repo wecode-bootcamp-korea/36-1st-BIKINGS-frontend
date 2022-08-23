@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './ProductCheackList.scss';
 
-// 카테고리 목록
-
-function ProductCheackList() {
+function ProductCheackList({ serach }) {
   const [checkedList, setCheckedList] = useState([]);
   const [categoty, setCategoty] = useState([]);
 
   const onCheckedElement = e => {
     e.target.checked
-      ? setCheckedList([...checkedList, e.target.value])
-      : setCheckedList(
-          checkedList.filter(element => element !== e.target.value)
-        );
+      ? setCheckedList([...checkedList, e.target.id])
+      : setCheckedList(checkedList.filter(element => element !== e.target.id));
   };
 
   useEffect(() => {
@@ -38,17 +34,20 @@ function ProductCheackList() {
                 <input
                   type="checkbox"
                   value={name}
+                  id={id}
                   onChange={e => {
                     onCheckedElement(e);
                   }}
-                  checked={checkedList.includes(name) ? true : false}
+                  checked={checkedList.includes(String(id)) ? true : false}
                 />
                 <div>{name}</div>
               </div>
             );
           })}
         </div>
-        <button className="serchCategory">검색</button>
+        <button className="serchCategory" onClick={() => serach(checkedList)}>
+          검색
+        </button>
       </div>
     </div>
   );
