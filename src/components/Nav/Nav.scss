@@ -1,0 +1,70 @@
+.navigation {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  &.clicked {
+    background-color: #d42939;
+  }
+}
+
+.common {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  width: 100%;
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    .mainTitle {
+      color: white;
+      font-size: 5rem;
+      font-family: 'Inspiration', cursive;
+      font-weight: bold;
+      margin-left: 7rem;
+    }
+
+    .topFontLeft {
+      color: white;
+      font-size: 2rem;
+      margin-left: 8rem;
+      margin-right: 0rem;
+      cursor: pointer;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .images {
+      display: flex;
+      height: 2.5rem;
+      margin-right: 3rem;
+      cursor: pointer;
+      .topImage {
+        margin-right: 5rem;
+      }
+    }
+
+    .topRight {
+      display: flex;
+      margin-right: 3rem;
+
+      .topFontRight {
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      .shoppingCart {
+        height: 3rem;
+        cursor: pointer;
+        margin: 0rem 5rem 0rem 5rem;
+      }
+    }
+  }
+}
