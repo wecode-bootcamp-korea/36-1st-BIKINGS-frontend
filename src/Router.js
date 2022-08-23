@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Nav from './components/Nav/Nav';
 import Price from './pages/Price/Price';
-import Login from './pages/Main/Login/Login';
 import Topbtn from './components/TopBtn/TopBtn';
 import Main from './pages/Main/Main';
 
@@ -12,7 +11,6 @@ const Router = () => {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route path="/Login" element={<Login />} />
         <Route path="/" element={<Main />} />
         <Route path="/price" element={<Price />} />
       </Routes>
