@@ -6,7 +6,7 @@ const InnerList = ({ list }) => {
   const { name, src, icon, description } = list;
 
   return (
-    <li className="listCategory">
+    <li className="listContent">
       <img className="listImage" src={src} alt="list" />
       <div className="bgBox">{name}</div>
       <div className="darkness">
