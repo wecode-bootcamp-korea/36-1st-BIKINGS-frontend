@@ -66,8 +66,8 @@ const Price = () => {
   const totalPrice = addPrice === 0 ? 0 : addPrice - sale + 5000;
 
   return (
-    <div className="price">
-      <div className="priceBox">
+    <main className="price">
+      <article className="priceBox">
         <h3>장바구니</h3>
         <div className="priceList">
           <div className="priceSelectBox">
@@ -95,24 +95,24 @@ const Price = () => {
             <div className="line" />
           </div>
           <div className="priceFinalCheck">
-            <div className="priceInfo">
-              <div className="totalBox">
+            <ul className="priceInfo">
+              <li className="totalBox">
                 <p>상품금액</p>
                 <p>{addPrice.toLocaleString() + '원'}</p>
-              </div>
-              <div className="totalBox">
+              </li>
+              <li className="totalBox">
                 <p>상품할인금액</p>
                 <p>{sale.toLocaleString() + '원'}</p>
-              </div>
-              <div className="totalBox">
+              </li>
+              <li className="totalBox">
                 <p>배송비</p>
                 <p>5000 원</p>
-              </div>
-              <div className="totalBox">
+              </li>
+              <li className="totalBox">
                 <p>결제예정금액</p>
                 <p>{totalPrice.toLocaleString() + '원'}</p>
-              </div>
-            </div>
+              </li>
+            </ul>
             <button className="priceBtn" onClick={togleModal}>
               주문하기
             </button>
@@ -125,8 +125,8 @@ const Price = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
   );
 };
 
