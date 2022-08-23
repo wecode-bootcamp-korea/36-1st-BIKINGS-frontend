@@ -34,7 +34,7 @@ const ProductDetail = () => {
             <i className="fa-brands fa-facebook-f icon" />
           </a>
           <a className="sns" href="https://www.instagram.com">
-            <i class="fa-brands fa-instagram icon" />
+            <i className="fa-brands fa-instagram icon" />
           </a>
         </div>
       </div>
