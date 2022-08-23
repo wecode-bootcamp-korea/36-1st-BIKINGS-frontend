@@ -3,6 +3,7 @@ import './Carts.scss';
 
 const Carts = ({ setShowModal, productData }) => {
   const { name, price } = productData;
+
   return (
     <div className="carts">
       <div className="carsContainer">
