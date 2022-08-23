@@ -3,12 +3,11 @@ import DropDown from './DropDown';
 import './Nav.scss';
 
 const Nav = () => {
-<<<<<<< HEAD
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
+    if (window.scrollY > 100) {
       setScrollOption(true);
     } else setScrollOption(false);
   });
@@ -27,21 +26,6 @@ const Nav = () => {
           </li>
           <li className="topFontLeft">용품</li>
           <li className="topFontLeft">대리점</li>
-        </div>
-
-        <div className="searchBar">
-          <input
-            className="searchBarInput"
-            type="text"
-            placeholder="검색어를 입력하세요"
-          />
-          <button className="button">
-            <img
-              className="buttonImage"
-              alt="buttonImage"
-              src="images/loupe.png"
-            />
-          </button>
         </div>
 
         <div className="navRight">
@@ -64,9 +48,6 @@ const Nav = () => {
       {navRender && <DropDown navRender={setNavRender} />}
     </div>
   );
-=======
-  return <div />;
->>>>>>> d8c5182c15ec8cfd25c455d09108ecefa51df02c
 };
 
 export default Nav;

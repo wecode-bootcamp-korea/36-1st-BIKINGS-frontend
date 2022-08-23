@@ -1,9 +1,9 @@
 .common {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 2rem;
   padding-bottom: 3rem;
-  align-items: center;
   width: 100%;
 
   .navLeft {
@@ -14,13 +14,13 @@
       font-size: 5rem;
       font-family: 'Inspiration', cursive;
       font-weight: bold;
-      margin-left: 3rem;
+      margin-left: 7rem;
     }
 
     .topFontLeft {
       color: white;
       font-size: 2rem;
-      margin-left: 5rem;
+      margin-left: 8rem;
       margin-right: 0rem;
       cursor: pointer;
     }
@@ -29,44 +29,18 @@
     }
   }
 
-  .searchBar {
-    display: flex;
-    position: relative;
-
-    .searchBarInput {
-      padding: 1rem;
-      border-radius: 3rem;
-      border: none;
-      width: 35rem;
-      padding: auto;
-    }
-
-    .button {
-      border: none;
-      background-color: white;
-      position: absolute;
-      right: 1.5rem;
-      margin-top: 0.4rem;
-      cursor: pointer;
-
-      .buttonImage {
-        width: 2.5rem;
-        height: 2.5rem;
-      }
-    }
-  }
-
   .navRight {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     .images {
       display: flex;
-      height: 3rem;
+      height: 2.5rem;
       margin-right: 3rem;
       cursor: pointer;
       .topImage {
-        margin-right: 3rem;
+        margin-right: 5rem;
       }
     }
 
@@ -83,7 +57,7 @@
       .shoppingCart {
         height: 3rem;
         cursor: pointer;
-        margin-left: 5rem;
+        margin: 0rem 5rem 0rem 5rem;
       }
     }
   }
@@ -92,6 +66,11 @@
 .navigation {
   position: fixed;
   width: 100%;
+  z-index: 99;
+
+  &[onMouseOver] {
+    background-color: #d42939;
+  }
 }
 
 .clicked {
