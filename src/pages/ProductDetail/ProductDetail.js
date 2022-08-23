@@ -9,7 +9,7 @@ const ProductDetail = () => {
   const userId = params.id;
 
   useEffect(() => {
-    fetch('/data/data.json')
+    fetch(`http://10.58.1.154:3000/products/${userId}`)
       .then(response => response.json())
       .then(result => setData(result));
   }, [userId]);
