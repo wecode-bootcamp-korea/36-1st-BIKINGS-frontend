@@ -13,7 +13,7 @@
       border-radius: 12px;
       border: 0.2px solid rgb(234, 228, 228);
       box-shadow: none;
-      background-color: bisque;
+
       position: absolute;
       left: 35%;
       top: 20rem;
@@ -65,15 +65,6 @@
           font-size: 1.5rem;
           padding-bottom: 1.5rem;
           color: grey;
-
-          .secondBtn {
-            background-color: #ffc000;
-            color: #ffffff;
-            font-size: 1.2rem;
-            margin: 0 1rem;
-            padding: 1px 5px;
-            border-radius: 5px;
-          }
         }
         .thirdBasket {
           display: flex;
@@ -85,9 +76,10 @@
             height: 52px;
             background-color: #ffffff;
             border-radius: 6px;
-            border: 0px none;
+            border: 0.5px #d82728 solid;
             width: 50%;
             font-size: 1.7rem;
+            color: #d82728;
           }
           .selectBtn {
             display: block;
@@ -97,7 +89,7 @@
             height: 52px;
             border-radius: 6px;
             color: rgb(255, 255, 255);
-            background-color: rgb(95, 0, 128);
+            background-color: #d82728;
             border: 0px none;
             font-size: 1.7rem;
           }

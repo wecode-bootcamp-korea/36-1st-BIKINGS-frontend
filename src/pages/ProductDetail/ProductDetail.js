@@ -12,13 +12,14 @@ const ProductDetail = () => {
   useEffect(() => {
     fetch('./data/data.json')
       .then(response => response.json())
-      .then(result => setProductData(result));
+      .then(result => setProductData(result[0]));
   }, []);
-  console.log(productData);
 
   return (
     <div className="productDetail">
-      {showModal && <Carts setShowModal={setShowModal} />}
+      {showModal && (
+        <Carts setShowModal={setShowModal} productData={productData} />
+      )}
       <button onClick={closeModal} className="cartsBtn" type="button">
         <img className="cartsImg" src="/images/카트.png" alt="cart" />
       </button>

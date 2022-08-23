@@ -1,25 +1,31 @@
 import React from 'react';
 import './Carts.scss';
 
-const Carts = ({ setShowModal }) => {
+const Carts = ({ setShowModal, productData }) => {
+  const { name, price } = productData;
   return (
     <div className="carts">
       <div className="carsContainer">
         <div className="cartsSubContainer">
           <div className="cartsInnerContainer">
             <div className="firstBasket">
-              <p>오던세 라고아 2인조 13피스</p>
-              <p className="subDes">적립제외상품</p>
-              <span className="price">149,250</span>
-              <span className="subPrice">199,250</span>
+              <p>{name}</p>
+              <p className="subDes" />
+              <span className="price">
+                {Number(price).toLocaleString() + '원'}
+              </span>
+              <span className="subPrice">
+                {Number(price * 1.1).toLocaleString() + '원'}
+              </span>
             </div>
             <div className="secondBasket">
               <p>합계</p>
-              <span className="bigPrice">149,250원</span>
+              <span className="bigPrice">
+                {Number(price).toLocaleString() + '원'}
+              </span>
             </div>
             <div className="secondAndHalfBasket">
-              <span className="secondBtn">적립</span>
-              <span className="">로그인 후, 회원할인가 제공</span>
+              <span className="">10% 할인가 적용</span>
             </div>
             <div className="thirdBasket">
               <button onClick={() => setShowModal(false)} className="cancelBtn">
