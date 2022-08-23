@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import PriceContent from './PriceContent';
 import './Price.scss';
+import Modal from '../../components/Modal/Modal';
 
 const Price = () => {
   const [checkedList, setCheckedList] = useState([]);
   const [priceList, setPriceList] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const togleModal = () => {
+    setShowModal(showModal => !showModal);
+  };
 
   const handleAllCheck = e => {
     if (e.target.checked) {
@@ -107,7 +113,12 @@ const Price = () => {
                 <p>{totalPrice.toLocaleString() + '원'}</p>
               </div>
             </div>
-            <button className="priceBtn"> 주문하기 </button>
+            <button className="priceBtn" onClick={togleModal}>
+              주문하기
+            </button>
+            {showModal && (
+              <Modal togleModal={togleModal} content="주문하시곘습니까?" />
+            )}
             <div className="Footer">
               <p>[주문완료] 상태일경우에만 주문취소 할수있습니다.</p>
               <p>[배송중] 상태일 경우에는 곤란.</p>
