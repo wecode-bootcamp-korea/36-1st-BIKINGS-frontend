@@ -1,8 +1,24 @@
 import React from 'react';
 import './Carts.scss';
 
-const Carts = ({ setShowModal, productData }) => {
-  const { name, price } = productData;
+const Carts = ({ setShowModal, back, setProductData, closeModal }) => {
+  const { data } = back;
+  const [one] = data;
+  const { name, price } = one;
+
+  const postInfo = () => {
+    fetch('http://10.58.1.132:8000/carts/new', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTIzNTAyNn0.7x9lDvoBsqge7GlvUh-GG2RD6JUQwwlZ4MHtIc158bc',
+      },
+      body: JSON.stringify({ productId: '1' }),
+    })
+      .then(response => response.json())
+      .then(result => setProductData(result));
+  };
 
   return (
     <div className="carts">
@@ -32,7 +48,13 @@ const Carts = ({ setShowModal, productData }) => {
               <button onClick={() => setShowModal(false)} className="cancelBtn">
                 취소
               </button>
-              <button onClick={() => setShowModal(false)} className="selectBtn">
+              <button
+                onClick={function () {
+                  postInfo();
+                  closeModal();
+                }}
+                className="selectBtn"
+              >
                 장바구니 담기
               </button>
             </div>
