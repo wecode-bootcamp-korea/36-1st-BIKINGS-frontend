@@ -21,9 +21,13 @@ const DeleteId = ({ setShowModal }) => {
 
   const Delete = e => {
     e.preventDefault();
-    fetch('http://10.58.0.71:3000/users/signup', {
+    fetch('http://10.58.1.132:8000/users/withrowal', {
       method: 'delete',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMjBAZ21haWwuY29tIiwiaWQiOjI1LCJiaXJ0aCI6IjE5ODktMTItMzFUMTU6MDA6MDAuMDAwWiIsImNvbnRhY3QiOiIwMTAtNTU1NS00NDQ0IiwicG9pbnQiOjEwMDAwMDAwLCJuYW1lIjoia2ZrIiwiaWF0IjoxNjYxMjM3OTUzfQ.ip2Vqy38bkmd0W_jWW6Z2HD9iuHxiaRc-zdqKFr6ycc',
+      },
       body: JSON.stringify({
         username: inputValues.username,
         password: inputValues.password,
@@ -31,8 +35,7 @@ const DeleteId = ({ setShowModal }) => {
     })
       .then(response => response.json())
       .then(data => {
-        localStorage.setItem('Token', data.authorization);
-        navigate('/'); //경로지정은 메인으로
+        navigate('/main'); //회원정보 삭제 후 경로지정은 메인으로
       });
   };
 

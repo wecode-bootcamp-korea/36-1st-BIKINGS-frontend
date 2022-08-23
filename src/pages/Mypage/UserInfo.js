@@ -13,9 +13,9 @@ const UserInfo = ({ info }) => {
     <>
       <div className="userInfo">
         <div className="id">ID : {info.username} </div>
-        <div className="name">이름 : {info.name}</div>
-        <div className="contact">전화번호 : {info.contact}</div>
-        <div className="birth">생년월일 : {info.birth}</div>
+        <div className="nameContactBirth">이름 : {info.name}</div>
+        <div className="nameContactBirth">전화번호 : {info.contact}</div>
+        <div className="nameContactBirth">생년월일 : {info.birth}</div>
       </div>
       <ol className="userOption">
         <li className="userInfoChange">회원정보 변경</li>
