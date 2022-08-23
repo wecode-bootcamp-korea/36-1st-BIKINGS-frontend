@@ -1,30 +1,45 @@
 .userInfo {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   font-size: 2rem;
-  padding-top: 5rem;
-  padding-right: 10rem;
+  background-color: white;
+  width: 60%;
+  border-radius: 2rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem gray;
+  margin: 2rem 0;
+  padding: 5rem;
 }
-
-.id {
+.userInfoContainer {
+  display: flex;
   margin-top: 5rem;
-  margin-bottom: 3rem;
 }
 
-.nameContactBirth {
-  margin-bottom: 3rem;
+.userInfoDetail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0rem 10rem;
+  // width: 100%;
+  p {
+    margin: 1rem 0;
+  }
 }
 
 .bikeMyPage {
-  height: 38rem;
-  width: 35rem;
-  margin-top: 7rem;
+  height: 30rem;
+  width: 30rem;
 }
 
 .userOption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   font-size: 1.7rem;
-  padding-top: 43rem;
-  padding-right: 10rem;
+  margin-top: 3rem;
+
   color: rgb(69, 130, 205);
 
   cursor: pointer;
