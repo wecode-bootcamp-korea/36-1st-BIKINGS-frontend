@@ -51,14 +51,6 @@ const Product = () => {
           src={image('ProductTopImg')}
           alt="productImg"
         />
-        {isShowImage && (
-          <div className="productText">
-            <h3>전기자전거</h3>
-            <p>
-              전기모터의 힘을 더하여, 적은 힘으로도 편하게 주행할 수 있는 자전거
-            </p>
-          </div>
-        )}
       </div>
       <div className={isShowImage ? 'productBody' : 'productBody active'}>
         <div className="imageSeemore" onClick={changeImage}>
