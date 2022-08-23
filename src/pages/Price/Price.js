@@ -119,9 +119,9 @@ const Price = () => {
             {showModal && (
               <Modal togleModal={togleModal} content="주문하시곘습니까?" />
             )}
-            <div className="Footer">
+            <div className="footer">
               <p>[주문완료] 상태일경우에만 주문취소 할수있습니다.</p>
-              <p>[배송중] 상태일 경우에는 곤란.</p>
+              <p>[배송중] 상태일 경우에는 취소가 불가능 합니다.</p>
             </div>
           </div>
         </div>
