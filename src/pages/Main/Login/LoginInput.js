@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Modal from '../../../components/Modal/Modal';
 import './LoginInput.scss';
 
 const LoginInput = ({ isLoginMode }) => {
@@ -10,6 +11,12 @@ const LoginInput = ({ isLoginMode }) => {
     name: '',
     address: '',
   });
+
+  const [isShowModal, setIsShowModal] = useState(false);
+
+  const togleModal = () => {
+    setIsShowModal(togleModal => !togleModal);
+  };
 
   const handleInput = event => {
     const { name, value } = event.target;
@@ -43,7 +50,8 @@ const LoginInput = ({ isLoginMode }) => {
       .then(response => response.json())
       .then(data => {
         if (!isLoginMode) localStorage.setItem('Token', String(data.TOKEN));
-      });
+      })
+      .catch(setIsShowModal(true));
   };
 
   const birthValidation = _inputBirth => {
@@ -142,6 +150,13 @@ const LoginInput = ({ isLoginMode }) => {
       >
         <strong>{isLoginMode ? '회원가입' : '로그인'}</strong>
       </button>
+      {isShowModal && (
+        <Modal
+          content="아이디 또는 비밀번호가 틀렸습니다."
+          togleModal={togleModal}
+          propsFuntion={togleModal}
+        />
+      )}
     </form>
   );
 };
