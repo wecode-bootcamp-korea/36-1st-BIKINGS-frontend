@@ -48,10 +48,10 @@ const Nav = () => {
 
         <div className="navRight">
           <div className="images">
-            <img className="topImage" alt="blog" src="images/blog2.png" />
-            <img className="topImage" alt="blog" src="images/instagram2.png" />
-            <img className="topImage" alt="blog" src="images/facebook2.png" />
-            <img className="topImage" alt="blog" src="images/youtube2.png" />
+            <img className="topImage" alt="blog" src="/images/blog2.png" />
+            <img className="topImage" alt="blog" src="/images/instagram2.png" />
+            <img className="topImage" alt="blog" src="/images/facebook2.png" />
+            <img className="topImage" alt="blog" src="/images/youtube2.png" />
           </div>
           <div className="topRight">
             <li className="topFontRight" onClick={togleLogin}>
@@ -60,7 +60,7 @@ const Nav = () => {
             <img
               className="shoppingCart"
               alt="shoppingCart"
-              src="images/shopping-cart2.png"
+              src="/images/shopping-cart2.png"
             />
           </div>
         </div>
