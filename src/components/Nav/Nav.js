@@ -1,10 +1,17 @@
 import React, { useState, useRef } from 'react';
+import Login from '../../pages/Main/Login/Login';
 import DropDown from './DropDown';
 import './Nav.scss';
 
 const Nav = ({ onChangePage }) => {
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+
+  const togleLogin = () => {
+    setIsLogin(isLogin => !isLogin);
+  };
+
   const navRef = useRef(null);
 
   window.addEventListener('scroll', () => {
@@ -48,7 +55,9 @@ const Nav = ({ onChangePage }) => {
             <img className="topImage" alt="blog" src="/images/youtube2.png" />
           </div>
           <div className="topRight">
-            <li className="topFontRight">Login</li>
+            <li className="topFontRight" onClick={togleLogin}>
+              Login
+            </li>
             <img
               className="shoppingCart"
               alt="shoppingCart"
@@ -59,6 +68,7 @@ const Nav = ({ onChangePage }) => {
         </div>
       </div>
       {navRender && <DropDown navRender={setNavRender} />}
+      {isLogin && <Login togleLogin={togleLogin} />}
     </div>
   );
 };

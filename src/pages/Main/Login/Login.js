@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Login.scss';
 import LoginInput from './LoginInput';
 
-const Login = () => {
+const Login = ({ togleLogin }) => {
   const [isLoginMode, setreplace] = useState(false);
 
   const popSignup = () => {
@@ -14,7 +14,9 @@ const Login = () => {
       <div className="logIn">
         <div className="mainTitle">300</div>
         <LoginInput isLoginMode={isLoginMode} />
-
+        <button className="cancelBtn" onClick={togleLogin}>
+          닫기
+        </button>
         <p className="cursor" onClick={popSignup}>
           {isLoginMode
             ? '이미 가입하셨나요? 로그인'
