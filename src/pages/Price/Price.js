@@ -32,13 +32,12 @@ const Price = ({ onChangePage }) => {
   };
 
   useEffect(() => {
-    getOrder(`http://10.58.1.132:8000/carts/cart`, setPriceList);
+    getOrder(`http://10.58.1.132:8000/carts`, setPriceList);
   }, []);
 
   const deleteContent = id => {
     deleteData(
-      `http://10.58.1.132:8000/carts/withrawal/product`,
-      { productId: id },
+      `http://10.58.1.132:8000/carts/${id}`,
       setPriceList(priceList.filter(el => el.id !== id))
     );
   };
@@ -107,7 +106,7 @@ const Price = ({ onChangePage }) => {
             {showModal && (
               <Modal
                 togleModal={togleModal}
-                content="걀제하시겠습니까?"
+                content="결제하시겠습니까?"
                 propsFuntion={function () {
                   onChangePage('Mypage');
                   togleModal();

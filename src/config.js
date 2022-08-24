@@ -34,14 +34,14 @@ export const getOrder = async (url, setState) => {
     headers: {
       'Content-Type': 'application/json',
       authorization:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTEzMDIzNX0.1ZQ9uebdi1950j-dhZcG-3Tsf_9KTjWgFltGYQ7WOVk',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTMyNjU4MH0.lGtjlP5qVZKd-4q23ZpqstdmJM5xGY4SlRnQXzMptMQ',
     },
   });
   const data = await response.json();
   setState(Object.values(data)[1]);
 };
 
-export const deleteData = async (url, id, execution) => {
+export const deleteData = async (url, execution) => {
   try {
     await fetch(url, {
       method: 'DELETE',
@@ -50,7 +50,6 @@ export const deleteData = async (url, id, execution) => {
         authorization:
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTEzMDIzNX0.1ZQ9uebdi1950j-dhZcG-3Tsf_9KTjWgFltGYQ7WOVk',
       },
-      body: JSON.stringify(id),
     }).then(execution);
   } catch (err) {
     throw new Error(err);
