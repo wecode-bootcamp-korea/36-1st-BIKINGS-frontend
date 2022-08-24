@@ -1,4 +1,3 @@
-import React from 'react';
 import Inner from './Inner/Inner';
 import ImageSlide from './ImageSlide/ImageSlide';
 import './Main.scss';

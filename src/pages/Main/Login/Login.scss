@@ -1,0 +1,34 @@
+.loginBackground {
+  background-color: #fafafa;
+
+  .logIn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    flex-direction: column;
+    background-color: blur;
+
+    .mainTitle {
+      color: red;
+      margin-bottom: 5rem;
+      font-size: 5rem;
+      font-family: 'Inspiration', cursive;
+      letter-spacing: -0.1ch;
+      font-weight: bold;
+    }
+    .cursor {
+      font-size: 1.5rem;
+      margin-top: 7rem;
+      margin-bottom: 3rem;
+      text-decoration: none;
+      color: #577296;
+      cursor: pointer;
+    }
+  }
+}
