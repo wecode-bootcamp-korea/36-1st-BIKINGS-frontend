@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BycleInfo from './BycleInfo/BycleInfo';
 import ProductCheackList from './ProductCheckList/ProductCheackList';
 import { image } from '../../Function';
+import { getProduct, serachTag } from '../../config';
 import './Product.scss';
 
 const Product = () => {
@@ -15,15 +16,10 @@ const Product = () => {
   };
 
   useEffect(() => {
-    fetch(`http://10.58.1.154:3000/products/?limit=${6}&offset=${offset}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(res => res.json())
-      .then(res => setbycles(res))
-      .catch(rej => alert(rej));
+    getProduct(
+      `http://10.58.1.154:3000/products/?limit=${6}&offset=${offset}`,
+      setbycles
+    );
   }, [offset]);
 
   const movePage = pageNum => {
@@ -32,15 +28,7 @@ const Product = () => {
 
   const serach = id => {
     setTagId(String(id));
-    fetch(`http://10.58.1.154:3000/tags/${tagId}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(res => res.json())
-      .then(res => setbycles(res.getProductsByTags))
-      .catch(rej => alert(rej));
+    serachTag(`http://10.58.1.154:3000/tags/${tagId}`, setbycles);
   };
 
   return (
