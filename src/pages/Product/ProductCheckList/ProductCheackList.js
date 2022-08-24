@@ -30,8 +30,9 @@ function ProductCheackList({ serach }) {
         <div className="checkBoxList">
           {categoty.map(({ id, name }) => {
             return (
-              <div className="checkBox" key={id}>
+              <div className="checkBoxs" key={id}>
                 <input
+                  className="checkBox"
                   type="checkbox"
                   value={name}
                   id={id}

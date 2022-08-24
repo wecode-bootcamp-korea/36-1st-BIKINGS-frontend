@@ -17,9 +17,13 @@
   .checkList {
     display: flex;
     align-items: center;
+    font-size: 2rem;
+
     .serchCategory {
       border: 0.3rem solid whitesmoke;
       background-color: bisque;
+      width: 10rem;
+      height: 3rem;
       border-radius: 2rem;
       cursor: pointer;
 
@@ -37,10 +41,13 @@
     .checkBoxList {
       display: flex;
 
-      .checkBox {
+      .checkBoxs {
         display: flex;
         flex-direction: column;
         margin: 0rem 2rem;
+        .checkBox {
+          margin: 2rem 0rem;
+        }
       }
     }
   }
