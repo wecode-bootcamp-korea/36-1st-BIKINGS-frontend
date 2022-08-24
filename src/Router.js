@@ -8,9 +8,12 @@ import Main from './pages/Main/Main';
 import Product from './pages/Product/Product';
 
 const Router = () => {
+  const onChangePage = path => {
+    window.location.href = '/' + path;
+  };
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav onChangePage={path => onChangePage(path)} />
       <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/" element={<Main />} />
