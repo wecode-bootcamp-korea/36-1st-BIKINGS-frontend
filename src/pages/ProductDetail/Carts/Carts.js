@@ -7,7 +7,7 @@ const Carts = ({ setShowModal, getData, setProductData, closeModal }) => {
   const { name, price } = one;
 
   const postInfo = () => {
-    fetch('http://10.58.1.132:8000/carts/new', {
+    fetch(`http://10.58.1.132:8000/carts/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
