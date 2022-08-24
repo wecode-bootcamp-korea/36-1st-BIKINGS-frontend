@@ -107,9 +107,9 @@ const Price = ({ onChangePage }) => {
             {showModal && (
               <Modal
                 togleModal={togleModal}
-                content="주문하시곘습니까?"
+                content="걀제하시겠습니까?"
                 propsFuntion={function () {
-                  onChangePage('');
+                  onChangePage('Mypage');
                   togleModal();
                 }}
               />
