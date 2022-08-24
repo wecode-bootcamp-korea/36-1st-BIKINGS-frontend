@@ -4,7 +4,7 @@ import { getOrder, deleteData } from '../../config';
 import Modal from '../../components/Modal/Modal';
 import './Price.scss';
 
-const Price = () => {
+const Price = ({ onChangePage }) => {
   const [checkedList, setCheckedList] = useState([]);
   const [priceList, setPriceList] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -105,7 +105,14 @@ const Price = () => {
               주문하기
             </button>
             {showModal && (
-              <Modal togleModal={togleModal} content="주문하시곘습니까?" />
+              <Modal
+                togleModal={togleModal}
+                content="주문하시곘습니까?"
+                propsFuntion={function () {
+                  onChangePage('');
+                  togleModal();
+                }}
+              />
             )}
             <div className="footer">
               <p>[주문완료] 상태일경우에만 주문취소 할수있습니다.</p>

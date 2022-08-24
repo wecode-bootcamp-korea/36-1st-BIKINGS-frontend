@@ -7,12 +7,18 @@ import Topbtn from './components/TopBtn/TopBtn';
 import Main from './pages/Main/Main';
 
 const Router = () => {
+  const onChangePage = path => {
+    window.location.href = '/' + path;
+  };
   return (
     <BrowserRouter>
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/price" element={<Price />} />
+        <Route
+          path="/price"
+          element={<Price onChangePage={path => onChangePage(path)} />}
+        />
       </Routes>
       <Topbtn />
       <Footer />
