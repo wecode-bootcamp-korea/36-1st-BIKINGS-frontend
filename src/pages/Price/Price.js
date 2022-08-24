@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PriceContent from './PriceContent';
-import { fetchData, deleteData } from '../../config';
+import { getOrder, deleteData } from '../../config';
 import Modal from '../../components/Modal/Modal';
 import './Price.scss';
 
@@ -32,7 +32,7 @@ const Price = () => {
   };
 
   useEffect(() => {
-    fetchData(`http://10.58.1.132:8000/carts/cart`, setPriceList);
+    getOrder(`http://10.58.1.132:8000/carts/cart`, setPriceList);
   }, []);
 
   const deleteContent = id => {
