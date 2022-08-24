@@ -1,10 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import DropDown from './DropDown';
 import './Nav.scss';
 
 const Nav = () => {
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
+  const [getNumberCart, setGetNumberCart] = useState([]);
+
   const navRef = useRef(null);
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
@@ -23,6 +25,19 @@ const Nav = () => {
     navRef.current.getElementsByClassName('common')[0].style.backgroundColor =
       '#d42939';
   };
+
+  useEffect(() => {
+    fetch('http://10.58.1.132:8000/carts/cart', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTI5OTg2M30.DNIylmQKbJdHQMtfhVOYqTrTwQQL4-5Mx8aFkKVAKdQ',
+      },
+    })
+      .then(response => response.json())
+      .then(result => setGetNumberCart(result));
+  }, []);
 
   return (
     <div
@@ -53,6 +68,9 @@ const Nav = () => {
               alt="shoppingCart"
               src="images/shopping-cart2.png"
             />
+            <div className="basedOnCart">
+              {getNumberCart > 0 && getNumberCart.data.length}
+            </div>
           </div>
         </div>
       </div>
