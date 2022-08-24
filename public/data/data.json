@@ -1,65 +1,79 @@
 [
   {
     "id": 1,
-    "src": "images/Main 이미지.png",
+    "src": "/images/mountainbike.png",
+    "name": "산악",
+    "description": "산악 지형이나 험로에서 다이내믹한 라이딩이 가능한 오프로드 자전거",
+    "icon": "images/전기.png"
+  },
+  {
+    "id": 2,
+    "src": "/images/electricbike.png",
     "name": "전기자전거",
     "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
     "icon": "images/전기.png"
   },
   {
-    "id": 2,
-    "src": "images/Main 이미지.png",
-    "name": "산악",
-    "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
-    "icon": "images/전기.png"
-  },
-  {
     "id": 3,
-    "src": "images/Main 이미지.png",
+    "src": "/images/roadbike.png",
     "name": "로드",
-    "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
+    "description": "포장 도로에서 더 빠른 속도로, 더 멀리 달리기 위한 스포츠 자전거",
     "icon": "images/전기.png"
   },
   {
     "id": 4,
-    "src": "images/Main 이미지.png",
-    "name": "하이브리드",
-    "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
+    "src": "/images/steelbike.png",
+    "name": "스틸",
+    "description": "스틸에서 오는 묵직한 패들링으로, 펀 라이딩이 가능한 자전거",
     "icon": "images/전기.png"
   },
   {
     "id": 5,
-    "src": "images/Main 이미지.png",
-    "name": "산악형",
-    "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
+    "src": "/images/carbonbike.png",
+    "name": "카본",
+    "description": "카본의 견고함과 단단함으로, 보다 수준높은 라이딩을 위한 자전거",
     "icon": "images/전기.png"
   },
   {
     "id": 6,
-    "src": "images/Main 이미지.png",
-    "name": "시티",
-    "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
+    "src": "/images/aluminumbike.png",
+    "name": "알루미늄",
+    "description": "알루미늄에서 오는 가벼움으로, 산뜻한 라이딩을 위한 자전거",
     "icon": "images/전기.png"
   },
   {
     "id": 7,
-    "src": "images/Main 이미지.png",
-    "name": "폴딩",
-    "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
+    "src": "/images/expensivebike.png",
+    "name": "고가",
+    "description": "프로 무대에서 보다 단축된 기록을 내기 위한 자전거",
     "icon": "images/전기.png"
   },
   {
     "id": 8,
-    "src": "images/Main 이미지.png",
-    "name": "주니어",
-    "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
+    "src": "/images/reasonablebike.jpg",
+    "name": "가성비",
+    "description": "합리적인 가격으로 누구나 자유롭게 펀 라이딩이 가능한 자전거",
     "icon": "images/전기.png"
   },
   {
     "id": 9,
-    "src": "images/Main 이미지.png",
-    "name": "키즈",
-    "description": "전기모터의 힘을 더해서 적은 힘으로도 편하게 주행할 수 있는 자전거",
+    "src": "/images/basketbike.png",
+    "name": "트렌디",
+    "description": "유럽 감성 트렌디함으로 어디서도 주목 받는 자전거",
+    "icon": "images/전기.png"
+  },
+  {
+    "id": 10,
+    "src": "/images/maniakbike.png",
+    "name": "매니악",
+    "description": "독특한 감성으로 매니아층을 위한 자전거",
+    "icon": "images/전기.png"
+  },
+  {
+    "id": 11,
+    "src": "/images/goodbike.png",
+    "name": "인기",
+    "description": "모두에게 사랑받는 가장 인기 있는 자전거",
     "icon": "images/전기.png"
   }
 ]
