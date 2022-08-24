@@ -1,28 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import Carts from './Carts/Carts';
+import { getDataClickBtn } from '../../config';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const [showModal, setShowModal] = useState(false);
   const [productData, setProductData] = useState([]);
   const [getData, setGetData] = useState([]);
+  const params = useParams();
+  const userId = params.id;
 
   const closeModal = () => {
     setShowModal(true);
   };
 
   useEffect(() => {
-    fetch('http://10.58.1.132:8000/carts/product/2', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTIzNTAyNn0.7x9lDvoBsqge7GlvUh-GG2RD6JUQwwlZ4MHtIc158bc',
-      },
-    })
-      .then(response => response.json())
-      .then(result => setGetData(result));
-  }, []);
+    getDataClickBtn(`http://10.58.1.154:3000/products/${userId}`, setGetData);
+  }, [userId]);
 
   return (
     <div className="productDetail">

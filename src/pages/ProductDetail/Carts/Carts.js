@@ -1,20 +1,17 @@
 import React from 'react';
 import './Carts.scss';
 
-const Carts = ({ setShowModal, getData, setProductData, closeModal }) => {
-  const { data } = getData;
-  const [one] = data;
-  const { name, price } = one;
+const Carts = ({ getData, setShowModal, setProductData, closeModal }) => {
+  const { id, name, price } = getData[0];
 
   const postInfo = () => {
-    fetch(`http://10.58.1.132:8000/carts/`, {
+    fetch(`http://10.58.1.132:8000/carts/${id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTIzNTAyNn0.7x9lDvoBsqge7GlvUh-GG2RD6JUQwwlZ4MHtIc158bc',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTMyNjU4MH0.lGtjlP5qVZKd-4q23ZpqstdmJM5xGY4SlRnQXzMptMQ',
       },
-      body: JSON.stringify({ productId: '1' }),
     })
       .then(response => response.json())
       .then(result => setProductData(result));
