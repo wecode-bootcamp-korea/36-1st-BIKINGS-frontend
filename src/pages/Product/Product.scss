@@ -1,0 +1,114 @@
+@import '../../styles/variable.scss';
+
+.product {
+  @include flex-sort;
+  flex-direction: column;
+
+  .productImgBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+    .showProductImg {
+      width: 100%;
+      height: 30rem;
+      transition-duration: 0.3s;
+    }
+
+    .closeProductImg {
+      width: 100%;
+      height: 10rem;
+      transition-duration: 0.7s;
+    }
+  }
+
+  .productBody {
+    @include flex-sort;
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    width: 100vw;
+
+    transform: translate(0, 0);
+    transition: transform 0.2s;
+
+    .imageSeemore {
+      width: 11rem;
+      height: 3rem;
+      box-sizing: content-box;
+      padding-top: 1.5rem;
+      position: relative;
+      background: gray;
+      color: white;
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      text-align: center;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 1.3rem solid #eee;
+        border-left: 5.5rem solid transparent;
+        border-right: 5.5rem solid transparent;
+      }
+    }
+
+    .bycleContainer {
+      @include flex-sort;
+      flex-direction: column;
+      width: 100%;
+
+      .bycleTitle {
+        @include flex-sort;
+        flex-direction: column;
+
+        h3 {
+          font-size: 5rem;
+          text-align: center;
+          margin: 3rem 0;
+        }
+        .line {
+          border: 0.1rem solid gray;
+          width: 100%;
+        }
+      }
+
+      .bycleList {
+        @include flex-sort;
+        flex-wrap: wrap-reverse;
+      }
+    }
+    .movePageBtn {
+      .pageBtn {
+        width: 8rem;
+        height: 3rem;
+        margin: 05rem;
+        border: none;
+        border-radius: 2rem;
+        padding: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem gray;
+          transition-duration: 0.8s;
+        }
+
+        &:active {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  .active {
+    transform: translate(0, -40rem);
+    transition: transform 0.2s;
+    top: 20rem;
+  }
+}

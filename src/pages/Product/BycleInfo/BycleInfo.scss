@@ -1,0 +1,57 @@
+.bycleInfo {
+  display: flex;
+  flex-direction: column;
+  width: 45rem;
+  margin: 3rem 18rem;
+  border: 0.1rem solid gray;
+  border-radius: 1rem;
+  background-color: white;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 5px 5px 5px 5px gray;
+    transition-duration: 0.8s;
+    .bycleName {
+      color: red;
+      transition-duration: 0.8s;
+    }
+  }
+
+  .bycleContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 0;
+
+    .bycleName {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .byclePrice {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .bycleHashtag {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .hashTag {
+        background-color: rgb(231, 231, 231);
+        border: none;
+        margin: 0.7rem 0.7rem;
+
+        &:hover {
+          box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem gray;
+          transition-duration: 0.8s;
+          background-color: azure;
+          border: red;
+          color: red;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

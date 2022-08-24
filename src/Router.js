@@ -6,6 +6,7 @@ import Login from './pages/Main/Login/Login';
 import Topbtn from './components/TopBtn/TopBtn';
 import Main from './pages/Main/Main';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
+import Product from './pages/Product/Product';
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/" element={<Main />} />
         <Route path="/productDetail/:id" element={<ProductDetail />} />
+        <Route path="/product" element={<Product />} />
       </Routes>
       <Topbtn />
       <Footer />
