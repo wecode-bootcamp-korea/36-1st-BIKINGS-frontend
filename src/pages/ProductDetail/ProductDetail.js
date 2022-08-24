@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Tags from './Tags/Tags';
-
-import './ProductDetail.scss';
+import { getProductDetailData } from '../../config';
 import { useParams } from 'react-router';
+import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const [data, setData] = useState([]);
@@ -10,9 +10,7 @@ const ProductDetail = () => {
   const userId = params.id;
 
   useEffect(() => {
-    fetch(`http://10.58.1.154:3000/products/${userId}`)
-      .then(response => response.json())
-      .then(result => setData(result));
+    getProductDetailData(`http://10.58.1.154:3000/products/${userId}`, setData);
   }, [userId]);
 
   return (

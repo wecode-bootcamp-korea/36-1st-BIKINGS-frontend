@@ -27,3 +27,11 @@
 //     .then(response => response.json())
 //     .then(data => {});
 // };
+
+export const getProductDetailData = async (url, setState) => {
+  const response = await fetch(url, {
+    method: 'GET',
+  });
+  const data = await response.json();
+  setState(data);
+};
