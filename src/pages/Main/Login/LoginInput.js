@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './LoginInput.scss';
 
 const LoginInput = ({ isLoginMode }) => {
-  const navigate = useNavigate();
-
   const [inputValues, setInputValues] = useState({
     username: '',
     password: '',
@@ -14,92 +11,40 @@ const LoginInput = ({ isLoginMode }) => {
     address: '',
   });
 
-  console.log(inputValues);
-
   const handleInput = event => {
     const { name, value } = event.target;
     setInputValues({ ...inputValues, [name]: value });
   };
-  // const loginSignUp = (url, method, headers, body, e) => {
-  //   e.preventDefault();
-  //   fetch(`http://10.58.0.71:3000/users/${url}`, {
-  //     method: method,
-  //     headers: headers,
-  //     body: body,
-  //   });
-  // };
 
-  // const a = loginSignUp(
-  //   'login',
-  //   'post',
-  //   {
-  //     'Content-Type': 'application/json',
-  //     authorization: localStorage.getItem('Token'),
-  //   },
-  //   JSON.stringify({
-  //     username: inputValues.username,
-  //     password: inputValues.password,
-  //   })
-  // )
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     localStorage.setItem('Token', String(data.TOKEN));
-  //     navigate('/Main');
-  //   });
-
-  // const login = e => {
-  //   e.preventDefault();
-  //   fetch('http://10.58.1.132:8000/users/login', {
-  //     method: 'post',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       authorization: localStorage.getItem('Token'),
-  //     },
-  //     body: JSON.stringify({
-  //       username: inputValues.username,
-  //       password: inputValues.password,
-  //     }),
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       localStorage.setItem('Token', String(data.TOKEN));
-  //       navigate('/Main');
-  //     });
-  // };
-  const loginSignUp = e => {
+  const loginSignUp = (e, urlSignUp, urlLogin) => {
     e.preventDefault();
-    fetch(
-      `${
-        !isLoginMode
-          ? 'http://10.58.1.132:8000/users/login'
-          : 'http://10.58.1.132:8000/users/signup'
+    urlSignUp = 'http://10.58.1.132:8000/users/signup';
+    urlLogin = 'http://10.58.1.132:8000/users/login';
+
+    fetch(`${isLoginMode ? urlSignUp : urlLogin}`, {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: `${
+        isLoginMode
+          ? JSON.stringify({
+              username: inputValues.username,
+              password: inputValues.password,
+              name: inputValues.name,
+              birth: Number(inputValues.birth),
+              contact: inputValues.contact,
+              address: inputValues.address,
+            })
+          : JSON.stringify({
+              username: inputValues.username,
+              password: inputValues.password,
+            })
       }`,
-      {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        body: `${
-          isLoginMode
-            ? JSON.stringify({
-                username: inputValues.username,
-                password: inputValues.password,
-              })
-            : JSON.stringify({
-                username: inputValues.username,
-                password: inputValues.password,
-                name: inputValues.name,
-                birth: Number(inputValues.birth),
-                contact: inputValues.contact,
-              })
-        }`,
-      }
-    )
+    })
       .then(response => response.json())
       .then(data => {
-        if (isLoginMode) localStorage.setItem('Token', String(data.TOKEN));
-        navigate('/Main');
+        if (!isLoginMode) localStorage.setItem('Token', String(data.TOKEN));
       });
   };
-  // localStorage.setItem('Token', data.authorization);
 
   const birthValidation = _inputBirth => {
     let Birth_exp = /^(\(?\+?[0-9]*\)?)?[0-9_\- ]*$/;
@@ -134,8 +79,9 @@ const LoginInput = ({ isLoginMode }) => {
   };
 
   const InputValueSignup =
-    inputValues.username.includes('@, .com') &&
-    inputValues.password.length >= 5 &&
+    inputValues.username.includes('@') &&
+    inputValues.password.length >= 4 &&
+    inputValues.password.length <= 10 &&
     inputValues.name.length > 2 &&
     birthValidation(inputValues.birth) &&
     inputValues.contact.length >= 10 &&
@@ -199,5 +145,4 @@ const LoginInput = ({ isLoginMode }) => {
     </form>
   );
 };
-// {isLoginMode ? '회원가입' : '로그인'}
 export default LoginInput;
