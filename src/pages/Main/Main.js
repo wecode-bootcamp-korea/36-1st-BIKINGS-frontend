@@ -1,12 +1,13 @@
-import React from 'react';
-import Mypage from '../Mypage/Mypage';
+import Inner from './Inner/Inner';
+import ImageSlide from './ImageSlide/ImageSlide';
+import './Main.scss';
 
 const Main = () => {
   return (
-    <>
-      <div />
-      <Mypage />
-    </>
+    <div className="main">
+      <ImageSlide />
+      <Inner />
+    </div>
   );
 };
 
