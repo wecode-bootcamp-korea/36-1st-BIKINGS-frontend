@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PriceContent from './PriceContent';
-import './Price.scss';
+import { fetchData, deleteData } from '../../config';
 import Modal from '../../components/Modal/Modal';
+import './Price.scss';
 
 const Price = () => {
   const [checkedList, setCheckedList] = useState([]);
@@ -31,28 +32,15 @@ const Price = () => {
   };
 
   useEffect(() => {
-    fetch(`http://10.58.1.132:8000/carts/cart`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTEzMDIzNX0.1ZQ9uebdi1950j-dhZcG-3Tsf_9KTjWgFltGYQ7WOVk',
-      },
-    })
-      .then(res => res.json())
-      .then(res => setPriceList(res.data));
+    fetchData(`http://10.58.1.132:8000/carts/cart`, setPriceList);
   }, []);
 
   const deleteContent = id => {
-    fetch(`http://10.58.1.132:8000/carts/withrawal/product`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTE3MTE1N30.6BorL6uEULIs3oYrhXpAetU72wFYDYaEEO_mw8uiHpw',
-      },
-      body: JSON.stringify({ productId: id }),
-    }).then(setPriceList(priceList.filter(el => el.id !== id)));
+    deleteData(
+      `http://10.58.1.132:8000/carts/withrawal/product`,
+      { productId: id },
+      setPriceList(priceList.filter(el => el.id !== id))
+    );
   };
 
   const setPricetoNumber = checkedList.map(checkedListToNumber =>
