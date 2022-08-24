@@ -42,10 +42,10 @@ const Nav = ({ onChangePage }) => {
 
         <div className="navRight">
           <div className="images">
-            <img className="topImage" alt="blog" src="images/blog2.png" />
-            <img className="topImage" alt="blog" src="images/instagram2.png" />
-            <img className="topImage" alt="blog" src="images/facebook2.png" />
-            <img className="topImage" alt="blog" src="images/youtube2.png" />
+            <img className="topImage" alt="blog" src="/images/blog2.png" />
+            <img className="topImage" alt="blog" src="/images/instagram2.png" />
+            <img className="topImage" alt="blog" src="/images/facebook2.png" />
+            <img className="topImage" alt="blog" src="/images/youtube2.png" />
           </div>
           <div className="topRight">
             <li className="topFontRight">Login</li>
@@ -62,5 +62,4 @@ const Nav = ({ onChangePage }) => {
     </div>
   );
 };
-
 export default Nav;
