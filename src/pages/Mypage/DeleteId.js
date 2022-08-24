@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Modal from '../../components/Modal/Modal';
+// import { useNavigate } from 'react-router-dom';
 import './DeleteId.scss';
 
 const DeleteId = ({ setShowModal }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+
+  const [isShowModal, setIsShowModal] = useState(false);
+
+  const togleModal = () => {
+    setIsShowModal(togleModal => !togleModal);
+  };
 
   const closeModal = () => {
     setShowModal(false);
@@ -34,9 +41,10 @@ const DeleteId = ({ setShowModal }) => {
       }),
     })
       .then(response => response.json())
-      .then(data => {
-        navigate('/main'); //회원정보 삭제 후 경로지정은 메인으로
-      });
+      // .then(data => {
+      //   navigate('/main'); //회원정보 삭제 후 경로지정은 메인으로
+      // });
+      .catch(setIsShowModal(true));
   };
 
   const InputValueDelete =
@@ -72,6 +80,13 @@ const DeleteId = ({ setShowModal }) => {
           <strong>{InputValueDelete}회원탈퇴</strong>
           {/* 메인페이지로 이동 */}
         </button>
+        {isShowModal && (
+          <Modal
+            content="아이디 또는 비밀번호가 틀렸습니다."
+            togleModal={togleModal}
+            propsFuntion={togleModal}
+          />
+        )}
       </form>
       <div className="backToMyPage" onClick={closeModal}>
         마이페이지로 돌아가기
