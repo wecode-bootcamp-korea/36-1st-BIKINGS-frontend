@@ -2,10 +2,11 @@ import React, { useState, useRef } from 'react';
 import DropDown from './DropDown';
 import './Nav.scss';
 
-const Nav = () => {
+const Nav = ({ onChangePage }) => {
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
   const navRef = useRef(null);
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       setScrollOption(true);
@@ -51,7 +52,8 @@ const Nav = () => {
             <img
               className="shoppingCart"
               alt="shoppingCart"
-              src="/images/shopping-cart2.png"
+              src="images/shopping-cart2.png"
+              onClick={() => onChangePage('price')}
             />
           </div>
         </div>
