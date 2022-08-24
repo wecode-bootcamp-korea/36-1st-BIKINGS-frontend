@@ -4,13 +4,15 @@
   .logIn {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: absolute;
-    width: 40rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
     flex-direction: column;
-    background-color: white;
+    background-color: blur;
 
     .mainTitle {
       color: red;
@@ -18,7 +20,6 @@
       font-size: 5rem;
       font-family: 'Inspiration', cursive;
       letter-spacing: -0.1ch;
-      margin-top: 50px;
       font-weight: bold;
     }
     .cursor {

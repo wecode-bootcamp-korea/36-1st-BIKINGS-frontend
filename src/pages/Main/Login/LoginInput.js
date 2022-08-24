@@ -11,7 +11,10 @@ const LoginInput = ({ isLoginMode }) => {
     contact: '',
     birth: '',
     name: '',
+    address: '',
   });
+
+  console.log(inputValues);
 
   const handleInput = event => {
     const { name, value } = event.target;
@@ -98,12 +101,45 @@ const LoginInput = ({ isLoginMode }) => {
   };
   // localStorage.setItem('Token', data.authorization);
 
+  const birthValidation = _inputBirth => {
+    let Birth_exp = /^(\(?\+?[0-9]*\)?)?[0-9_\- ]*$/;
+    let year = Number(_inputBirth.substring(0, 4));
+    let month = Number(_inputBirth.substring(4, 6));
+    let day = Number(_inputBirth.substring(6, 8));
+    let today = new Date();
+    let yearNow = today.getFullYear();
+
+    if (_inputBirth === undefined) {
+      return false;
+    } else if (_inputBirth.length !== 8 || !Birth_exp.test(_inputBirth)) {
+      return false;
+    } else if (1900 > year || year > yearNow) {
+      return false;
+    } else if (month < 1 || month > 12) {
+      return false;
+    } else if (day < 1 || day > 31) {
+      return false;
+    } else if (
+      (month === 4 || month === 6 || month === 9 || month === 11) &&
+      day === 31
+    ) {
+      return false;
+    } else if (month === 2) {
+      const leapYear = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+      if (day > 29 || (day === 29 && !leapYear)) {
+        return false;
+      }
+    }
+    return true;
+  };
+
   const InputValueSignup =
-    inputValues.username.includes('@') &&
+    inputValues.username.includes('@, .com') &&
     inputValues.password.length >= 5 &&
     inputValues.name.length > 2 &&
-    inputValues.birth.length >= 8 &&
-    inputValues.contact.length >= 10;
+    birthValidation(inputValues.birth) &&
+    inputValues.contact.length >= 10 &&
+    inputValues.address.length >= 12;
 
   const InputValueLogin =
     inputValues.username.includes('@') && inputValues.password.length >= 5;
@@ -143,6 +179,12 @@ const LoginInput = ({ isLoginMode }) => {
             onChange={handleInput}
             type="text"
             placeholder="전화번호"
+          />
+          <input
+            name="address"
+            onChange={handleInput}
+            type="text"
+            placeholder="주소"
           />
         </>
       )}
