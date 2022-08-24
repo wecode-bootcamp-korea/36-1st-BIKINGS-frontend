@@ -61,3 +61,27 @@ export const postDataClickBtn = async (url, setState) => {
   const data = await response.json();
   setState(data);
 };
+
+export const getProduct = async (url, setState) => {
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const data = await response.json();
+  setState(Object.values(data));
+};
+
+export const searchTag = async (url, setState) => {
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const data = await response.json();
+  setState(Object.values(data)[0].getProductsByTags);
+};
