@@ -4,10 +4,10 @@ import './Main.scss';
 
 const Main = () => {
   return (
-    <div className="main">
+    <main className="main">
       <ImageSlide />
       <Inner />
-    </div>
+    </main>
   );
 };
 

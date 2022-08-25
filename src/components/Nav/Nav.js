@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import DropDown from './DropDown/DropDown';
 import Login from '../../pages/Main/Login/Login';
-import DropDown from './DropDown';
 import './Nav.scss';
 
 const Nav = ({ onChangePage }) => {
@@ -46,7 +46,6 @@ const Nav = ({ onChangePage }) => {
       .then(result => setGetNumberCart(result));
   }, []);
 
-  console.log(getNumberCart);
   const CartNum = getNumberCart?.data?.length;
 
   return (

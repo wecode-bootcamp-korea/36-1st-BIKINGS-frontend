@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './ProductCheackList.scss';
+import './ProductCheckList.scss';
 
-function ProductCheackList({ serach }) {
+function ProductCheckList({ serch }) {
   const [checkedList, setCheckedList] = useState([]);
   const [categoty, setCategoty] = useState([]);
 
@@ -24,7 +24,7 @@ function ProductCheackList({ serach }) {
   }, []);
 
   return (
-    <div className="ProductCheackList">
+    <div className="ProductCheckList">
       <h3>카테고리</h3>
       <div className="checkList">
         <div className="checkBoxList">
@@ -46,7 +46,7 @@ function ProductCheackList({ serach }) {
             );
           })}
         </div>
-        <button className="serchCategory" onClick={() => serach(checkedList)}>
+        <button className="serchCategory" onClick={() => serch(checkedList)}>
           검색
         </button>
       </div>
@@ -54,4 +54,4 @@ function ProductCheackList({ serach }) {
   );
 }
 
-export default ProductCheackList;
+export default ProductCheckList;

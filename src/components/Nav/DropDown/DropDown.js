@@ -1,6 +1,6 @@
 import React from 'react';
-import './DropDown.scss';
 import { DropDownData, DropDownData2, Brand, hashTag } from './DropDownData';
+import './DropDown.scss';
 
 const DropDown = ({ navRender }) => {
   const dropLeave = () => {
