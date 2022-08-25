@@ -107,7 +107,7 @@ const LoginInput = ({ isLoginMode }) => {
         disabled={
           isLoginMode ? !InputValueSignup(inputValues) : !InputValueLogin
         }
-        onClick={() => (isLoginMode ? alert('회원가입!') : loginSignUp())}
+        onClick={loginSignUp}
       >
         <strong>{isLoginMode ? '회원가입' : '로그인'}</strong>
       </button>
