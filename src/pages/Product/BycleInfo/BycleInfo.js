@@ -1,9 +1,15 @@
 import React from 'react';
 import './BycleInfo.scss';
 
-const BycleInfo = ({ bycle: { name, price, cover_image_url, tags } }) => {
+const BycleInfo = ({
+  bycle: { name, price, cover_image_url, tags, id },
+  onChangePage,
+}) => {
   return (
-    <div className="bycleInfo">
+    <div
+      className="bycleInfo"
+      onClick={() => onChangePage(`productDetail/${id}`)}
+    >
       <img className="bycleImg" src={cover_image_url} alt="bycleImg" />
       <div className="bycleContent">
         <div className="bycleName">{name}</div>

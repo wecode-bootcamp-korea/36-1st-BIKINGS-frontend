@@ -40,7 +40,11 @@ const Nav = ({ onChangePage }) => {
       <div className="common">
         <div className="navLeft">
           <div className="mainTitle">300</div>
-          <li className="topFontLeft" onMouseOver={popNavBar}>
+          <li
+            className="topFontLeft"
+            onMouseOver={popNavBar}
+            onClick={() => onChangePage('product')}
+          >
             자전거
           </li>
           <li className="topFontLeft">용품</li>
@@ -61,7 +65,7 @@ const Nav = ({ onChangePage }) => {
             <img
               className="shoppingCart"
               alt="shoppingCart"
-              src="images/shopping-cart2.png"
+              src="/images/shopping-cart2.png"
               onClick={() => onChangePage('price')}
             />
           </div>

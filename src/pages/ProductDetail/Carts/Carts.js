@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import './Carts.scss';
 
 const Carts = ({ getData, setShowModal, setProductData, closeModal }) => {
-  const { id, name, price } = getData;
-
+  const { id, name, price } = getData[0];
+  console.log(getData);
   const postInfo = () => {
     fetch(`http://10.58.1.132:8000/carts/${id}`, {
       method: 'POST',
@@ -27,13 +27,13 @@ const Carts = ({ getData, setShowModal, setProductData, closeModal }) => {
       <div className="cartsSubContainer">
         <div className="cartsInnerContainer">
           <div className="firstBasket">
-            <p>{name}</p>
+            <p className="cartsTitle">{name}</p>
             <p className="subDes" />
             <span className="price">
               {Number(price).toLocaleString() + '원'}
-            </span>
-            <span className="subPrice">
-              {Number(price * 1.1).toLocaleString() + '원'}
+              <span className="subPrice">
+                {Number(price * 1.1).toLocaleString() + '원'}
+              </span>
             </span>
           </div>
           <div className="secondBasket">

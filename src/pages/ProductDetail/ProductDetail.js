@@ -9,8 +9,8 @@ import './ProductDetail.scss';
 const ProductDetail = () => {
   const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState([]);
-  const [productData, setProductData] = useState([]);
   const [getData, setGetData] = useState([]);
+  const [productData, setProductData] = useState([]);
   const params = useParams();
   const userId = params.id;
 

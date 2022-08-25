@@ -40,6 +40,9 @@
         font-size: 1.5rem;
         width: 38rem;
 
+        .cartsTitle {
+          text-align: left;
+        }
         .subDes {
           margin-bottom: 20px;
         }
@@ -47,11 +50,15 @@
         .price {
           font-size: 1.8rem;
           font-weight: 600;
-        }
-        .subPrice {
-          padding-left: 0.5rem;
-          color: grey;
-          text-decoration: line-through;
+          display: flex;
+          .subPrice {
+            font-size: 1.5rem;
+            padding-left: 0.5rem;
+            color: grey;
+            text-decoration: line-through;
+            display: flex;
+            align-items: center;
+          }
         }
       }
 
