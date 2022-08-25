@@ -13,7 +13,7 @@ const Login = ({ togleLogin }) => {
     <div className="loginBackground">
       <div className="logIn">
         <div className="mainTitle">300</div>
-        <LoginInput isLoginMode={isLoginMode} />
+        <LoginInput isLoginMode={isLoginMode} togleLogin={togleLogin} />
         <button className="cancelBtn" onClick={togleLogin}>
           닫기
         </button>

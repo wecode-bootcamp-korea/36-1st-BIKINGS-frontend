@@ -32,8 +32,7 @@ const DeleteId = ({ setShowModal }) => {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json',
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMjBAZ21haWwuY29tIiwiaWQiOjI1LCJiaXJ0aCI6IjE5ODktMTItMzFUMTU6MDA6MDAuMDAwWiIsImNvbnRhY3QiOiIwMTAtNTU1NS00NDQ0IiwicG9pbnQiOjEwMDAwMDAwLCJuYW1lIjoia2ZrIiwiaWF0IjoxNjYxMjM3OTUzfQ.ip2Vqy38bkmd0W_jWW6Z2HD9iuHxiaRc-zdqKFr6ycc',
+        // authorization: authorization.TOKEN,
       },
       body: JSON.stringify({
         username: inputValues.username,
@@ -41,9 +40,6 @@ const DeleteId = ({ setShowModal }) => {
       }),
     })
       .then(response => response.json())
-      // .then(data => {
-      //   navigate('/main'); //회원정보 삭제 후 경로지정은 메인으로
-      // });
       .catch(setIsShowModal(true));
   };
 

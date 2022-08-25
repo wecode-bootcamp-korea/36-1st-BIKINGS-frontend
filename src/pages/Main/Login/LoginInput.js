@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Modal from '../../../components/Modal/Modal';
+import { useNavigate } from 'react-router';
 import './LoginInput.scss';
 
-const LoginInput = ({ isLoginMode }) => {
+const LoginInput = ({ isLoginMode, togleLogin }) => {
   const [inputValues, setInputValues] = useState({
     username: '',
     password: '',
@@ -12,6 +13,7 @@ const LoginInput = ({ isLoginMode }) => {
     address: '',
   });
 
+  const navigate = useNavigate();
   const [isShowModal, setIsShowModal] = useState(false);
 
   const togleModal = () => {
@@ -47,11 +49,20 @@ const LoginInput = ({ isLoginMode }) => {
             })
       }`,
     })
-      .then(response => response.json())
-      .then(data => {
-        if (!isLoginMode) localStorage.setItem('Token', String(data.TOKEN));
+      .then(response => {
+        if (!response.ok) {
+          setIsShowModal(true);
+        } else if (response.ok) {
+          togleLogin(true);
+          navigate('/');
+        }
+        return response.json();
       })
-      .catch(setIsShowModal(true));
+      .then(data => {
+        if (!isLoginMode) {
+          localStorage.setItem('Token', String(data.TOKEN));
+        }
+      });
   };
 
   const birthValidation = _inputBirth => {
