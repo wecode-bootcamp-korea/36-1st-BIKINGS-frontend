@@ -49,5 +49,5 @@ export const serachTag = async (url, setState) => {
   });
 
   const data = await response.json();
-  setState(Object.values(data)[0].getProductsByTags);
+  setState(Object.values(data).getProductsByTags);
 };
