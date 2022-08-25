@@ -1,18 +1,26 @@
 .loginBackground {
-  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .logIn {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
     flex-direction: column;
-    background-color: blur;
+    padding: 7rem;
+    border-radius: 2rem;
+    background-color: white;
 
     .mainTitle {
       color: red;
@@ -29,6 +37,25 @@
       text-decoration: none;
       color: #577296;
       cursor: pointer;
+    }
+  }
+
+  .cancelBtn {
+    margin-top: 3rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 35rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #e50011;
+    color: white;
+    border: none;
+    &:hover {
+      background-color: #f96871;
+    }
+    &:active {
+      background-color: #e50011;
     }
   }
 }

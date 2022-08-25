@@ -32,6 +32,9 @@
       margin-left: 8rem;
       margin-right: 0rem;
       cursor: pointer;
+      &:hover {
+        color: black;
+      }
     }
   }
 

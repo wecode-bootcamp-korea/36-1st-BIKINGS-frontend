@@ -1,11 +1,19 @@
 import React, { useState, useRef } from 'react';
 import DropDown from './DropDown/DropDown';
+import Login from '../../pages/Main/Login/Login';
 import './Nav.scss';
 
-const Nav = () => {
+const Nav = ({ onChangePage }) => {
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+
+  const togleLogin = () => {
+    setIsLogin(isLogin => !isLogin);
+  };
+
   const navRef = useRef(null);
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       setScrollOption(true);
@@ -47,16 +55,20 @@ const Nav = () => {
             <img className="topImage" alt="blog" src="/images/youtube2.png" />
           </div>
           <div className="topRight">
-            <li className="topFontRight">Login</li>
+            <li className="topFontRight" onClick={togleLogin}>
+              Login
+            </li>
             <img
               className="shoppingCart"
               alt="shoppingCart"
-              src="/images/shopping-cart2.png"
+              src="images/shopping-cart2.png"
+              onClick={() => onChangePage('price')}
             />
           </div>
         </div>
       </div>
       {navRender && <DropDown navRender={setNavRender} />}
+      {isLogin && <Login togleLogin={togleLogin} />}
     </div>
   );
 };
