@@ -32,14 +32,14 @@ const Price = ({ onChangePage }) => {
   };
 
   useEffect(() => {
-    getOrder(`http://10.58.1.132:8000/carts`, setPriceList);
+    // getOrder(`http://10.58.1.132:8000/carts`, setPriceList);
   }, []);
 
   const deleteContent = id => {
-    deleteData(
-      `http://10.58.1.132:8000/carts/${id}`,
-      setPriceList(priceList.filter(el => el.id !== id))
-    );
+    // deleteData(
+    //   `http://10.58.1.132:8000/carts/${id}`,
+    //   setPriceList(priceList.filter(el => el.id !== id))
+    // );
   };
 
   const setPricetoNumber = checkedList.map(checkedListToNumber =>
@@ -53,7 +53,7 @@ const Price = ({ onChangePage }) => {
   const totalPrice = addPrice === 0 ? 0 : addPrice - sale + 5000;
 
   return (
-    <main className="price">
+    <main id="price">
       <article className="priceBox">
         <h3>장바구니</h3>
         <div className="priceList">
