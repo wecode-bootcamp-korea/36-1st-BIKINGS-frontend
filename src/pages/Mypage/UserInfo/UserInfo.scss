@@ -1,0 +1,89 @@
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+  background-color: white;
+  width: 60%;
+  border-radius: 2rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem gray;
+  margin: 2rem 0;
+  padding: 5rem;
+
+  .userNameTitle {
+    font-weight: 500;
+    font-size: 2.4rem;
+  }
+  .userInfoContainer {
+    display: flex;
+    margin-top: 5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    .userInfoDetail {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0rem 10rem;
+
+      p {
+        margin: 1rem 0;
+      }
+    }
+
+    .userPointSection {
+      height: 20rem;
+      width: 20rem;
+
+      .subContainer {
+        width: 70%;
+        height: 70%;
+        margin: 3rem auto;
+
+        .subFirst {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+
+          .userRank {
+            min-width: 48px;
+            height: 48px;
+            width: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #d82728;
+            border: 1px solid #d82728;
+            border-radius: 5px;
+          }
+
+          .userNameIn {
+            font-size: 2rem;
+          }
+        }
+
+        .point {
+          font-size: 1.3rem;
+          padding-top: 2rem;
+          text-align: center;
+        }
+      }
+    }
+
+    .userOption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      font-size: 1.4rem;
+      margin-top: 3rem;
+      color: rgb(69, 130, 205);
+      cursor: pointer;
+
+      .userInfoDelete {
+        color: #d82728;
+      }
+    }
+  }
+}
