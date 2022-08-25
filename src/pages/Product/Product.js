@@ -50,7 +50,7 @@ const Product = ({ onChangePage }) => {
         <div className="imageSeemore" onClick={changeImage}>
           {isShowImage ? '접기 ' : '더보기'}
         </div>
-        <ProductCheckList serach={serch} />
+        <ProductCheckList serch={serch} />
         <div className="bycleContainer">
           <div className="bycleTitle">
             <h3> 상품 목록 </h3>

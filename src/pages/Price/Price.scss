@@ -1,0 +1,98 @@
+#price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  padding: 20rem;
+  width: 100vw;
+
+  .priceBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10rem;
+    border-radius: 5rem;
+    background-color: white;
+    box-shadow: 0.3rem 0.3rem 0rem 0rem #bdbdbd;
+
+    h3 {
+      padding: 2rem;
+      font-size: 3rem;
+    }
+
+    .priceOptionSelect {
+      display: flex;
+      align-items: center;
+
+      .setCheckBox {
+        margin: 0 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    .priceList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .line {
+    border: 0.1rem solid black;
+    margin: 2rem 0;
+  }
+
+  .priceFinalCheck {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin-left: 15rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0.3rem 0.3rem 0rem 0rem #bdbdbd;
+
+    .priceInfo {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border: 0.2rem solid #bdbdbd;
+      border-radius: 2rem;
+
+      .totalBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 2rem;
+        padding: 2rem;
+        width: 100%;
+      }
+    }
+
+    .footer {
+      font-size: 1.5rem;
+      color: gray;
+    }
+
+    .priceBtn {
+      margin: 2rem 0;
+      border: 0.3rem solid whitesmoke;
+      background-color: bisque;
+      border-radius: 2rem;
+      padding: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem gray;
+        transition-duration: 0.8s;
+      }
+
+      &:active {
+        box-shadow: none;
+        border: 0.3rem solid whitesmoke;
+      }
+    }
+  }
+}

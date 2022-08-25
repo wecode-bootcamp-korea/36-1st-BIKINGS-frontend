@@ -3,6 +3,7 @@ import './Carts.scss';
 
 const Carts = ({ getData, setShowModal, setProductData, closeModal }) => {
   const { id, name, price } = getData[0];
+
   const postInfo = () => {
     fetch(`http://10.58.1.132:8000/carts/${id}`, {
       method: 'POST',

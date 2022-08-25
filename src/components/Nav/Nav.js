@@ -48,6 +48,56 @@ const Nav = ({ onChangePage }) => {
 
   const CartNum = getNumberCart?.data?.length;
 
+  // useEffect(() => {
+  //   fetch('http://10.58.1.132:8000/users', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       authorization:
+  //         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMkBnbWFpbC5jb20iLCJpZCI6MiwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZTIiLCJpYXQiOjE2NjEzODgwMDZ9.sSUjlL9ErJop8XYPRU-yGtwbsQbQkA3QieZ8tk0Mtcc',
+  //     },
+  //   })
+  //     .then(response => response.json())
+  //     // .then(res => console.log(res.data[0].id))
+  //     .then(res => setGetUser(res.data[0].id))
+  //     .finally(() => {
+  //       setGetUser(false);
+  //     });
+  // }, []);
+
+  const moveToPriceContent = () => {
+    fetch('http://10.58.1.154:3000/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user_id: 1,
+        status_order_id: 1,
+        user_address_id: 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => moveToPriceContentToOrder(res.data));
+  };
+
+  const moveToPriceContentToOrder = res => {
+    fetch('http://10.58.1.154:3000/orders/items', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        product_id: 1,
+        status_order_item_id: 1,
+        amount: 2,
+        order_id: res,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => localStorage.setItem('id', res.data));
+  };
+
   return (
     <div
       ref={navRef}
@@ -82,7 +132,10 @@ const Nav = ({ onChangePage }) => {
               className="shoppingCart"
               alt="shoppingCart"
               src="/images/shopping-cart2.png"
-              onClick={() => onChangePage('price')}
+              onClick={function () {
+                moveToPriceContent();
+                onChangePage('price');
+              }}
             />
             {getNumberCart?.data?.length > 0 && (
               <div className="basedOnCart">
