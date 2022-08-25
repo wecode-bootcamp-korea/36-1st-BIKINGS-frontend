@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import BycleInfo from './BycleInfo/BycleInfo';
-import ProductCheackList from './ProductCheckList/ProductCheackList';
+import ProductCheckList from './ProductCheckList/ProductCheckList';
 import { image } from '../../Function';
-import { getProduct, serachTag } from '../../config';
+import { getProduct, serchTag } from '../../config';
 import './Product.scss';
 
 const Product = () => {
@@ -26,9 +26,9 @@ const Product = () => {
     setOffset((pageNum - 1) * 6);
   };
 
-  const serach = id => {
+  const serch = id => {
     setTagId(String(id));
-    serachTag(`http://10.58.1.154:3000/tags/${tagId}`, setbycles);
+    serchTag(`http://10.58.1.154:3000/tags/${tagId}`, setbycles);
   };
 
   return (
@@ -44,7 +44,7 @@ const Product = () => {
         <div className="imageSeemore" onClick={changeImage}>
           {isShowImage ? '접기 ' : '더보기'}
         </div>
-        <ProductCheackList serach={serach} />
+        <ProductCheckList serach={serch} />
         <div className="bycleContainer">
           <div className="bycleTitle">
             <h3> 상품 목록 </h3>

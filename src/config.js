@@ -48,7 +48,7 @@ export const getProduct = async (url, setState) => {
   setState(Object.values(data));
 };
 
-export const serachTag = async (url, setState) => {
+export const serchTag = async (url, setState) => {
   const response = await fetch(url, {
     method: 'GET',
     headers: {
