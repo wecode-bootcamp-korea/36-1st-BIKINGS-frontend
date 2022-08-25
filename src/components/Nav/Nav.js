@@ -78,8 +78,7 @@ const Nav = ({ onChangePage }) => {
       }),
     })
       .then(res => res.json())
-      .then(res => moveToPriceContentToOrder(res.data))
-      .catch(error => console.log(error));
+      .then(res => moveToPriceContentToOrder(res.data));
   };
 
   const moveToPriceContentToOrder = res => {
@@ -96,9 +95,7 @@ const Nav = ({ onChangePage }) => {
       }),
     })
       .then(res => res.json())
-      .then(res => localStorage.setItem('id', res.data))
-      // .then(res => setOrderId(res.data))
-      .catch(error => console.log(error));
+      .then(res => localStorage.setItem('id', res.data));
   };
 
   return (

@@ -41,7 +41,7 @@ const Price = ({ onChangePage }) => {
     })
       .then(res => res.json())
       .then(res => setPriceList(res));
-  }, []);
+  }, [orderId]);
 
   const deleteContent = id => {
     // deleteData(
