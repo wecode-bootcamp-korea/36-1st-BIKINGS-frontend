@@ -46,7 +46,6 @@ const Nav = ({ onChangePage }) => {
       .then(result => setGetNumberCart(result));
   }, []);
 
-  console.log(getNumberCart);
   const CartNum = getNumberCart?.data?.length;
 
   return (

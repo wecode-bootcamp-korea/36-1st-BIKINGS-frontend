@@ -3,17 +3,16 @@ import './Carts.scss';
 
 const Carts = ({ getData, setShowModal, setProductData, closeModal }) => {
   const { id, name, price } = getData[0];
+
   const postInfo = () => {
     fetch(`http://10.58.1.132:8000/carts/${id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTMyNjU4MH0.lGtjlP5qVZKd-4q23ZpqstdmJM5xGY4SlRnQXzMptMQ',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMkBnbWFpbC5jb20iLCJpZCI6MiwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZTIiLCJpYXQiOjE2NjEzODgwMDZ9.sSUjlL9ErJop8XYPRU-yGtwbsQbQkA3QieZ8tk0Mtcc',
       },
-    })
-      .then(response => response.json())
-      .then(result => setProductData(result));
+    });
   };
 
   useEffect(() => {
