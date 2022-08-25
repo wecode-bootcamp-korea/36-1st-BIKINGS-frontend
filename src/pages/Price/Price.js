@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PriceContent from './PriceContent';
-import { getOrder, deleteData } from '../../config';
 import Modal from '../../components/Modal/Modal';
 import './Price.scss';
 
@@ -16,7 +15,7 @@ const Price = ({ onChangePage }) => {
   const handleAllCheck = e => {
     if (e.target.checked) {
       const idArray = [];
-      priceList.forEach(el => idArray.push(el.price));
+      priceList.forEach(el => idArray.push(el.product_price));
       setCheckedList(idArray);
     } else {
       setCheckedList([]);
@@ -31,8 +30,17 @@ const Price = ({ onChangePage }) => {
         );
   };
 
+  const orderId = localStorage.getItem('id');
+
   useEffect(() => {
-    // getOrder(`http://10.58.1.132:8000/carts`, setPriceList);
+    fetch(`http://10.58.1.154:3000/orders/item/${orderId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(res => res.json())
+      .then(res => setPriceList(res));
   }, []);
 
   const deleteContent = id => {
@@ -71,11 +79,13 @@ const Price = ({ onChangePage }) => {
             <div className="line" />
             {priceList.map(prices => (
               <PriceContent
-                key={prices.id}
+                key={prices.order_item_id}
                 prices={prices}
                 onCheckedElement={onCheckedElement}
                 checkedList={checkedList}
-                checked={checkedList.includes(prices.price) ? true : false}
+                checked={
+                  checkedList.includes(prices.product_price) ? true : false
+                }
                 deleteContent={() => deleteContent(prices.id)}
               />
             ))}
