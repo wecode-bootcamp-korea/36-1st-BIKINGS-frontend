@@ -7,6 +7,7 @@ import Main from './pages/Main/Main';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Product from './pages/Product/Product';
 import Mypage from './pages/Mypage/Mypage';
+import Price from './pages/Price/Price';
 
 const Router = () => {
   const onChangePage = path => {
@@ -24,6 +25,10 @@ const Router = () => {
           element={<Product onChangePage={path => onChangePage(path)} />}
         />
         <Route path="/Mypage" element={<Mypage />} />
+        <Route
+          path="/price"
+          element={<Price onChangePage={path => onChangePage(path)} />}
+        />
       </Routes>
       <Topbtn />
       <Footer />

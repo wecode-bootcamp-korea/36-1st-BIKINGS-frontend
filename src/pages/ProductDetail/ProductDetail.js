@@ -15,7 +15,7 @@ const ProductDetail = () => {
   const userId = params.id;
 
   const closeModal = () => {
-    setShowModal(true);
+    setShowModal(showModal => !showModal);
   };
 
   useEffect(() => {

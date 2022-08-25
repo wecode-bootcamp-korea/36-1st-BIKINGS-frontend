@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from '../../components/Modal/Modal';
+import Modal from '../../../../components/Modal/Modal';
 import { useNavigate } from 'react-router-dom';
 import './DeleteId.scss';
 

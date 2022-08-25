@@ -4,7 +4,7 @@ import Modal from '../../../components/Modal/Modal';
 import { useNavigate } from 'react-router';
 import './LoginInput.scss';
 
-const LoginInput = ({ isLoginMode, togleLogin }) => {
+const LoginInput = ({ isLoginMode, togleLogin, setreplace }) => {
   const [isShowModal, setIsShowModal] = useState(false);
 
   const [inputValues, setInputValues] = useState({
@@ -71,7 +71,7 @@ const LoginInput = ({ isLoginMode, togleLogin }) => {
     inputValues.username.includes('@') && inputValues.password.length >= 5;
 
   return (
-    <form className="inputAndButton">
+    <div className="inputAndButton">
       <input
         className="inputIdPw"
         name="username"
@@ -120,7 +120,7 @@ const LoginInput = ({ isLoginMode, togleLogin }) => {
         disabled={
           isLoginMode ? !InputValueSignup(inputValues) : !InputValueLogin
         }
-        onClick={loginSignUp}
+        onClick={isLoginMode ? () => setreplace(false) : loginSignUp}
       >
         <strong>{isLoginMode ? '회원가입' : '로그인'}</strong>
       </button>
@@ -131,7 +131,7 @@ const LoginInput = ({ isLoginMode, togleLogin }) => {
           propsFuntion={togleModal}
         />
       )}
-    </form>
+    </div>
   );
 };
 export default LoginInput;
