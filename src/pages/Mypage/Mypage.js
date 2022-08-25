@@ -4,7 +4,7 @@ import OrderData from './OrderData/OrderData';
 import './Mypage.scss';
 
 const Mypage = () => {
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState([{ data: [], message: '' }]);
   const [orderData, setOrderData] = useState([]);
 
   useEffect(() => {
@@ -32,6 +32,8 @@ const Mypage = () => {
       .then(response => response.json())
       .then(result => setOrderData(result.data));
   }, []);
+
+  console.log(userInfo);
 
   return (
     <div className="myPage">
