@@ -56,7 +56,9 @@ const Nav = ({ onChangePage }) => {
     >
       <div className="common">
         <div className="navLeft">
-          <div className="mainTitle">300</div>
+          <div className="mainTitle" onClick={() => onChangePage('')}>
+            300
+          </div>
           <li
             className="topFontLeft"
             onMouseOver={popNavBar}
