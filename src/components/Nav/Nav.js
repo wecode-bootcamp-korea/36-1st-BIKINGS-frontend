@@ -27,17 +27,20 @@ const Nav = () => {
   };
 
   useEffect(() => {
-    fetch('http://10.58.1.132:8000/carts/cart', {
+    fetch('http://10.58.1.132:8000/carts', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMUBnbWFpbC5jb20iLCJpZCI6MSwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZSIsImlhdCI6MTY2MTI5OTg2M30.DNIylmQKbJdHQMtfhVOYqTrTwQQL4-5Mx8aFkKVAKdQ',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMkBnbWFpbC5jb20iLCJpZCI6MiwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZTIiLCJpYXQiOjE2NjEzODgwMDZ9.sSUjlL9ErJop8XYPRU-yGtwbsQbQkA3QieZ8tk0Mtcc',
       },
     })
       .then(response => response.json())
       .then(result => setGetNumberCart(result));
   }, []);
+
+  console.log(getNumberCart);
+  const CartNum = getNumberCart?.data?.length;
 
   return (
     <div
@@ -68,9 +71,11 @@ const Nav = () => {
               alt="shoppingCart"
               src="images/shopping-cart2.png"
             />
-            <div className="basedOnCart">
-              {getNumberCart > 0 && getNumberCart.data.length}
-            </div>
+            {getNumberCart?.data?.length > 0 ? (
+              <div className="basedOnCart">
+                {getNumberCart?.data?.length > 0 && CartNum}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
