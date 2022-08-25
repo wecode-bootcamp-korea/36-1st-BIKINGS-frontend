@@ -8,7 +8,7 @@ const UserInfo = ({ info }) => {
   const openModal = () => {
     setShowModal(true);
   };
-  console.log(info);
+
   return (
     <div className="userInfo">
       <p className="userNameTitle">
