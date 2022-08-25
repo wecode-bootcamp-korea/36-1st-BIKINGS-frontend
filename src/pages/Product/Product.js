@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BycleInfo from './BycleInfo/BycleInfo';
 import ProductCheckList from './ProductCheckList/ProductCheckList';
 import { image } from '../../Function';
-import { getProduct, serchTag } from '../../config';
+import { getProduct } from '../../config';
 import './Product.scss';
 
 const Product = ({ onChangePage }) => {
@@ -25,7 +25,7 @@ const Product = ({ onChangePage }) => {
     setOffset((pageNum - 1) * 6);
   };
 
-  const serach = id => {
+  const serch = id => {
     fetch(`http://10.58.1.154:3000/products/tags/${id}`, {
       method: 'GET',
       headers: {
