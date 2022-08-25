@@ -78,7 +78,10 @@ const Nav = ({ onChangePage }) => {
             <img className="topImage" alt="blog" src="/images/youtube2.png" />
           </div>
           <div className="topRight">
-            <li className="topFontRight" onClick={togleLogin}>
+            <li
+              className="topFontRight"
+              onClick={loginMypage ? () => onChangePage('Mypage') : togleLogin}
+            >
               {loginMypage ? 'myPage' : 'Login'}
             </li>
             <img
