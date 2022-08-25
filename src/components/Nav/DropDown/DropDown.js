@@ -1,6 +1,6 @@
 import React from 'react';
-import './DropDown.scss';
 import { DropDownData, DropDownData2, Brand, hashTag } from './DropDownData';
+import './DropDown.scss';
 
 const DropDown = ({ navRender }) => {
   const dropLeave = () => {
@@ -12,7 +12,6 @@ const DropDown = ({ navRender }) => {
   return (
     <div className="DropDownTop">
       <div className="DropDown" onMouseLeave={dropLeave}>
-        {/* {navRender && {style : {{backgroundColor:"#d42939"}}} */}
         <div className="dropDownLeft">
           <ul className="style">
             <div className="menuTop">스타일</div>

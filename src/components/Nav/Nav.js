@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import DropDown from './DropDown';
+import DropDown from './DropDown/DropDown';
 import './Nav.scss';
 
 const Nav = () => {
