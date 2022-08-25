@@ -71,11 +71,11 @@ const Nav = () => {
               alt="shoppingCart"
               src="images/shopping-cart2.png"
             />
-            {getNumberCart?.data?.length > 0 ? (
+            {getNumberCart?.data?.length > 0 && (
               <div className="basedOnCart">
                 {getNumberCart?.data?.length > 0 && CartNum}
               </div>
-            ) : null}
+            )}
           </div>
         </div>
       </div>
