@@ -1,4 +1,9 @@
 .myPage {
+  .nav1 {
+    background-color: #bdbdbd;
+    width: 100vw;
+    height: 10rem;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,6 +34,14 @@
       width: 100%;
       margin-top: 2rem;
       padding: 2rem;
+    }
+
+    .exclaimation {
+      width: 25rem;
+      margin-top: 2.5rem;
+    }
+    .noItem {
+      margin-top: 3rem;
     }
   }
 }
