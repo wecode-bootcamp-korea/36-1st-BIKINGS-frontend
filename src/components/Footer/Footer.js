@@ -38,20 +38,20 @@ const Footer = () => {
         <div className="linkArea">
           <ul className="linkUl">
             <li className="linkAfter">개인정보취급방침</li>
-            <li className="linkAfter">개인정보취급방침</li>
-            <li>개인정보취급방침</li>
+            <li className="linkAfter">내부정보관리규정</li>
+            <li>이메일무단수집동의</li>
           </ul>
           <select className="linkSelect">
-            <option value="electric">electric</option>
-            <option value="bycle">bycle</option>
+            <option value="electric">36기 최고</option>
+            <option value="bycle">1차 프로젝트 완성!</option>
           </select>
         </div>
         <div className="footerAreas">
           <p className="footerArea">
-            본사 : 서울특별시 강남구 테헤란로 위워크 10층 | A/S : 01-1234-1234
+            BIKINGS : 서울특별시 강남구 테헤란로 위워크 10층 102호 BIKINGS
             <br />
             <br />
-            Copyright © 2020 - 2022 wecode. All rights reserved.
+            Copyright © 2022 Wecode. All rights reserved.
           </p>
         </div>
       </div>
