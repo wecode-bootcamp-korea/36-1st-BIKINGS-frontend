@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './Inner.scss';
 import InnerList from './InnerList/InnerList';
+import './Inner.scss';
 
 const Inner = () => {
   const [lists, setList] = useState([]);

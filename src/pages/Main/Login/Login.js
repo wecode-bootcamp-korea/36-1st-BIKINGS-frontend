@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './Login.scss';
 import LoginInput from './LoginInput';
+import './Login.scss';
 
 const Login = () => {
   const [isLoginMode, setreplace] = useState(false);
