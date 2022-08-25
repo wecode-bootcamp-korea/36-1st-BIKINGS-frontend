@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import DropDown from './DropDown/DropDown';
 import Login from '../../pages/Main/Login/Login';
-import DropDown from './DropDown';
 import './Nav.scss';
 
 const Nav = ({ onChangePage }) => {

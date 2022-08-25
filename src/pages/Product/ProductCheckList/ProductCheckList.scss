@@ -1,0 +1,54 @@
+.ProductCheckList {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+  padding: 5rem;
+  border: 0.1rem solid black;
+  border-radius: 2rem;
+  background-color: #fdfdfd;
+  box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem gray;
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .checkList {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+
+    .serchCategory {
+      border: 0.3rem solid whitesmoke;
+      background-color: bisque;
+      width: 10rem;
+      height: 3rem;
+      border-radius: 2rem;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem gray;
+        transition-duration: 0.8s;
+      }
+
+      &:active {
+        box-shadow: none;
+        border: 0.3rem solid whitesmoke;
+      }
+    }
+
+    .checkBoxList {
+      display: flex;
+
+      .checkBoxs {
+        display: flex;
+        flex-direction: column;
+        margin: 0rem 2rem;
+        .checkBox {
+          margin: 2rem 0rem;
+        }
+      }
+    }
+  }
+}

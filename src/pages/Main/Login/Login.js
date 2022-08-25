@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import './Login.scss';
+import React, { useState, useEffect } from 'react';
 import LoginInput from './LoginInput';
+import './Login.scss';
 
 const Login = ({ togleLogin }) => {
   const [isLoginMode, setreplace] = useState(false);
@@ -9,8 +9,19 @@ const Login = ({ togleLogin }) => {
     setreplace(isLoginMode => !isLoginMode);
   };
 
+  const closeModal = e => {
+    if (e.target === e.currentTarget) {
+      togleLogin();
+    }
+  };
+
+  useEffect(() => {
+    document.body.style = `overflow: hidden`;
+    return () => (document.body.style = `overflow: auto`);
+  }, []);
+
   return (
-    <div className="loginBackground">
+    <div className="loginBackground" onClick={closeModal}>
       <div className="logIn">
         <div className="mainTitle">300</div>
         <LoginInput isLoginMode={isLoginMode} />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BycleInfo from './BycleInfo/BycleInfo';
-import ProductCheackList from './ProductCheckList/ProductCheackList';
+import ProductCheckList from './ProductCheckList/ProductCheckList';
 import { image } from '../../Function';
 import { getProduct } from '../../config';
 import './Product.scss';
@@ -25,7 +25,7 @@ const Product = ({ onChangePage }) => {
     setOffset((pageNum - 1) * 6);
   };
 
-  const serach = id => {
+  const serch = id => {
     fetch(`http://10.58.1.154:3000/products/tags/${id}`, {
       method: 'GET',
       headers: {
@@ -50,7 +50,7 @@ const Product = ({ onChangePage }) => {
         <div className="imageSeemore" onClick={changeImage}>
           {isShowImage ? '접기 ' : '더보기'}
         </div>
-        <ProductCheackList serach={serach} />
+        <ProductCheckList serach={serch} />
         <div className="bycleContainer">
           <div className="bycleTitle">
             <h3> 상품 목록 </h3>
