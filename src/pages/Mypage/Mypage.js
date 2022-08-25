@@ -32,9 +32,6 @@ const Mypage = () => {
       .then(response => response.json())
       .then(result => setOrderData(result.data));
   }, []);
-
-  console.log(userInfo);
-
   return (
     <div className="myPage">
       <div className="nav1" />
