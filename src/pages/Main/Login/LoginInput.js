@@ -50,6 +50,7 @@ const LoginInput = ({ isLoginMode, togleLogin }) => {
       }`,
     })
       .then(response => {
+        console.log(response);
         if (!response.ok) {
           setIsShowModal(true);
         } else if (response.ok) {
@@ -60,7 +61,7 @@ const LoginInput = ({ isLoginMode, togleLogin }) => {
       })
       .then(data => {
         if (!isLoginMode) {
-          localStorage.setItem('Token', String(data.TOKEN));
+          localStorage.setItem('Token', String(data.token));
         }
       });
   };

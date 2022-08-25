@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Modal from '../../components/Modal/Modal';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './DeleteId.scss';
 
 const DeleteId = ({ setShowModal }) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [isShowModal, setIsShowModal] = useState(false);
 
@@ -28,19 +28,25 @@ const DeleteId = ({ setShowModal }) => {
 
   const Delete = e => {
     e.preventDefault();
-    fetch('http://10.58.1.132:8000/users/withrowal', {
+    fetch('http://10.58.1.132:8000/users', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json',
-        // authorization: authorization.TOKEN,
+        authorization: localStorage.getItem('Token'),
       },
       body: JSON.stringify({
         username: inputValues.username,
         password: inputValues.password,
       }),
-    })
-      .then(response => response.json())
-      .catch(setIsShowModal(true));
+    }).then(response => {
+      if (!response.ok) {
+        setIsShowModal(true);
+      } else if (response.ok) {
+        setShowModal(false);
+        navigate('/');
+      }
+      return response.json();
+    });
   };
 
   const InputValueDelete =

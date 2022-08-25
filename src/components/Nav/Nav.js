@@ -31,6 +31,9 @@ const Nav = ({ onChangePage }) => {
     navRef.current.getElementsByClassName('common')[0].style.backgroundColor =
       '#d42939';
   };
+  const loginMypage = () => {
+    localStorage.getItem('Token') === null ? 'Login' : 'Mypage';
+  };
 
   return (
     <div
@@ -56,7 +59,7 @@ const Nav = ({ onChangePage }) => {
           </div>
           <div className="topRight">
             <li className="topFontRight" onClick={togleLogin}>
-              Login
+              {loginMypage}
             </li>
             <img
               className="shoppingCart"
