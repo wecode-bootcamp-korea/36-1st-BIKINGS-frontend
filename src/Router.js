@@ -12,13 +12,17 @@ const Router = () => {
   const onChangePage = path => {
     window.location.href = '/' + path;
   };
+
   return (
     <BrowserRouter>
       <Nav onChangePage={path => onChangePage(path)} />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/productDetail/:id" element={<ProductDetail />} />
-        <Route path="/product" element={<Product />} />
+        <Route
+          path="/product"
+          element={<Product onChangePage={path => onChangePage(path)} />}
+        />
         <Route path="/Mypage" element={<Mypage />} />
       </Routes>
       <Topbtn />

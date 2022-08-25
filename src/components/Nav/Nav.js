@@ -1,11 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import DropDown from './DropDown/DropDown';
 import Login from '../../pages/Main/Login/Login';
-import DropDown from './DropDown';
 import './Nav.scss';
 
 const Nav = ({ onChangePage }) => {
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
+  const [getNumberCart, setGetNumberCart] = useState([]);
   const [isLogin, setIsLogin] = useState(false);
 
   const togleLogin = () => {
@@ -31,9 +32,22 @@ const Nav = ({ onChangePage }) => {
     navRef.current.getElementsByClassName('common')[0].style.backgroundColor =
       '#d42939';
   };
-  const loginMypage = () => {
-    localStorage.getItem('Token') === null ? 'Login' : 'Mypage';
-  };
+  const loginMypage = localStorage.getItem('Token');
+
+  useEffect(() => {
+    fetch('http://10.58.1.132:8000/carts', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMkBnbWFpbC5jb20iLCJpZCI6MiwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZTIiLCJpYXQiOjE2NjEzODgwMDZ9.sSUjlL9ErJop8XYPRU-yGtwbsQbQkA3QieZ8tk0Mtcc',
+      },
+    })
+      .then(response => response.json())
+      .then(result => setGetNumberCart(result));
+  }, []);
+
+  const CartNum = getNumberCart?.data?.length;
 
   return (
     <div
@@ -43,7 +57,11 @@ const Nav = ({ onChangePage }) => {
       <div className="common">
         <div className="navLeft">
           <div className="mainTitle">300</div>
-          <li className="topFontLeft" onMouseOver={popNavBar}>
+          <li
+            className="topFontLeft"
+            onMouseOver={popNavBar}
+            onClick={() => onChangePage('product')}
+          >
             자전거
           </li>
           <li className="topFontLeft">용품</li>
@@ -59,14 +77,19 @@ const Nav = ({ onChangePage }) => {
           </div>
           <div className="topRight">
             <li className="topFontRight" onClick={togleLogin}>
-              {loginMypage}
+              {loginMypage ? 'myPage' : 'Login'}
             </li>
             <img
               className="shoppingCart"
               alt="shoppingCart"
-              src="images/shopping-cart2.png"
+              src="/images/shopping-cart2.png"
               onClick={() => onChangePage('price')}
             />
+            {getNumberCart?.data?.length > 0 && (
+              <div className="basedOnCart">
+                {getNumberCart?.data?.length > 0 && CartNum}
+              </div>
+            )}
           </div>
         </div>
       </div>
