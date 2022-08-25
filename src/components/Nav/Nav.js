@@ -32,6 +32,7 @@ const Nav = ({ onChangePage }) => {
     navRef.current.getElementsByClassName('common')[0].style.backgroundColor =
       '#d42939';
   };
+  const loginMypage = localStorage.getItem('Token');
 
   useEffect(() => {
     fetch('http://10.58.1.132:8000/carts', {
@@ -105,7 +106,9 @@ const Nav = ({ onChangePage }) => {
     >
       <div className="common">
         <div className="navLeft">
-          <div className="mainTitle">300</div>
+          <div className="mainTitle" onClick={() => onChangePage('')}>
+            300
+          </div>
           <li
             className="topFontLeft"
             onMouseOver={popNavBar}
@@ -125,8 +128,11 @@ const Nav = ({ onChangePage }) => {
             <img className="topImage" alt="blog" src="/images/youtube2.png" />
           </div>
           <div className="topRight">
-            <li className="topFontRight" onClick={togleLogin}>
-              Login
+            <li
+              className="topFontRight"
+              onClick={loginMypage ? () => onChangePage('Mypage') : togleLogin}
+            >
+              {loginMypage ? 'myPage' : 'Login'}
             </li>
             <img
               className="shoppingCart"

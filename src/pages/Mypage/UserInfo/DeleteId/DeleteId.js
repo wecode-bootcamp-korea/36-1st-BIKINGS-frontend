@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Modal from '../../../../components/Modal/Modal';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './DeleteId.scss';
 
 const DeleteId = ({ setShowModal }) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [isShowModal, setIsShowModal] = useState(false);
 
@@ -28,23 +28,25 @@ const DeleteId = ({ setShowModal }) => {
 
   const Delete = e => {
     e.preventDefault();
-    fetch('http://10.58.1.132:8000/users/withrowal', {
+    fetch('http://10.58.1.132:8000/users', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json',
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMjBAZ21haWwuY29tIiwiaWQiOjI1LCJiaXJ0aCI6IjE5ODktMTItMzFUMTU6MDA6MDAuMDAwWiIsImNvbnRhY3QiOiIwMTAtNTU1NS00NDQ0IiwicG9pbnQiOjEwMDAwMDAwLCJuYW1lIjoia2ZrIiwiaWF0IjoxNjYxMjM3OTUzfQ.ip2Vqy38bkmd0W_jWW6Z2HD9iuHxiaRc-zdqKFr6ycc',
+        authorization: localStorage.getItem('Token'),
       },
       body: JSON.stringify({
         username: inputValues.username,
         password: inputValues.password,
       }),
-    })
-      .then(response => response.json())
-      // .then(data => {
-      //   navigate('/main'); //회원정보 삭제 후 경로지정은 메인으로
-      // });
-      .catch(setIsShowModal(true));
+    }).then(response => {
+      if (!response.ok) {
+        setIsShowModal(true);
+      } else if (response.ok) {
+        setShowModal(false);
+        navigate('/');
+      }
+      return response.json();
+    });
   };
 
   const InputValueDelete =

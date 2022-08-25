@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { InputValueSignup } from '../../../Function';
 import Modal from '../../../components/Modal/Modal';
+import { useNavigate } from 'react-router';
 import './LoginInput.scss';
 
-const LoginInput = ({ isLoginMode }) => {
+const LoginInput = ({ isLoginMode, togleLogin, setreplace }) => {
   const [isShowModal, setIsShowModal] = useState(false);
+
   const [inputValues, setInputValues] = useState({
     username: '',
     password: '',
@@ -13,6 +15,17 @@ const LoginInput = ({ isLoginMode }) => {
     name: '',
     address: '',
   });
+
+  const navigate = useNavigate();
+
+  const togleModal = () => {
+    setIsShowModal(togleModal => !togleModal);
+  };
+
+  const handleInput = event => {
+    const { name, value } = event.target;
+    setInputValues({ ...inputValues, [name]: value });
+  };
 
   const loginSignUp = (e, urlSignUp, urlLogin) => {
     e.preventDefault();
@@ -38,27 +51,27 @@ const LoginInput = ({ isLoginMode }) => {
             })
       }`,
     })
-      .then(response => response.json())
-      .then(data => {
-        if (!isLoginMode) localStorage.setItem('Token', String(data.TOKEN));
+      .then(response => {
+        if (!response.ok) {
+          setIsShowModal(true);
+        } else if (response.ok) {
+          togleLogin(true);
+          navigate('/');
+        }
+        return response.json();
       })
-      .catch(setIsShowModal(true));
-  };
-
-  const togleModal = () => {
-    setIsShowModal(togleModal => !togleModal);
-  };
-
-  const handleInput = event => {
-    const { name, value } = event.target;
-    setInputValues({ ...inputValues, [name]: value });
+      .then(data => {
+        if (!isLoginMode) {
+          localStorage.setItem('Token', data.token);
+        }
+      });
   };
 
   const InputValueLogin =
     inputValues.username.includes('@') && inputValues.password.length >= 5;
 
   return (
-    <form className="inputAndButton">
+    <div className="inputAndButton">
       <input
         className="inputIdPw"
         name="username"
@@ -107,7 +120,7 @@ const LoginInput = ({ isLoginMode }) => {
         disabled={
           isLoginMode ? !InputValueSignup(inputValues) : !InputValueLogin
         }
-        onClick={loginSignUp}
+        onClick={isLoginMode ? () => setreplace(false) : loginSignUp}
       >
         <strong>{isLoginMode ? '회원가입' : '로그인'}</strong>
       </button>
@@ -118,7 +131,7 @@ const LoginInput = ({ isLoginMode }) => {
           propsFuntion={togleModal}
         />
       )}
-    </form>
+    </div>
   );
 };
 export default LoginInput;

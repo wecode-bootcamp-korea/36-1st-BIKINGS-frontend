@@ -24,7 +24,11 @@ const Login = ({ togleLogin }) => {
     <div className="loginBackground" onClick={closeModal}>
       <div className="logIn">
         <div className="mainTitle">300</div>
-        <LoginInput isLoginMode={isLoginMode} />
+        <LoginInput
+          isLoginMode={isLoginMode}
+          togleLogin={togleLogin}
+          setreplace={setreplace}
+        />
         <button className="cancelBtn" onClick={togleLogin}>
           닫기
         </button>
