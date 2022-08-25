@@ -5,10 +5,9 @@ import { image } from '../../Function';
 import { getProduct, serchTag } from '../../config';
 import './Product.scss';
 
-const Product = () => {
+const Product = ({ onChangePage }) => {
   const [isShowImage, setIsShowImage] = useState(false);
   const [bycles, setbycles] = useState([]);
-  const [tagId, setTagId] = useState(11);
   const [offset, setOffset] = useState(0);
 
   const changeImage = () => {
@@ -26,9 +25,16 @@ const Product = () => {
     setOffset((pageNum - 1) * 6);
   };
 
-  const serch = id => {
-    setTagId(String(id));
-    serchTag(`http://10.58.1.154:3000/tags/${tagId}`, setbycles);
+  const serach = id => {
+    fetch(`http://10.58.1.154:3000/products/tags/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(res => res.json())
+      .then(res => setbycles(res.getProductsByTags))
+      .catch(rej => alert(rej));
   };
 
   return (
@@ -52,7 +58,11 @@ const Product = () => {
           </div>
           <div className="bycleList">
             {bycles.map(bycle => (
-              <BycleInfo key={bycle.id} bycle={bycle} />
+              <BycleInfo
+                key={bycle.id}
+                bycle={bycle}
+                onChangePage={id => onChangePage(id)}
+              />
             ))}
           </div>
           <div className="movePageBtn">

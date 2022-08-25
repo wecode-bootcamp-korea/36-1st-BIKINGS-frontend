@@ -34,6 +34,7 @@
         font-size: 1.4rem;
         color: #898989;
         padding-bottom: 1rem;
+        line-height: 2rem;
       }
 
       .listNum {
@@ -60,6 +61,7 @@
       .linkUl {
         display: flex;
         padding: 19px 0;
+        color: #898989;
 
         .linkAfter {
           &::after {
