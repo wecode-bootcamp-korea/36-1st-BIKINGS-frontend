@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Login from '../../pages/Main/Login/Login';
 import DropDown from './DropDown';
 import './Nav.scss';
@@ -6,6 +6,7 @@ import './Nav.scss';
 const Nav = ({ onChangePage }) => {
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
+  const [getNumberCart, setGetNumberCart] = useState([]);
   const [isLogin, setIsLogin] = useState(false);
 
   const togleLogin = () => {
@@ -31,6 +32,22 @@ const Nav = ({ onChangePage }) => {
     navRef.current.getElementsByClassName('common')[0].style.backgroundColor =
       '#d42939';
   };
+
+  useEffect(() => {
+    fetch('http://10.58.1.132:8000/carts', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMkBnbWFpbC5jb20iLCJpZCI6MiwiYmlydGgiOiIyMDAwLTA5LTMwVDE1OjAwOjAwLjAwMFoiLCJjb250YWN0IjoiMDEwLTU1NTUtNDQ0NCIsInBvaW50IjoxMDAwMDAwMCwibmFtZSI6ImxlZTIiLCJpYXQiOjE2NjEzODgwMDZ9.sSUjlL9ErJop8XYPRU-yGtwbsQbQkA3QieZ8tk0Mtcc',
+      },
+    })
+      .then(response => response.json())
+      .then(result => setGetNumberCart(result));
+  }, []);
+
+  console.log(getNumberCart);
+  const CartNum = getNumberCart?.data?.length;
 
   return (
     <div
@@ -68,6 +85,11 @@ const Nav = ({ onChangePage }) => {
               src="/images/shopping-cart2.png"
               onClick={() => onChangePage('price')}
             />
+            {getNumberCart?.data?.length > 0 && (
+              <div className="basedOnCart">
+                {getNumberCart?.data?.length > 0 && CartNum}
+              </div>
+            )}
           </div>
         </div>
       </div>
