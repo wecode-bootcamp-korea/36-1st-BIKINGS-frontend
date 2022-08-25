@@ -21,13 +21,7 @@ const Modal = ({ togleModal, content, propsFuntion }) => {
           <button className="btn close" onClick={togleModal}>
             취소
           </button>
-          <button
-            className="confirm btn"
-            onClick={function () {
-              propsFuntion();
-              togleModal();
-            }}
-          >
+          <button className="confirm btn" onClick={propsFuntion}>
             확인
           </button>
         </div>

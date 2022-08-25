@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import Tags from './Tags/Tags';
+import { getProductDetailData } from '../../config';
+import { useParams } from 'react-router';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
@@ -9,9 +10,7 @@ const ProductDetail = () => {
   const userId = params.id;
 
   useEffect(() => {
-    fetch(`http://10.58.1.154:3000/products/${userId}`)
-      .then(response => response.json())
-      .then(result => setData(result));
+    getProductDetailData(`http://10.58.1.154:3000/products/${userId}`, setData);
   }, [userId]);
 
   return (
@@ -34,7 +33,7 @@ const ProductDetail = () => {
             <i className="fa-brands fa-facebook-f icon" />
           </a>
           <a className="sns" href="https://www.instagram.com">
-            <i class="fa-brands fa-instagram icon" />
+            <i className="fa-brands fa-instagram icon" />
           </a>
         </div>
       </div>

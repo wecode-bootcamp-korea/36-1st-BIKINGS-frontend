@@ -1,13 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Login from '../../pages/Main/Login/Login';
 import DropDown from './DropDown';
 import './Nav.scss';
 
-const Nav = () => {
+const Nav = ({ onChangePage }) => {
   const [navRender, setNavRender] = useState(false);
   const [scrollOption, setScrollOption] = useState(false);
   const [getNumberCart, setGetNumberCart] = useState([]);
+  const [isLogin, setIsLogin] = useState(false);
+
+  const togleLogin = () => {
+    setIsLogin(isLogin => !isLogin);
+  };
 
   const navRef = useRef(null);
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       setScrollOption(true);
@@ -59,17 +66,20 @@ const Nav = () => {
 
         <div className="navRight">
           <div className="images">
-            <img className="topImage" alt="blog" src="images/blog2.png" />
-            <img className="topImage" alt="blog" src="images/instagram2.png" />
-            <img className="topImage" alt="blog" src="images/facebook2.png" />
-            <img className="topImage" alt="blog" src="images/youtube2.png" />
+            <img className="topImage" alt="blog" src="/images/blog2.png" />
+            <img className="topImage" alt="blog" src="/images/instagram2.png" />
+            <img className="topImage" alt="blog" src="/images/facebook2.png" />
+            <img className="topImage" alt="blog" src="/images/youtube2.png" />
           </div>
           <div className="topRight">
-            <li className="topFontRight">Login</li>
+            <li className="topFontRight" onClick={togleLogin}>
+              Login
+            </li>
             <img
               className="shoppingCart"
               alt="shoppingCart"
               src="images/shopping-cart2.png"
+              onClick={() => onChangePage('price')}
             />
             {getNumberCart?.data?.length > 0 && (
               <div className="basedOnCart">
@@ -80,8 +90,8 @@ const Nav = () => {
         </div>
       </div>
       {navRender && <DropDown navRender={setNavRender} />}
+      {isLogin && <Login togleLogin={togleLogin} />}
     </div>
   );
 };
-
 export default Nav;
