@@ -57,7 +57,7 @@
 </table>
 
 [36-1st-bikings-repository](https://github.com/wecode-bootcamp-korea/36-1st-BIKINGS-backend)
-##  <img height="25px" src="https://user-images.githubusercontent.com/50071076/184506573-ed624123-2e8f-430c-9165-0bce79d1e13d.png" /> 클론코딩 프로젝트 소개
+## 클론코딩 프로젝트 소개
 ### 프로젝트 기간
 
 - 프로젝트 구현 : 22.08.16 ~ 22.08.25(10일)
@@ -97,22 +97,11 @@
 ## DB modeling
 ![삼천리자전거 DB modeling](https://user-images.githubusercontent.com/88824305/187007537-cc9cdf2f-f153-42e1-8021-889a8c55eaf3.png)
 
-## (BE) Features
-- 회원가입(POST)
-- 로그인(POST)
-- 장바구니(POST, GET)
-- 주문하기(POST)
-- 제품 리스트(GET)
-- 제품 상세페이지(GET)
-- 마이페이지(GET)
-- 회원탈퇴(DELETE)
-- 구매 상품 추가(POST)
-- 구매 묶음 추가(POST)
-- 구매 상품 조회(GET)
-- 구매 묶음 조회(GET)
-- 구매 상품 수정(PATCH)
-- 구매 상품 삭제(DELETE)
-- 구매 묶음 삭제(DELETE)
+## (FE) Features
+- 이주영 : 메인 상품 페이지, 상품 정보 페이지, 장바구니 모달페이지, footer, 
+- 문보성 : Nav, 로그인, 회원가입, 마이페이지, 회원탈퇴 구현
+- 권영준 : imageCarousel ,Top button , 상품페이지 UI 구현, 검색 기능 구현, 구매 페이지  
+
 
 ## 팀 프로젝트 노션 링크 
  - [바이킹쓰 노션 페이지](https://www.notion.so/6-d977ee006c2745fc99ae1f958a07d015)
